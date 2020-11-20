@@ -268,11 +268,12 @@ assoc$HostSynonyms[ assoc$HostSynonyms == "na" ] = ""
 # set artiodactyls
 assoc$HostOrder[ assoc$HostOrder %in% c("Artiodactyla", "Cetacea") ] = "Cetartiodactyla"
 
-# order and save
+# order, keep only distinct records, and save
 assoc = assoc %>%
   dplyr::arrange(HostOrder, Host_Harmonised, Pathogen_Harmonised, Database) %>%
   dplyr::select(Host_Harmonised, Host_Original, HostClass, HostOrder, HostFamily, Pathogen_Harmonised, Pathogen_Original, PathogenType, Database, Year, YearType,
-                DetectionMethod_Original, DetectionMethod_Harmonised, DetectionQuality_Original, DetectionQuality_Harmonised, HostSynonyms)
+                DetectionMethod_Original, DetectionMethod_Harmonised, DetectionQuality_Original, DetectionQuality_Harmonised, HostSynonyms) %>%
+  distinct()
 
 write.csv(assoc, "./output/Clover_reconciledassociations_v1_20201120.csv", row.names=FALSE)
 
