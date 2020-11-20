@@ -223,7 +223,7 @@ write.csv(shaw, "./output/hostpathogen_harmonised/Shaw_MammalViruses_AllHarmonis
 
 # subset to relevant columns, combine with assoc, subset to mammals only
 shaw_sub = shaw[ , c("Pathogen_Original", "Pathogen_Harmonised", "Type", "Host_Original", "Host_Harmonised", "HostClass",
-                     "HostOrder", "HostFamily", "Year", "YearType", "Method")] %>%
+                     "HostOrder", "HostFamily", "HostSynonyms", "Year", "YearType", "Method")] %>%
   dplyr::rename("PathogenType" = Type, "DetectionMethod_Original" = Method) %>%
   dplyr::mutate(DetectionMethod_Harmonised = NA,
                 DetectionQuality_Original = NA,
@@ -254,8 +254,33 @@ assoc$Pathogen_Harmonised[ assoc$Pathogen_Harmonised == "human mastadenovirus e"
 assoc$Pathogen_Harmonised[ assoc$Pathogen_Harmonised == "human mastadenovirus f" ] = "human adenovirus f"
 assoc$Pathogen_Harmonised[ assoc$Pathogen_Harmonised == "human polyomavirus" ] = "human polyomavirus 1"
 
-# save
+# hosts that do not harmonise to taxize for shaw; corrected for prev datasets
+assoc$Host_Harmonised[ assoc$Host_Original == "felis catus" & assoc$Database == "Shaw" ] = assoc$Host_Harmonised[ assoc$Host_Original == "felis catus" & assoc$Database == "EID2" ][1] 
+assoc$HostSynonyms[ assoc$Host_Original == "felis catus" & assoc$Database == "Shaw" ] = assoc$HostSynonyms[ assoc$Host_Original == "felis catus" & assoc$Database == "EID2" ][1] 
+assoc$Host_Harmonised[ assoc$Host_Original == "physeter catodon" & assoc$Database == "Shaw" ] = "physeter macrocephalus"
+assoc$HostSynonyms[ assoc$Host_Original == "physeter catodon" & assoc$Database == "Shaw" ] = "physeter catodon"
+assoc$Host_Harmonised[ assoc$Host_Original == "balaena mysticetus" & assoc$Database == "Shaw" ] = "balaena mysticetus"
+assoc$HostSynonyms[ assoc$Host_Original == "balaena mysticetus" & assoc$Database == "Shaw" ] = ""
+
+# fix NAs in synonyms
+assoc$HostSynonyms[ assoc$HostSynonyms == "na" ] = ""
+
+# set artiodactyls
+assoc$HostOrder[ assoc$HostOrder %in% c("Artiodactyla", "Cetacea") ] = "Cetartiodactyla"
+
+# order and save
+assoc = assoc %>%
+  dplyr::arrange(HostOrder, Host_Harmonised, Pathogen_Harmonised, Database) %>%
+  dplyr::select(Host_Harmonised, Host_Original, HostClass, HostOrder, HostFamily, Pathogen_Harmonised, Pathogen_Original, PathogenType, Database, Year, YearType,
+                DetectionMethod_Original, DetectionMethod_Harmonised, DetectionQuality_Original, DetectionQuality_Harmonised, HostSynonyms)
+
 write.csv(assoc, "./output/Clover_reconciledassociations_v1_20201120.csv", row.names=FALSE)
+
+
+
+
+
+# ==============
 
 # some initial viz (exclude nucleotide from year)
 p1 = ggplot(assoc[assoc$YearType != "Nucleotide" & assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] ) + 
@@ -291,4 +316,4 @@ p4 = ggplot(a4) +
   ggtitle("Host richness by virus")
 
 px = gridExtra::grid.arrange(grobs=list(p1, p2, p3, p4), nrow=2, ncol=2, widths=c(1, 1.3))
-ggsave(px, file="./output/clover_v1reconciled_initialviz.png", device="png", dpi=300, width=10, height=8, units="in")
+ggsave(px, file="./output/clover_v1reconciled_initialviz.png", device="png", dpi=300, width=12, height=10, units="in")
