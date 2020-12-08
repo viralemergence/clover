@@ -200,34 +200,37 @@ hp3 = read.csv("./output/hostpathogen_harmonised/HP3_MammalViruses_Harmonised_Oc
 cols = Reduce(intersect, list(names(eid2), names(gmpd2), names(hp3)))
 assoc = rbind(eid2[ , cols], gmpd2[ , cols], hp3[ , cols])
 
-# harmonise detection methods
-dm = assoc$DetectionMethod
-harmDM = function(x){
-  d = dm[x]
-  dm_return = c()
-  if(any(c("Cargocarrier", "NA", "Other") %in% d)) dm_return = c(dm_return, "Cargocarrier")
-  if(any(c("Serology", "Antibodies", "bcELISA", "IFA", "CF", "antigen", "Antigen", "Antigens", "micropsy", "PHA", "hemmaglutination",
-           "PAGE", "Direct Fluorescent Antibody Testing", "agar gel immunodiffusion", "Antibodies and Isolation", "SouthernBlot") %in% d)) dm_return = c(dm_return, "Serology")
-  if(any(c("SNT", "VNT", "plaque reduction neutralization", "PRNT", "neutralization test", "NT", "ELISA and plaque reduction",
-           "Hemagglutination inhibition assay; Neutralization test", "virus neutralization") %in% d)) dm_return = c(dm_return, "VirusNeutralisationAssay")
-  if(any(c("PCR", "PCR/Direct") %in% d)) dm_return = c(dm_return, "PCR")
-  if(any(c("DNA RFLP", "EM, DNA (i.e. more than just PCR)", "Pyroseq", "RNA") %in% d)) dm_return = c(dm_return, "DirectDetection_GeneticOther")
-  if(any(c("DirectBlood", "DirectFecal", "DirectOther", "Tissue", "Fecal", "Isolation", "histopath, e-microscopy", "histopath; e microscopy", "isolation", "Cell culture", "Antibodies and Isolation") %in% d)) dm_return = c(dm_return, "DirectIsolationOrObservation")
-  if("Reservoir" %in% d) dm_return = c(dm_return, "Reservoir")
-  if(length(dm_return)>1) dm_return = paste(dm_return, collapse=", ")
-  if(is.null(dm_return)) dm_return = "Cargocarrier"
-  return(dm_return)
-}
-dmx = unlist(lapply(1:length(dm), harmDM))
-assoc$DetectionMethod_Harmonised = dmx
+# remove detection quality (finalise when combined with Shaw)
+assoc = assoc[ , - which(names(assoc) == "DetectionQuality")]
 
-# harmonise detection quality
-assoc$DetectionQuality_Harmonised = 0
-assoc$DetectionQuality_Harmonised[ grep("Serology", assoc$DetectionMethod_Harmonised) ] = 1
-assoc$DetectionQuality_Harmonised[ grep("VirusNeutralisationAssay", assoc$DetectionMethod_Harmonised) ] = 1
-assoc$DetectionQuality_Harmonised[ grep("PCR", assoc$DetectionMethod_Harmonised) ] = 2
-assoc$DetectionQuality_Harmonised[ grep("DirectIsolationOrObservation", assoc$DetectionMethod_Harmonised) ] = 2
-assoc$DetectionQuality_Harmonised[ grep("DirectDetection_GeneticOther", assoc$DetectionMethod_Harmonised) ] = 2
+# # harmonise detection methods
+# dm = assoc$DetectionMethod
+# harmDM = function(x){
+#   d = dm[x]
+#   dm_return = c()
+#   if(any(c("Cargocarrier", "NA", "Other") %in% d)) dm_return = c(dm_return, "Cargocarrier")
+#   if(any(c("Serology", "Antibodies", "bcELISA", "IFA", "CF", "antigen", "Antigen", "Antigens", "micropsy", "PHA", "hemmaglutination",
+#            "PAGE", "Direct Fluorescent Antibody Testing", "agar gel immunodiffusion", "Antibodies and Isolation", "SouthernBlot") %in% d)) dm_return = c(dm_return, "Serology")
+#   if(any(c("SNT", "VNT", "plaque reduction neutralization", "PRNT", "neutralization test", "NT", "ELISA and plaque reduction",
+#            "Hemagglutination inhibition assay; Neutralization test", "virus neutralization") %in% d)) dm_return = c(dm_return, "VirusNeutralisationAssay")
+#   if(any(c("PCR", "PCR/Direct") %in% d)) dm_return = c(dm_return, "PCR")
+#   if(any(c("DNA RFLP", "EM, DNA (i.e. more than just PCR)", "Pyroseq", "RNA") %in% d)) dm_return = c(dm_return, "DirectDetection_GeneticOther")
+#   if(any(c("DirectBlood", "DirectFecal", "DirectOther", "Tissue", "Fecal", "Isolation", "histopath, e-microscopy", "histopath; e microscopy", "isolation", "Cell culture", "Antibodies and Isolation") %in% d)) dm_return = c(dm_return, "DirectIsolationOrObservation")
+#   if("Reservoir" %in% d) dm_return = c(dm_return, "Reservoir")
+#   if(length(dm_return)>1) dm_return = paste(dm_return, collapse=", ")
+#   if(is.null(dm_return)) dm_return = "Cargocarrier"
+#   return(dm_return)
+# }
+# dmx = unlist(lapply(1:length(dm), harmDM))
+# assoc$DetectionMethod_Harmonised = dmx
+# 
+# # harmonise detection quality
+# assoc$DetectionQuality_Harmonised = 0
+# assoc$DetectionQuality_Harmonised[ grep("Serology", assoc$DetectionMethod_Harmonised) ] = 1
+# assoc$DetectionQuality_Harmonised[ grep("VirusNeutralisationAssay", assoc$DetectionMethod_Harmonised) ] = 1
+# assoc$DetectionQuality_Harmonised[ grep("PCR", assoc$DetectionMethod_Harmonised) ] = 2
+# assoc$DetectionQuality_Harmonised[ grep("DirectIsolationOrObservation", assoc$DetectionMethod_Harmonised) ] = 2
+# assoc$DetectionQuality_Harmonised[ grep("DirectDetection_GeneticOther", assoc$DetectionMethod_Harmonised) ] = 2
 
 # standardise host names (resolve synonyms using ITIS/CoL)
 # data compiled during PREDICTs/pathogens paper (Nature, 2020)
@@ -258,16 +261,14 @@ assoc = assoc %>%
   rename("Host_Original" = Host,
          "Pathogen_Original" = Parasite,
          "PathogenType" = ParasiteType,
-         "DetectionQuality_Original" = DetectionQuality,
          "DetectionMethod_Original" = DetectionMethod,
          "Pathogen_Harmonised" = PathogenName_Harmonised)
 assoc = assoc[ , c("Database", "Pathogen_Original", "Pathogen_Harmonised", "PathogenType", 
                    "Host_Original", "Host_Harmonised", "HostClass", "HostOrder", "HostFamily", "HostSynonyms",
-                   "Year", "YearType", "DetectionMethod_Original", "DetectionMethod_Harmonised", "DetectionQuality_Original", "DetectionQuality_Harmonised",
-                   "HumanInfective_Any", "DiseaseAgent", "IsZoonotic", "Disease_GIDEON", "Route_GIDEON")]
+                   "Year", "YearType", "DetectionMethod_Original", "HumanInfective_Any", "DiseaseAgent", "IsZoonotic", "Disease_GIDEON", "Route_GIDEON")]
 
-# issue with year lookup for some nucleotide records: set all to NA for now
-assoc$Year[ assoc$Database == "EID2" & assoc$Year == 1900 & !is.na(assoc$Year) ] = NA
+# issue with year lookup for nucleotide records: set all to NA for now
+assoc$Year[ grep("Nucleotide", assoc$YearType) ] = NA
 
 # save final dataset for analysis
 write.csv(assoc, "./output/hostpathogen_harmonised/AllDatabases_Associations_Hosts_Harmonised_Oct2020.csv", row.names=FALSE)

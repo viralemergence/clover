@@ -29,134 +29,134 @@ shaw$Pathogen_Original = foo
 
 # =============== access publication year for Shaw; first for refs, then scrape PubMed ================
 
-# extract numerics (year) and trim out second year marker
-years = regmatches(shaw$Reference, gregexpr("[[:digit:]]+", shaw$Reference))
-shaw$YearRef = as.numeric(unlist(lapply(years, "[", 1)))
-
-# create dataframe of PMIDs to lookup
-shaw$idx = 1:nrow(shaw)
-query_df = shaw %>%
-  select(idx, PMID, Pathogen_Original) %>%
-  dplyr::mutate(Database = "pubmed") %>%
-  dplyr::filter(!is.na(PMID)) 
-
-# function to scrape pubmed results
-#' @param x 1:nrow(query_df), i.e. the nth row of query_df
-
-searchNCBI = function(x){
-  
-  # print identifier
-  print(sprintf("Processing: %s", query_df$PMID[x]))
-  
-  # run scrape (5 attempts and exit if successful)
-  e = simpleError("test error")
-  for(attempt in 1:5){
-    search = tryCatch(RISmed::EUtilsGet(query_df$PMID[x], type="efetch", db=query_df$Database[x]), error=function(e) e)
-    if(class(search)[1] != "simpleError"){ break }
-    Sys.sleep(0.5)
-  }
-  
-  # PubMed
-  if(query_df$Database[x] == "pubmed"){
-    
-    # if not returned successfully
-    if(class(search)[1] != "Medline"){
-      res = data.frame(
-        idx = query_df$idx[x],
-        PMID = query_df$PMID[x],
-        Database = query_df$Database[x],
-        Lookup_Successful = FALSE,
-        PMID_lookup = NA,
-        Year = NA,
-        Journal = NA,
-        Title = NA
-      ) 
-      Sys.sleep(0.5)
-      return(res)
-    }
-    
-    # if no records exist
-    if(length(search@PMID) == 0){
-      res = data.frame(
-        idx = query_df$idx[x],
-        PMID = query_df$PMID[x],
-        Database = query_df$Database[x],
-        Lookup_Successful = TRUE,
-        PMID_lookup = "no record",
-        Year = NA,
-        Journal = NA,
-        Title = NA
-      ) 
-    } else{
-      # otherwise return records
-      res = data.frame(
-        idx = query_df$idx[x],
-        PMID = query_df$PMID[x],
-        Database = query_df$Database[x],
-        Lookup_Successful = TRUE,
-        PMID_lookup = search@PMID,
-        Year = search@YearPubmed,
-        Journal = search@MedlineTA,
-        Title = search@ArticleTitle
-      )
-    }
-  }
-  
-  # sleep for 0.5 seconds to prevent over-requesting on API (might be able to get away with shorter)
-  Sys.sleep(0.5)
-  return(res)
-}
-
-# create filenames for running scrape
-output_loc = "./output/"
-save_file = paste(output_loc, "Shaw_Pubmedscrape_12112020_v2.csv", sep="")
-
-# append each new query to csv
-for(i in 1:nrow(query_df)){
-
-  # run query
-  cat(paste(i, "...", sep=""))
-  e = simpleError("test error")
-  resx = tryCatch(searchNCBI(i))
-  
-  # initialise file on first iteration, and then append
-  if(class(resx)[1] == "simpleError"){ next
-  } else if(i == 1){
-    write.csv(resx, save_file, row.names=FALSE)
-  } else{
-    write.table(resx, save_file, append=TRUE, sep=",", col.names=FALSE, row.names=FALSE, quote=TRUE) # append
-  }
-}
-
-
-
-# =============== save host names for harmonising via taxize ================
-
-# hostnames, run through taxize script
-hostnames = shaw %>%
-  select(HostSpecies.new)
-write.csv(hostnames, "./output/crossref_temp/Shaw_HostNames_formatching.csv", row.names=FALSE)
-
+#' # extract numerics (year) and trim out second year marker
+#' years = regmatches(shaw$Reference, gregexpr("[[:digit:]]+", shaw$Reference))
+#' shaw$YearRef = as.numeric(unlist(lapply(years, "[", 1)))
+#' 
+#' # create dataframe of PMIDs to lookup
+#' shaw$idx = 1:nrow(shaw)
+#' query_df = shaw %>%
+#'   select(idx, PMID, Pathogen_Original) %>%
+#'   dplyr::mutate(Database = "pubmed") %>%
+#'   dplyr::filter(!is.na(PMID)) 
+#' 
+#' # function to scrape pubmed results
+#' #' @param x 1:nrow(query_df), i.e. the nth row of query_df
+#' 
+#' searchNCBI = function(x){
+#'   
+#'   # print identifier
+#'   print(sprintf("Processing: %s", query_df$PMID[x]))
+#'   
+#'   # run scrape (5 attempts and exit if successful)
+#'   e = simpleError("test error")
+#'   for(attempt in 1:5){
+#'     search = tryCatch(RISmed::EUtilsGet(query_df$PMID[x], type="efetch", db=query_df$Database[x]), error=function(e) e)
+#'     if(class(search)[1] != "simpleError"){ break }
+#'     Sys.sleep(0.5)
+#'   }
+#'   
+#'   # PubMed
+#'   if(query_df$Database[x] == "pubmed"){
+#'     
+#'     # if not returned successfully
+#'     if(class(search)[1] != "Medline"){
+#'       res = data.frame(
+#'         idx = query_df$idx[x],
+#'         PMID = query_df$PMID[x],
+#'         Database = query_df$Database[x],
+#'         Lookup_Successful = FALSE,
+#'         PMID_lookup = NA,
+#'         Year = NA,
+#'         Journal = NA,
+#'         Title = NA
+#'       ) 
+#'       Sys.sleep(0.5)
+#'       return(res)
+#'     }
+#'     
+#'     # if no records exist
+#'     if(length(search@PMID) == 0){
+#'       res = data.frame(
+#'         idx = query_df$idx[x],
+#'         PMID = query_df$PMID[x],
+#'         Database = query_df$Database[x],
+#'         Lookup_Successful = TRUE,
+#'         PMID_lookup = "no record",
+#'         Year = NA,
+#'         Journal = NA,
+#'         Title = NA
+#'       ) 
+#'     } else{
+#'       # otherwise return records
+#'       res = data.frame(
+#'         idx = query_df$idx[x],
+#'         PMID = query_df$PMID[x],
+#'         Database = query_df$Database[x],
+#'         Lookup_Successful = TRUE,
+#'         PMID_lookup = search@PMID,
+#'         Year = search@YearPubmed,
+#'         Journal = search@MedlineTA,
+#'         Title = search@ArticleTitle
+#'       )
+#'     }
+#'   }
+#'   
+#'   # sleep for 0.5 seconds to prevent over-requesting on API (might be able to get away with shorter)
+#'   Sys.sleep(0.5)
+#'   return(res)
+#' }
+#' 
+#' # create filenames for running scrape
+#' output_loc = "./output/"
+#' save_file = paste(output_loc, "Shaw_Pubmedscrape_12112020_v2.csv", sep="")
+#' 
+#' # append each new query to csv
+#' for(i in 1:nrow(query_df)){
+#' 
+#'   # run query
+#'   cat(paste(i, "...", sep=""))
+#'   e = simpleError("test error")
+#'   resx = tryCatch(searchNCBI(i))
+#'   
+#'   # initialise file on first iteration, and then append
+#'   if(class(resx)[1] == "simpleError"){ next
+#'   } else if(i == 1){
+#'     write.csv(resx, save_file, row.names=FALSE)
+#'   } else{
+#'     write.table(resx, save_file, append=TRUE, sep=",", col.names=FALSE, row.names=FALSE, quote=TRUE) # append
+#'   }
+#' }
+#' 
+#' 
+#' 
+#' # =============== save host names for harmonising via taxize ================
+#' 
+#' # hostnames, run through taxize script
+#' hostnames = shaw %>%
+#'   select(HostSpecies.new)
+#' write.csv(hostnames, "./output/crossref_temp/Shaw_HostNames_formatching.csv", row.names=FALSE)
+#' 
 
 
 # =============== reconcile pathogen names ==================
-
-# subset to just pathogen names and check whether name already in associations
-shawp = shaw %>%
-  dplyr::select(Pathogen_Original, Synonym) %>%
-  distinct() %>%
-  dplyr::mutate(InAssoc = ifelse(Pathogen_Original %in% assoc$Pathogen_Harmonised, TRUE, FALSE),
-                Synonym = tolower(Synonym)) %>%
-  arrange(Pathogen_Original)
-shawp$Pathogen_Harmonised = ""
-shawp$Pathogen_Harmonised[ shawp$InAssoc == TRUE ] = shawp$Pathogen_Original[ shawp$InAssoc == TRUE ] 
-
-# association names for cross-ref
-assocp = assoc %>%
-  dplyr::filter(PathogenType == "virus") %>%
-  dplyr::select(Pathogen_Harmonised) %>%
-  distinct() %>%
-  arrange(Pathogen_Harmonised)
+# 
+# # subset to just pathogen names and check whether name already in associations
+# shawp = shaw %>%
+#   dplyr::select(Pathogen_Original, Synonym) %>%
+#   distinct() %>%
+#   dplyr::mutate(InAssoc = ifelse(Pathogen_Original %in% assoc$Pathogen_Harmonised, TRUE, FALSE),
+#                 Synonym = tolower(Synonym)) %>%
+#   arrange(Pathogen_Original)
+# shawp$Pathogen_Harmonised = ""
+# shawp$Pathogen_Harmonised[ shawp$InAssoc == TRUE ] = shawp$Pathogen_Original[ shawp$InAssoc == TRUE ] 
+# 
+# # association names for cross-ref
+# assocp = assoc %>%
+#   dplyr::filter(PathogenType == "virus") %>%
+#   dplyr::select(Pathogen_Harmonised) %>%
+#   distinct() %>%
+#   arrange(Pathogen_Harmonised)
 
 # save both for cross-ref
 # write.csv(shawp, "./output/crossref_temp/Shaw_virusnames_toharmonise.csv", row.names=FALSE)
@@ -225,10 +225,7 @@ write.csv(shaw, "./output/hostpathogen_harmonised/Shaw_MammalViruses_AllHarmonis
 shaw_sub = shaw[ , c("Pathogen_Original", "Pathogen_Harmonised", "Type", "Host_Original", "Host_Harmonised", "HostClass",
                      "HostOrder", "HostFamily", "HostSynonyms", "Year", "YearType", "Method")] %>%
   dplyr::rename("PathogenType" = Type, "DetectionMethod_Original" = Method) %>%
-  dplyr::mutate(DetectionMethod_Harmonised = NA,
-                DetectionQuality_Original = NA,
-                DetectionQuality_Harmonised = NA,
-                Database = "Shaw",
+  dplyr::mutate(Database = "Shaw",
                 PathogenType = tolower(PathogenType))
 assoc = assoc[ , which(names(assoc) %in% names(shaw_sub)) ]
 assoc = assoc[ assoc$HostClass == "Mammalia" & assoc$PathogenType == "virus", ]
@@ -272,49 +269,94 @@ assoc$HostOrder[ assoc$HostOrder %in% c("Artiodactyla", "Cetacea") ] = "Cetartio
 assoc = assoc %>%
   dplyr::arrange(HostOrder, Host_Harmonised, Pathogen_Harmonised, Database) %>%
   dplyr::select(Host_Harmonised, Host_Original, HostClass, HostOrder, HostFamily, Pathogen_Harmonised, Pathogen_Original, PathogenType, Database, Year, YearType,
-                DetectionMethod_Original, DetectionMethod_Harmonised, DetectionQuality_Original, DetectionQuality_Harmonised, HostSynonyms) %>%
+                DetectionMethod_Original, HostSynonyms) %>%
   distinct()
 
+# write 
 write.csv(assoc, "./output/Clover_reconciledassociations_v1_20201120.csv", row.names=FALSE)
 
 
 
 
+# ========================= harmonise detection methods ==================================
+
+# assoc
+#assoc = read.csv("./output/Clover_reconciledassociations_v1_20201120.csv", stringsAsFactors = FALSE)
+
+# detection methods
+dm = assoc[ !duplicated(assoc$DetectionMethod_Original), c("DetectionMethod_Original"), drop=FALSE ]
+
+# none reported
+det0 = c("na", "CargoCarrier", "Other")
+dm$Detection_NotSpecified = ifelse(dm$DetectionMethod_Original %in% det0 | is.na(dm$DetectionMethod_Original), TRUE, FALSE)
+
+# serology/antibody-based methods
+sero = c("bcELISA", "Antibodies", "Serology", "plaque reduction neutralization", "ELISA", "SNT", "ELISA, SNT", "PAGE", "VNT", "PAGE", "hemmaglutination", "virus neutralization", 
+         "Direct Fluorescent Antibody Testing", "CF", "VNT, ELISA", "agar gel immunodiffusion", "IFA", "antigen", "Antigens", "Antigen", "Hemagglutination inhibition assay; Neutralization test",
+         "PRNT", "NT", "neutralization test", "ELISA and plaque reduction", "PHA", "SouthernBlot", "Antibodies and Isolation")
+dm$Detection_Serology = ifelse(dm$DetectionMethod_Original %in% sero, TRUE, FALSE)
+
+# genetic detection methods
+gen_det = c("PCR", "Cell culture, PCR", "PCR, Isolation", "DNA RFLP", "EM, DNA (i.e. more than just PCR)", "Pyroseq", "RNA")
+dm$Detection_Genetic = ifelse(dm$DetectionMethod_Original %in% gen_det, TRUE, FALSE)
+
+# pathogen direct isolation/observation within/from tissue
+# this could be more nuanced
+iso_det = c("DirectBlood", "DirectFecal", "DirectOther", "Tissue", "Fecal", "Isolation", "histopath, e-microscopy", "histopath; e microscopy", "isolation", "Cell culture", "micropsy", "Antibodies and Isolation", "Pathology", "Histopathology", "Histology", "PCR, Isolation", "Cell culture, PCR")
+dm$Detection_Isolation = ifelse(dm$DetectionMethod_Original %in% iso_det, TRUE, FALSE)
+
+# composite column of highest quality detection
+dm$DetectionMethod_Harmonised = "Not specified"
+dm$DetectionMethod_Harmonised[ dm$Detection_Serology == TRUE ] = "Antibodies"
+dm$DetectionMethod_Harmonised[ dm$Detection_Genetic == TRUE ] = "PCR/Sequencing"
+dm$DetectionMethod_Harmonised[ dm$Detection_Isolation == TRUE ] = "Isolation/Observation"
+
+# create detection quality column (simple for now, can update)
+dm$DetectionQuality = 0
+dm$DetectionQuality[ dm$DetectionMethod_Harmonised == "Antibodies" ] = 1
+dm$DetectionQuality[ dm$DetectionMethod_Harmonised %in% c("Isolation/Observation", "PCR/Sequencing") ] = 2
+
+# combine and save
+assoc = left_join(assoc, dm, by="DetectionMethod_Original")
+write.csv(assoc, "./output/Clover_reconciledassociations_v1_20201120.csv", row.names=FALSE)
+
+
+
 
 # ==============
-
-# some initial viz (exclude nucleotide from year)
-p1 = ggplot(assoc[assoc$YearType != "Nucleotide" & assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] ) + 
-  geom_histogram(aes(Year), binwidth=1, fill="grey80", col="grey20") + theme_classic() + 
-  ggtitle("Total associations reported by year")
-
-a2 = assoc[ assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] %>%
-  dplyr::group_by(Host_Harmonised, Pathogen_Harmonised) %>%
-  dplyr::summarise(HostOrder = head(HostOrder, 1),
-                   Year = min(Year, na.rm=TRUE))
-p2 = ggplot(a2) + geom_histogram(aes(Year, fill=HostOrder), binwidth=5) + theme_classic() + 
-  ggtitle("Unique host-virus associations (first year reported)") +
-  geom_histogram(aes(Year), binwidth=5, col="grey20", fill=NA)
-
-a3 = assoc[ assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] %>%
-  group_by(Host_Harmonised) %>%
-  dplyr::summarise(HostOrder = head(HostOrder, 1),
-                   ViralRichness = n_distinct(Pathogen_Harmonised))
-p3 = ggplot(a3[ !is.na(a3$HostOrder), ]) + 
-  geom_histogram(aes(ViralRichness, fill=HostOrder), binwidth=5) +
-  theme_classic() +
-  theme(legend.position="none") +
-  ylab("Num host species") + 
-  ggtitle("Viral richness by host")
-
-a4 = assoc[ assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] %>%
-  group_by(Pathogen_Harmonised) %>%
-  dplyr::summarise(HostRichness = n_distinct(Host_Harmonised))
-p4 = ggplot(a4) + 
-  geom_histogram(aes(HostRichness), binwidth=2, fill="grey80", col="grey20") +
-  theme_classic() +
-  ylab("Num virus species") + 
-  ggtitle("Host richness by virus")
-
-px = gridExtra::grid.arrange(grobs=list(p1, p2, p3, p4), nrow=2, ncol=2, widths=c(1, 1.3))
-ggsave(px, file="./output/clover_v1reconciled_initialviz.png", device="png", dpi=300, width=12, height=10, units="in")
+# 
+# # some initial viz (exclude nucleotide from year)
+# p1 = ggplot(assoc[assoc$YearType != "Nucleotide" & assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] ) + 
+#   geom_histogram(aes(Year), binwidth=1, fill="grey80", col="grey20") + theme_classic() + 
+#   ggtitle("Total associations reported by year")
+# 
+# a2 = assoc[ assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] %>%
+#   dplyr::group_by(Host_Harmonised, Pathogen_Harmonised) %>%
+#   dplyr::summarise(HostOrder = head(HostOrder, 1),
+#                    Year = min(Year, na.rm=TRUE))
+# p2 = ggplot(a2) + geom_histogram(aes(Year, fill=HostOrder), binwidth=5) + theme_classic() + 
+#   ggtitle("Unique host-virus associations (first year reported)") +
+#   geom_histogram(aes(Year), binwidth=5, col="grey20", fill=NA)
+# 
+# a3 = assoc[ assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] %>%
+#   group_by(Host_Harmonised) %>%
+#   dplyr::summarise(HostOrder = head(HostOrder, 1),
+#                    ViralRichness = n_distinct(Pathogen_Harmonised))
+# p3 = ggplot(a3[ !is.na(a3$HostOrder), ]) + 
+#   geom_histogram(aes(ViralRichness, fill=HostOrder), binwidth=5) +
+#   theme_classic() +
+#   theme(legend.position="none") +
+#   ylab("Num host species") + 
+#   ggtitle("Viral richness by host")
+# 
+# a4 = assoc[ assoc$Year <= 2017 & assoc$Host_Harmonised != "homo sapiens", ] %>%
+#   group_by(Pathogen_Harmonised) %>%
+#   dplyr::summarise(HostRichness = n_distinct(Host_Harmonised))
+# p4 = ggplot(a4) + 
+#   geom_histogram(aes(HostRichness), binwidth=2, fill="grey80", col="grey20") +
+#   theme_classic() +
+#   ylab("Num virus species") + 
+#   ggtitle("Host richness by virus")
+# 
+# px = gridExtra::grid.arrange(grobs=list(p1, p2, p3, p4), nrow=2, ncol=2, widths=c(1, 1.3))
+# ggsave(px, file="./output/clover_v1reconciled_initialviz.png", device="png", dpi=300, width=12, height=10, units="in")
