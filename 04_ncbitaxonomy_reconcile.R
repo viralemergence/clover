@@ -11,50 +11,76 @@ pacman::p_load("RISmed", "dplyr", "magrittr")
 assoc = read.csv("./output/Clover_reconciledassociations_v1_20201120.csv", stringsAsFactors = FALSE)
 assoc = assoc[ assoc$Pathogen_Harmonised != "bse agent", ]
 
+# remove nucleotide year (lookup issues)
+assoc$Year[ assoc$YearType == "Nucleotide" ] = NA
 
-# =============== NCBITaxonomy output from Tim ======================
 
-# 1. update viruses from NBCITaxonomy lookup (only flagged issues)
-viruses = read.csv("./output/poisot_ncbitaxonomy/poisot_ncbitaxonomy_rg.csv", stringsAsFactors = FALSE) %>%
-  dplyr::filter(type == "viruses")
+
+# =============== Resolve viruses using NCBITaxonomy lookup ======================
+
+# viruses from NCBI taxonomy, with  fuzzy matches manually checked
+vir_checked = read.csv("./output/poisot_ncbitaxonomy/clover-viruses-poisot-rgchecked.csv", stringsAsFactors = FALSE)
+
+# correct all data for species with fuzzy matches
+viruses = vir_checked %>%
+  dplyr::filter(rg_updated==TRUE & !is.na(rg_updated))
+viruses$species = viruses$species_updated
+viruses$order = viruses$order_updated
+viruses$family = viruses$family_updated
+viruses$class = viruses$class_updated
+viruses$genus = viruses$genus_updated
+viruses$ncbiexact = ifelse(viruses$unresolved_notes == "", TRUE, FALSE)
+viruses = viruses[ , c("name", "class", "order", "family", "genus", "species", "ncbiexact") ]
+
+# viruses without issues
+vir_exact = vir_checked[ !vir_checked$name %in% viruses$name, ] %>%
+  dplyr::select(name, class, order, family, genus, species) %>%
+  dplyr::mutate(ncbiexact = TRUE)
+
+# combine all viruses with taxonomic information
+vir = rbind(viruses, vir_exact)
+vir = vir[ vir$name != "bse agent", ]
+#all(vir$name %in% assoc$Pathogen_Harmonised); all(assoc$Pathogen_Harmonised %in% vir$name)
+names(vir) = c("Pathogen_Harmonised", "VirusClass", "VirusOrder", "VirusFamily", "VirusGenus", "Virus", "Virus_NCBIResolved")
+
+# combine and rename cols
+assoc = left_join(assoc, vir, by="Pathogen_Harmonised") %>%
+  dplyr::select(-Pathogen_Harmonised) %>%
+  dplyr::rename("Virus_Original" = Pathogen_Original)
+
+
+
+# ============================ resolve hosts using NCBITaxonomy ========================
+
+# 2a. update hosts from NBCITaxonomy lookup
+hosts = read.csv("./output/poisot_ncbitaxonomy/conflicts-poisot-rg-family.csv", stringsAsFactors = FALSE) %>%
+  dplyr::filter(type == "hosts") %>%
+  dplyr::filter(rg_updated==TRUE & !is.na(rg_updated))
 
 # replace corrected fuzzy match records (rg)
-viruses$species[ viruses$rg_updated == TRUE & !is.na(viruses$rg_updated) ] = viruses$species_updated[ viruses$rg_updated == TRUE & !is.na(viruses$rg_updated) ]
-viruses$order[ viruses$rg_updated == TRUE & !is.na(viruses$rg_updated) ] = viruses$order_updated[ viruses$rg_updated == TRUE & !is.na(viruses$rg_updated) ]
+hosts$species = hosts$species_updated
+hosts$order = hosts$order_updated
+hosts$family = hosts$family_updated
+hosts$class = hosts$class_updated
+hosts$ncbiexact = ifelse(hosts$unresolved.notes == "", TRUE, FALSE)
+hosts = hosts[ , c("name", "order", "family", "species", "ncbiexact") ]
 
 # combine, and for all viruses where pathogen_harmonised is correct, assign this to virusspecies_harmonised column
-viruses = viruses[ , c("name", "order", "species")] %>%
-  dplyr::rename("Pathogen_Harmonised"=1, "VirusOrder"=2, "VirusSpecies_Harmonised"=3)
-assoc = left_join(assoc, viruses, by="Pathogen_Harmonised")
-assoc$VirusSpecies_Harmonised[ is.na(assoc$VirusSpecies_Harmonised) ] = assoc$Pathogen_Harmonised[ is.na(assoc$VirusSpecies_Harmonised) ]
-assoc$VirusSpecies_Harmonised = Hmisc::capitalize(assoc$VirusSpecies_Harmonised)
-
-# replace and rename pathogen harmonised
-assoc = assoc %>%
-  dplyr::mutate(Pathogen_Harmonised = VirusSpecies_Harmonised) %>%
-  dplyr::select(-VirusSpecies_Harmonised) %>%
-  dplyr::rename("Virus" = Pathogen_Harmonised,
-                "Virus_Original" = Pathogen_Original)
-
-# 2. update hosts from NBCITaxonomy lookup
-hosts = read.csv("./output/poisot_ncbitaxonomy/poisot_ncbitaxonomy_rg.csv", stringsAsFactors = FALSE) %>%
-  dplyr::filter(type == "hosts")
-
-# replace corrected fuzzy match records (rg)
-hosts$species[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ] = hosts$species_updated[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ]
-hosts$order[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ] = hosts$order_updated[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ]
-
-# combine, and for all viruses where pathogen_harmonised is correct, assign this to virusspecies_harmonised column
-hosts = hosts[ , c("name", "species")] %>%
-  dplyr::rename("Host_Harmonised"=1, "HostHarm_2"=2)
+hosts = hosts %>%
+  dplyr::rename("Host_Harmonised"=1, "HostOrder_2"=2, "HostFamily_2" =3, "HostHarm_2" = 4, "Host_NCBIResolved" = 5)
 assoc = left_join(assoc, hosts, by="Host_Harmonised")
 assoc$HostHarm_2[ is.na(assoc$HostHarm_2) ] = assoc$Host_Harmonised[ is.na(assoc$HostHarm_2) ]
+assoc$HostOrder_2[ is.na(assoc$HostOrder_2) ] = assoc$HostOrder[ is.na(assoc$HostOrder_2) ]
+assoc$HostFamily_2[ is.na(assoc$HostFamily_2) ] = assoc$HostFamily[ is.na(assoc$HostFamily_2) ]
+assoc$Host_NCBIResolved[ is.na(assoc$Host_NCBIResolved) ] = TRUE
 assoc$HostHarm_2 = Hmisc::capitalize(assoc$HostHarm_2)
 
 # replace and rename host harmonised
 assoc = assoc %>%
-  dplyr::mutate(Host_Harmonised = HostHarm_2) %>%
-  dplyr::select(-HostHarm_2) %>%
+  dplyr::mutate(Host_Harmonised = HostHarm_2,
+                HostOrder = HostOrder_2,
+                HostFamily = HostFamily_2) %>%
+  dplyr::select(-HostHarm_2, -HostOrder_2, -HostFamily_2) %>%
   dplyr::rename("Host" = Host_Harmonised,
                 "DetectionMethod" = DetectionMethod_Harmonised) %>%
   dplyr::mutate(Host_Original = Hmisc::capitalize(Host_Original),
@@ -64,11 +90,73 @@ assoc = assoc %>%
 
 # =========================== reorder columns ===========================
 
+# Host = host species (reconciled with ref to NCBI)
+# HostClass, HostOrder, HostFamily = taxonomic information (resolved against NCBI)
+# Virus = virus species (reconciled with ref to NCBI)
+# VirusClass, VirusOrder, VirusFamily, VirusGenus = taxonomic info (resolved against NCBI)
+# Year = year reported
+# YearType = how was year obtained? (author = in source db; pubmed = from pubmed scrape; nucleotide = from nucleotide scrape)
+# Database = source database
+# DatabaseVersion = version of source database that was accessed for CLOVER
+# DetectionMethod = detection method (reconciled and harmonised to a simple classification system)
+# DetectionMethod_NotSpecified, Serology, Genetic, Isolation = TRUE/FALSE flags for detection method
+# Host_Original = host species as listed in source database
+# Virus_Original = virus species as listed in source database
+# DetectionMethod_Original = detection method as reported in source database
+# Host or Virus_NCBIResolved = does Host/Virus column have an exact match in NCBITaxonomy? TRUE/FALSE
+# HostSynonyms = synonyms of host species (accessed from taxize)
+
 # reorder columns
 assoc = assoc %>%
-  dplyr::select(Host, HostClass, HostOrder, HostFamily, Virus, VirusOrder, Year, YearType, Database, DatabaseVersion, 
+  dplyr::select(Host, HostClass, HostOrder, HostFamily, Virus, VirusClass, VirusOrder, VirusFamily, VirusGenus, Year, YearType, Database, DatabaseVersion, 
                 DetectionMethod, Detection_NotSpecified, Detection_Serology, Detection_Genetic, Detection_Isolation,
-                Host_Original,  Virus_Original, DetectionMethod_Original) 
+                Host_Original, Virus_Original, DetectionMethod_Original, Host_NCBIResolved, Virus_NCBIResolved, HostSynonyms) 
 
 # save
 write.csv(assoc, "./output/Clover_v1.0_NBCIreconciled_20201211.csv", row.names=FALSE)
+
+
+
+# ================ record of corrected issues ================
+
+# save corrected records for Tim
+vir_corrected = vir_checked %>%
+  dplyr::filter(rg_updated==TRUE & !is.na(rg_updated)) %>%
+  dplyr::select(-checked_prev)
+hosts_corrected =  read.csv("./output/poisot_ncbitaxonomy/conflicts-poisot-rg-family.csv", stringsAsFactors = FALSE) %>%
+  dplyr::filter(type == "hosts") %>%
+  dplyr::filter(rg_updated==TRUE & !is.na(rg_updated)) %>%
+  dplyr::rename("unresolved_notes" = unresolved.notes) %>%
+  dplyr::mutate(class = "", 
+                family = "", 
+                genus = "")
+corrected = rbind(vir_corrected, hosts_corrected)
+write.csv(corrected, "./output/poisot_ncbitaxonomy/nbcitax-amendedrecords-rg.csv", row.names=FALSE)
+
+
+
+
+vv = assoc %>%
+  group_by(VirusFamily) %>%
+  dplyr::summarise(NumSpecies = n_distinct(Virus), 
+                   NumHosts = n_distinct(Host))
+
+
+
+
+
+# # 2b. hosts (correct) from NBCI scrape; exact matches
+# hosts_exact = read.csv("./output/poisot_ncbitaxonomy/clover-complete-poisot.csv", stringsAsFactors = FALSE) %>%
+#   dplyr::filter(type == "hosts") %>%
+#   dplyr::filter(!name %in% hosts$name) %>%
+#   dplyr::select(name, order, class, family, species) %>%
+#   dplyr::mutate(ncbiexact = TRUE)
+# 
+# # combine all hosts
+# hosts = rbind(hosts_exact, hosts)
+# all(hosts$name %in% assoc$Host_Harmonised); all(assoc$Host_Harmonised %in% hosts$name)
+# names(vir) = c("Pathogen_Harmonised", "VirusClass", "VirusOrder", "VirusFamily", "VirusGenus", "Virus", "Virus_NCBIResolved")
+# 
+# # replace corrected fuzzy match records (rg)
+# hosts$species[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ] = hosts$species_updated[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ]
+# hosts$order[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ] = hosts$order_updated[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ]
