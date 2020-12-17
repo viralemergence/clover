@@ -1,7 +1,11 @@
-# A reconciled association dataset on the global vertebrate virome
+# A reconciled association dataset for the global vertebrate virome
 
 ## What is 🍀?
-CLOVER reconciles four popular datasets that catalog host-virus associations: HP3, GMPD2, EID2, and Shaw. The four datasets have all been harmonized internally and then against  the internal taxonomy used by NCBI on popular data portals like GenBank. Then, we've merged them to create the best available data source on the host-virus network (and save you the trouble of merging on your own). Buy 1️⃣ get 3️⃣ free!
+These days, if you want to study viral macroecology, there are just too many options. CLOVER is our effort to reconcile four popular datasets that catalog host-virus associations: EcoHealth Alliance's [HP3](https://github.com/ecohealthalliance/HP3), UGA's [GMPD2](http://onlinelibrary.wiley.com/doi/10.1002/ecy.1799/suppinfo), U. Liverpool's [EID2](https://eid2.liverpool.ac.uk/), and an unnamed dataset curated by [Shaw](https://doi.org/10.6084/m9.figshare.8262779) _et al._ 
+
+The four datasets have all been harmonized internally and then against  the internal taxonomy used by NCBI on popular data portals like GenBank. Then, we've merged them to create the best available data source on the host-virus network (and save you the trouble of merging on your own). 
+
+Buy 1️⃣ get 3️⃣ free!
 
 ## Who curates this?
 Rory Gibb, Gregory Albery, Timothée Poisot, and Colin Carlson 
