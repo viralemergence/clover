@@ -1,9 +1,9 @@
 # A reconciled association dataset for the global vertebrate virome
 
 ## What is 🍀?
-These days, if you want to study viral macroecology, there are just too many options. CLOVER is our effort to reconcile four popular datasets that catalog host-virus associations: EcoHealth Alliance's [HP3](https://github.com/ecohealthalliance/HP3), UGA's [GMPD2](http://onlinelibrary.wiley.com/doi/10.1002/ecy.1799/suppinfo), U. Liverpool's [EID2](https://eid2.liverpool.ac.uk/), and an unnamed dataset curated by [Shaw](https://doi.org/10.6084/m9.figshare.8262779) _et al._ 
+You're looking for data for your research on wildlife virology, viral macroecology, or zoonotic risk prediction. But there are just too many options!
 
-The four datasets have all been harmonized internally and then against  the internal taxonomy used by NCBI on popular data portals like GenBank. Then, we've merged them to create the best available data source on the host-virus network (and save you the trouble of merging on your own). 
+CLOVER is a reconciled aggregate of four popular datasets that catalog host-virus associations: EcoHealth Alliance's [HP3](https://github.com/ecohealthalliance/HP3), UGA's [GMPD2](http://onlinelibrary.wiley.com/doi/10.1002/ecy.1799/suppinfo), U. Liverpool's [EID2](https://eid2.liverpool.ac.uk/), and an unnamed dataset curated by [Shaw](https://doi.org/10.6084/m9.figshare.8262779) _et al._ The four datasets have all been harmonized internally and then against  the internal taxonomy used by NCBI on popular data portals like GenBank. Then, we've merged them to create the best available data source on the host-virus network (and save you the trouble of merging on your own). 
 
 Buy 1️⃣ get 3️⃣ free!
 
