@@ -1,10 +1,10 @@
 # A reconciled association dataset on the global vertebrate virome
 
-## What is CLOVER?
+## What is 🍀?
 CLOVER reconciles four popular datasets that catalog host-virus associations: HP3, GMPD2, EID2, and Shaw. The four datasets have all been harmonized internally and then against  the internal taxonomy used by NCBI on popular data portals like GenBank. Then, we've merged them to create the best available data source on the host-virus network (and save you the trouble of merging on your own). Buy 1️⃣ get 3️⃣ free!
 
-## Curators
-Rory Gibb, Gregory Albery, Timothee Poisot, & Colin Carlson 
+## Who curates this?
+Rory Gibb, Gregory Albery, Timothée Poisot, and Colin Carlson 
 
 ## Key files
 
