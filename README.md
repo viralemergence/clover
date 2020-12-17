@@ -1,4 +1,4 @@
-# A reconciled association dataset for the global vertebrate virome
+# Harmonized association dataset for the vertebrate virome
 
 ## What is 🍀?
 You're looking for data for your research on wildlife virology, macroecology, or zoonotic risk prediction. But there are too many options!
