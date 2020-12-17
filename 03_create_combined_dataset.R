@@ -236,6 +236,7 @@ database_version = data.frame(Database=c("EID2", "Shaw", "GMPD2", "HP3"), Databa
 assoc = left_join(assoc, database_version)
 
 
+
 # ------------ manual corrections to pathogen synonymy in complete database ---------------
 
 # 1. "human polyomavirus" just listed as polyomavirus in Olival but 2 strains in Shaw; check Olival assoc and change to either
@@ -325,7 +326,7 @@ dm$DetectionMethod_Harmonised[ dm$Detection_Isolation == TRUE ] = "Isolation/Obs
 
 # combine and save for NCBITaxonomy resolving
 assoc = left_join(assoc, dm, by="DetectionMethod_Original")
-write.csv(assoc, "./output/Clover_reconciledassociations_v1_20201120.csv", row.names=FALSE)
+write.csv(assoc, "./output/intermediate_versions/Clover_reconciledassociations_v1_20201120.csv", row.names=FALSE)
 
 
 
