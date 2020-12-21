@@ -16,9 +16,9 @@ assoc$Year[ assoc$YearType == "Nucleotide" ] = NA
 
 
 
-# =============== Resolve viruses using NCBITaxonomy lookup ======================
+# =============== Resolve viruses against NCBITaxonomy lookup ======================
 
-# viruses from NCBI taxonomy, with  fuzzy matches manually checked
+# viruses from NCBI taxonomy, with fuzzy matches manually checked
 vir_checked = read.csv("./output/poisot_ncbitaxonomy/clover-viruses-poisot-rgchecked.csv", stringsAsFactors = FALSE)
 
 # correct all data for species with fuzzy matches
@@ -50,7 +50,7 @@ assoc = left_join(assoc, vir, by="Pathogen_Harmonised") %>%
 
 
 
-# ============================ resolve hosts using NCBITaxonomy ========================
+# ========================= resolve hosts from NCBITaxonomy ========================
 
 # 2a. update hosts from NBCITaxonomy lookup
 hosts = read.csv("./output/poisot_ncbitaxonomy/conflicts-poisot-rg-family.csv", stringsAsFactors = FALSE) %>%
@@ -88,12 +88,13 @@ assoc = assoc %>%
                 PathogenType = "Virus")
 
 
-# =========================== reorder columns ===========================
 
-# Host = host species (reconciled with ref to NCBI)
+# =========================== reorder columns and save ===========================
+
+# Host = host species (first taxized and then resolved against NCBI)
 # HostClass, HostOrder, HostFamily = taxonomic information (resolved against NCBI)
-# Virus = virus species (reconciled with ref to NCBI)
-# VirusClass, VirusOrder, VirusFamily, VirusGenus = taxonomic info (resolved against NCBI)
+# Virus = virus species (manually harmonised then reconciled with ref to NCBI)
+# VirusClass, VirusOrder, VirusFamily, VirusGenus = taxonomic info (accessed from NCBI)
 # Year = year reported
 # YearType = how was year obtained? (author = in source db; pubmed = from pubmed scrape; nucleotide = from nucleotide scrape)
 # Database = source database
@@ -115,133 +116,6 @@ assoc = assoc %>%
 # save
 write.csv(assoc, "./output/Clover_v1.0_NBCIreconciled_20201211.csv", row.names=FALSE)
 
-
-
-# ================ visual inspection and correction of host record issues ====================
-
-# corrections of host name errata: examine species names that do not match to IUCN species names
-# manual comparison of NCBITaxonomy, IUCN and full database to determine current host name
-# the vast majority are homotypic synonyms in NCBI; manually corrected for IUCN and phylogeny harmonising and synonyms updated
-assoc$Host[ assoc$Host == "Dusicyon thous"] = "Cerdocyon thous"
-assoc$Host[ assoc$Host_Original == "Canis lupus familiaris" ] = "Canis lupus familiaris"
-assoc$Host[ assoc$Host_Original == "Lycalopex gymnocercus" ] = "Lycalopex gymnocercus"
-assoc$HostSynonyms[ assoc$Host == "Galerella pulverulenta" ] = "Herpestes pulverulentus"
-assoc$HostSynonyms[ assoc$Host == "Galerella sanguinea" ] = "Herpestes sanguineus"
-assoc$Host[ assoc$Host == "Mustela vison" ] = "Neovison vison"
-assoc$HostSynonyms[ assoc$Host == "Neovison vison" ] = "Mustela vison"
-assoc$Host[ assoc$Host == "Puma yagouaroundi" ] = "Herpailurus yagouaroundi"
-assoc$HostSynonyms[ assoc$Host == "Herpailurus yagouaroundi" ] = paste(assoc$HostSynonyms[ assoc$Host_Original == "Herpailurus yagouaroundi" ], "Puma yagouaroundi", sep=", ")
-assoc$Host[ assoc$Host == "Uncia uncia" ] = "Panthera uncia"
-assoc$Host[ assoc$Host == "Urva javanica" ] = "Herpestes javanicus"
-assoc$HostSynonyms[ assoc$Host == "Herpestes javanicus" ] = "Urva javanica"
-assoc$Host[ assoc$Host == "Alcelaphus lichtensteinii" ] = "Alcelaphus buselaphus"
-assoc$Host[ assoc$Host == "Alces americanus" ] = "Alces alces"
-assoc$Host[ assoc$Host == "Bos grunniens mutus" ] = "Bos mutus"
-assoc$Host[ assoc$Host == "Capra hircus aegagrus" ] = "Capra aegagrus"
-assoc$Host[ assoc$Host == "Ovis aries orientalis" ] = "Ovis orientalis"
-assoc$Host[ assoc$Host == "Taurotragus oryx" ] = "Tragelaphus oryx"
-assoc$HostSynonyms[ assoc$Host == "Tragelaphus oryx" ] = "Taurotragus oryx"
-assoc$Host[ assoc$Host == "Aeorestes cinereus" ] = "Lasiurus cinereus"
-assoc$Host[ assoc$Host == "Aeorestes egregius" ] = "Lasiurus egregius"
-assoc$HostSynonyms[ assoc$Host == "Lasiurus cinereus" ] = "Aorestes cinereus"
-assoc$HostSynonyms[ assoc$Host == "Lasiurus egregius" ] = "Aorestes egregius"
-assoc$Host[ assoc$Host == "Artibeus cinereus" ] = "Dermanura cinerea"
-assoc$HostSynonyms[ assoc$Host == "Dermanura cinerea" ] = "Artibeus cinereus" 
-assoc$Host[ assoc$Host == "Artibeus phaeotis" ] = "Dermanura phaeotis"
-assoc$HostSynonyms[ assoc$Host == "Dermanura phaeotis" ] = "Artibeus phaeotis" 
-assoc$Host[ assoc$Host == "Artibeus toltecus" ] = "Dermanura tolteca"
-assoc$HostSynonyms[ assoc$Host == "Dermanura tolteca" ] = "Artibeus toltecus" 
-assoc$Host[ assoc$Host == "Dasypterus ega" ] = "Lasiurus ega"
-assoc$HostSynonyms[ assoc$Host == "Lasiurus ega" ] = "Dasypterus ega" 
-assoc$Host[ assoc$Host == "Dasypterus intermedius" ] = "Lasiurus intermedius"
-assoc$HostSynonyms[ assoc$Host == "Lasiurus intermedius" ] = "Dasypterus intermedius" 
-assoc$Host[ assoc$Host == "Dasypterus xanthinus" ] = "Lasiurus xanthinus"
-assoc$HostSynonyms[ assoc$Host == "Lasiurus xanthinus" ] = "Dasypterus xanthinus" 
-assoc$Host[ assoc$Host_Original == "Pipistrellus abramus" ] = "Pipistrellus abramus"
-assoc$Host[ assoc$Host_Original == "Pteronotus davyi" ] = "Pteronotus davyi"
-assoc$Host[ assoc$Host_Original == "Hipposideros abae" ] = "Hipposideros abae"
-assoc$Host[ assoc$Host_Original == "Hipposideros crumeniferus" ] = "Hipposideros crumeniferus"
-assoc$Host[ assoc$Host == "Macronycteris commersonii" ] = "Macronycteris commersoni"
-assoc$Host[ assoc$Host == "Megaderma lyra" ] = "Lyroderma lyra"
-assoc$HostSynonyms[ assoc$Host == "Lyroderma lyra"  ] = "Megaderma lyra"
-assoc$HostSynonyms[ assoc$Host == "Miniopterus fuliginosus"  ] = "Miniopterus schreibersii"
-assoc$Host[ assoc$Host == "Myonycteris angolensis" ] = "Lissonycteris angolensis"
-assoc$HostSynonyms[ assoc$Host == "Myotis ricketti"  ] = paste(assoc$HostSynonyms[ assoc$Host == "Myotis ricketti"  ], "Myotis pilosus", sep=", ")
-assoc$Host[ assoc$Host == "Perimyotis subflavus subflavus" ] = "Perimyotis subflavus"
-assoc$Host[ assoc$Host == "Tadarida plicata" ] = "Chaerephon plicatus"
-assoc$HostSynonyms[ assoc$Host ==  "Chaerephon plicatus"  ] = "Tadarida plicata"
-assoc$Host[ assoc$Host == "Micoureus demerarae" ] = "Marmosa demerarae"
-assoc$Host[ assoc$Host == "Dorcopsis veterum" ] = "Dorcopsis luctuosa"
-assoc$Host_NCBIResolved[ assoc$Host == "Dorcopsis luctuosa" ] = FALSE
-assoc$Host[ assoc$Host == "Notamacropus agilis" ] = "Macropus agilis"
-assoc$Host[ assoc$Host == "Notamacropus dorsalis" ] = "Macropus dorsalis"
-assoc$Host[ assoc$Host == "Notamacropus eugenii" ] = "Macropus eugenii"
-assoc$Host[ assoc$Host == "Notamacropus parma" ] = "Macropus parma"
-assoc$Host[ assoc$Host == "Notamacropus parryi" ] = "Macropus parryi"
-assoc$Host[ assoc$Host == "Notamacropus rufogriseus" ] = "Macropus rufogriseus"
-assoc$Host[ assoc$Host == "Osphranter robustus" ] = "Macropus robustus"
-assoc$Host[ assoc$Host == "Osphranter rufus" ] = "Macropus rufus"
-assoc$Host[ assoc$Host == "Macaca balantak" ] = "Macaca tonkeana"
-assoc$HostSynonyms[ assoc$Host == "Macaca tonkeana" ] = "Macaca balantak"
-assoc$Host[ assoc$Host == "Coendou rothschildi" ] = "Coendou quichua"
-assoc$Host[ assoc$Host == "Dipodillus dasyurus" ] = "Gerbillus dasyurus"
-assoc$HostSynonyms[ assoc$Host == "Gerbillus dasyurus" ] =  "Dipodillus dasyurus"
-assoc$Host[ assoc$Host == "Erethizon dorsatus" ] = "Erethizon dorsatum"
-assoc$Host[ assoc$Host == "Gerbilliscus kempii" ] = "Gerbilliscus kempi"
-assoc$Host[ assoc$Host == "Lasiopodomys gregalis" ] = "Microtus gregalis"
-assoc$HostSynonyms[ assoc$Host == "Microtus gregalis" ] = "Lasiopodomys gregalis"
-assoc$Host[ assoc$Host == "Liomys adspersus" ] = "Heteromys adspersus"
-assoc$HostSynonyms[ assoc$Host == "Heteromys adspersus" ] = "Liomys adspersus"
-assoc$Host[ assoc$Host == "Liomys salvini" ] = "Heteromys salvini"
-assoc$HostSynonyms[ assoc$Host == "Heteromys salvini" ] = "Liomys salvini"
-assoc$Host[ assoc$Host == "Myotomys unisulcatus" ] = "Otomys unisulcatus"
-assoc$HostSynonyms[ assoc$Host == "Otomys unisulcatus" ] = "Myotomys unisulcatus"
-assoc$Host[ assoc$Host == "Rattus flavipectus" ] = "Rattus tanezumi"
-assoc$HostSynonyms[ assoc$Host == "Rattus tanezumi" ] = "Rattus flavipectus"
-assoc$Host[ assoc$Host == "Tamias amoenus" ] = "Neotamias amoenus"
-assoc$HostSynonyms[ assoc$Host == "Neotamias amoenus" ] = "Tamias amoenus"
-assoc$Host[ assoc$Host == "Tamias minimus" ] = "Neotamias minimus"
-assoc$HostSynonyms[ assoc$Host == "Neotamias minimus" ] = "Tamias minimus"
-assoc$Host[ assoc$Host == "Tamias quadrivittatus" ] = "Neotamias quadrivittatus"
-assoc$HostSynonyms[ assoc$Host == "Neotamias quadrivittatus" ] = "Tamias quadrivittatus"
-assoc$Host[ assoc$Host == "Tamias sibiricus" ] = "Eutamias sibiricus"
-assoc$HostSynonyms[ assoc$Host == "Eutamias sibiricus" ] = "Tamias sibiricus"
-assoc$Host[ assoc$Host == "Tamias umbrinus" ] = "Neotamias umbrinus"
-assoc$HostSynonyms[ assoc$Host == "Neotamias umbrinus" ] = "Tamias umbrinus"
-assoc$Host[ assoc$Host == "Tupaia chinensis" ] = "Tupaia belangeri"
-
-# save
-write.csv(assoc, "./output/Clover_v1.0_NBCIreconciled_20201211.csv", row.names=FALSE)
-
-
-
-
-
-
-
-
-
-
-
-
-# xx = assoc[ !is.na(assoc$Year), ] %>%
-#   group_by(Host, Virus) %>%
-#   dplyr::summarise(MinYear = min(Year, na.rm=TRUE)) %>%
-#   dplyr::group_by(MinYear) %>%
-#   dplyr::summarise(UniqueHVAssoc = length(Host))
-# pp = ggplot(xx) + 
-#   geom_bar(aes(MinYear, UniqueHVAssoc), stat="identity", col="black", fill="skyblue") + 
-#   theme_minimal() +
-#   xlab("Year") + ylab("Unique host-virus associations reported") +
-#   geom_vline(xintercept=2010, lty=2, size=1, col="darkred")
-# ggsave(pp, file="barplot_timeseries.png", device="png", width=8, height=6, units="in", dpi=600)
-# 
-# err = assoc[ !assoc$Host %in% iucn$binomial, ]
-# write.csv(err, "errata.csv", row.names=FALSE)
-
-
-# ================ record of corrected issues ================
-
 # # save corrected records for Tim
 # vir_corrected = vir_checked %>%
 #   dplyr::filter(rg_updated==TRUE & !is.na(rg_updated)) %>%
@@ -259,21 +133,50 @@ write.csv(assoc, "./output/Clover_v1.0_NBCIreconciled_20201211.csv", row.names=F
 
 
 
+# ================ final reconcilation stage: comparison of host names against IUCN records ===============
+
+# a substantial number of host names in previous round didn't return a clear result in NCBITaxonomy
+# cross-reference host lookups to IUCN range map data for mammals and manually check issues against NCBI
+# 101 non-matches; flag issues to Tim and update records accordingly
+
+# iucn
+iucn = sf::st_read("C:/Users/roryj/Documents/PhD/202011_clover/data/iucn_range/MAMMALS/MAMMALS.shp")
+
+# issues
+issues = assoc[ !assoc$Host %in% iucn$binomial, ] %>% 
+  select(Host, HostClass, HostOrder, HostFamily, Host_Original, HostSynonyms, Host_NCBIResolved) %>%
+  distinct()
+#write.csv(issues, "./output/iucn_crossref/HostIssues_CLOVER.csv", row.names=FALSE)
+
+# manual comparison of NCBITaxonomy, IUCN and full database to determine current host name
+# the vast majority are homotypic synonyms in NCBI; manually corrected for IUCN and phylogeny harmonising and synonyms updated
+issues_rg = read.csv("./output/iucn_crossref/HostIssues_CLOVER_rg.csv", stringsAsFactors = FALSE) %>%
+  dplyr::filter(Record_Updated == TRUE)
+
+# correct issues in assoc database 1: domestic dog across all records ahnd "Artiodactyla"
+assoc$Host[ assoc$Host_Original == "Canis lupus familiaris" ] = "Canis lupus familiaris"
+assoc$HostOrder[ assoc$HostOrder == "Artiodactyla" ] = "Cetartiodactyla"
+
+# resolve 
+foo = assoc[ assoc$Host %in% issues_rg$Host, ] %>%
+  left_join(issues_rg) %>%
+  dplyr::mutate(Host = Host2,
+                HostSynonyms = HostSynonyms2, 
+                HostFamily = HostFamily2) %>%
+  dplyr::select(-Host_IUCNMatch, -Record_Updated, -Description_Of_Issue, -Host2, -HostSynonyms2, -HostFamily2)
+
+# combine, order and save
+assoc_updated = rbind( assoc[ !assoc$Host %in% issues_rg$Host, ], foo) %>%
+  dplyr::arrange(HostOrder, Host, VirusOrder, Virus)
+write.csv(assoc_updated, "./output/Clover_v1.0_NBCIreconciled_20201211.csv", row.names=FALSE)
 
 
 
-# # 2b. hosts (correct) from NBCI scrape; exact matches
-# hosts_exact = read.csv("./output/poisot_ncbitaxonomy/clover-complete-poisot.csv", stringsAsFactors = FALSE) %>%
-#   dplyr::filter(type == "hosts") %>%
-#   dplyr::filter(!name %in% hosts$name) %>%
-#   dplyr::select(name, order, class, family, species) %>%
-#   dplyr::mutate(ncbiexact = TRUE)
-# 
-# # combine all hosts
-# hosts = rbind(hosts_exact, hosts)
-# all(hosts$name %in% assoc$Host_Harmonised); all(assoc$Host_Harmonised %in% hosts$name)
-# names(vir) = c("Pathogen_Harmonised", "VirusClass", "VirusOrder", "VirusFamily", "VirusGenus", "Virus", "Virus_NCBIResolved")
-# 
-# # replace corrected fuzzy match records (rg)
-# hosts$species[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ] = hosts$species_updated[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ]
-# hosts$order[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ] = hosts$order_updated[ hosts$rg_updated == TRUE & !is.na(hosts$rg_updated) ]
+
+
+
+
+
+
+
+

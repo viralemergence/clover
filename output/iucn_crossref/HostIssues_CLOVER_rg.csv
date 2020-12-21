@@ -1,0 +1,102 @@
+Host,HostClass,HostOrder,HostFamily,Host_Original,HostSynonyms,Host_NCBIResolved,Host_IUCNMatch,Record_Updated,Description_Of_Issue,Host2,HostSynonyms2,HostFamily2
+Canis lupus familiaris,Mammalia,Carnivora,Canidae,Canis familiaris,"canis familiaris, canis familiarus domesticus",TRUE,FALSE,FALSE,Domestic,,,
+Dusicyon thous,Mammalia,Carnivora,Canidae,Dusicyon thous,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Cerdocyon thous,,Canidae
+Failed,Mammalia,Carnivora,Canidae,Lycalopex gymnocercus,failed,TRUE,FALSE,TRUE,taxize fail,Lycalopex gymnocercus,,Canidae
+Felis catus,Mammalia,Carnivora,Felidae,Felis catus,,TRUE,FALSE,FALSE,Domestic,,,
+Felis manul,Mammalia,Carnivora,Felidae,Otocolobus manul,otocolobus manul,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Otocolobus manul,Felis manul,Felidae
+Felis manul,Mammalia,Carnivora,Felidae,Felis manul,otocolobus manul,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Otocolobus manul,Felis manul,Felidae
+Galerella pulverulenta,Mammalia,Carnivora,Herpestidae,Galerella pulverulenta,,TRUE,FALSE,TRUE,IUCN lists as Herpestes; not listed in NCBI,Galerella pulverulenta,Herpestes pulverulentus,Herpestidae
+Galerella sanguinea,Mammalia,Carnivora,Herpestidae,Galerella sanguinea,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Galerella sanguinea,Herpestes sanguineus,Herpestidae
+Herpestes edwardsi,Mammalia,Carnivora,Herpestidae,Herpestes edwardsi,herpestes edwardsii,TRUE,FALSE,TRUE,Misspelling (edwardsii),Herpestes edwardsii,Urva edwardsii,Herpestidae
+Monachus schauinslandi,Mammalia,Carnivora,Phocidae,Monachus schauinslandi,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Neomonachus schauinslandi,Monachus schauinslandi,Phocidae
+Mustela vison,Mammalia,Carnivora,Mustelidae,Neovison vison,neovison vison,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Neovison vison,Mustela vison,Mustelidae
+Puma yagouaroundi,Mammalia,Carnivora,Felidae,Puma yagouaroundi,"felis yaguarondi, herpailurus yaguarondi",TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Herpailurus yagouaroundi,"felis yaguarondi, herpailurus yaguarondi, puma yagouarondi",Felidae
+Puma yagouaroundi,Mammalia,Carnivora,Felidae,Herpailurus yaguarondi,"felis yaguarondi, herpailurus yaguarondi",TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Herpailurus yagouaroundi,"felis yaguarondi, herpailurus yaguarondi, puma yagouarondi",Felidae
+Uncia uncia,Mammalia,Carnivora,Felidae,Panthera uncia,panthera uncia,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Panthera uncia,Uncia uncia,Felidae
+Uncia uncia,Mammalia,Carnivora,Felidae,Uncia uncia,panthera uncia,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Panthera uncia,Uncia uncia,Felidae
+Urva javanica,Mammalia,Carnivora,Herpestidae,Urva javanica,,TRUE,FALSE,TRUE,IUCN lists as Herpestes; NCBI listed as homotypic synonym,Urva javanica,Herpestes javanicus,Herpestidae
+Alcelaphus lichtensteinii,Mammalia,Cetartiodactyla,Bovidae,Alcelaphus lichtensteinii,sigmoceros lichtensteinii,TRUE,FALSE,TRUE,Subspecies,Alcelaphus buselaphus,"sigmoceros lichtensteinii, Alcelaphus bucelaphus lichtensteinii",Bovidae
+Alces americanus,Mammalia,Cetartiodactyla,Cervidae,Alces americanus,cervus americanus,TRUE,FALSE,TRUE,Subspecies,Alces alces,"cervus americanus, alces americanus",Cervidae
+Bos frontalis,Mammalia,Cetartiodactyla,Bovidae,Bos frontalis,,TRUE,FALSE,FALSE,Domestic,,,
+Bos frontalis,Mammalia,Artiodactyla,Bovidae,Bos gaurus,bos gaurus,TRUE,FALSE,FALSE,Domestic,,,
+Bos grunniens,Mammalia,Cetartiodactyla,Bovidae,Bos grunniens,,TRUE,FALSE,FALSE,Domestic,,,
+Bos grunniens mutus,Mammalia,Cetartiodactyla,Bovidae,Bos mutus,bos mutus,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Bos mutus,Bos grunniens mutus,Bovidae
+Bos taurus,Mammalia,Cetartiodactyla,Bovidae,Bos taurus,,TRUE,FALSE,FALSE,Domestic,,,
+Bos taurus indicus,Mammalia,Cetartiodactyla,Bovidae,Bos indicus,"bos indicus, bos namadicus",TRUE,FALSE,FALSE,Domestic,,,
+Bos taurus primigenius,Mammalia,Cetartiodactyla,Bovidae,Bos primigenius,bos primigenius,TRUE,FALSE,FALSE,Domestic,,,
+Bubalus bubalis,Mammalia,Cetartiodactyla,Bovidae,Bubalus bubalis,,TRUE,FALSE,FALSE,Domestic,,,
+Bubalus bubalis,Mammalia,Artiodactyla,Bovidae,Bubalus arnee,bubalus arnee,TRUE,FALSE,FALSE,Domestic,,,
+Bubalus carabanensis,Mammalia,Cetartiodactyla,Bovidae,Bubalus carabanensis,,TRUE,FALSE,FALSE,Domestic,,,
+Camelus bactrianus,Mammalia,Cetartiodactyla,Camelidae,Camelus bactrianus,,TRUE,FALSE,FALSE,Domestic,,,
+Camelus dromedarius,Mammalia,Cetartiodactyla,Camelidae,Camelus dromedarius,camelus ferus,TRUE,FALSE,FALSE,Domestic,,,
+Capra hircus,Mammalia,Cetartiodactyla,Bovidae,Capra hircus,,TRUE,FALSE,FALSE,Domestic,,,
+Capra hircus aegagrus,Mammalia,Cetartiodactyla,Bovidae,Capra aegagrus,capra aegagrus,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Capra aegagrus,Capra hircus aegagrus,Bovidae
+Hexaprotodon liberiensis,Mammalia,Cetartiodactyla,Hippopotamidae,Hexaprotodon liberiensis,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Choeropsis liberiensis,Hexaprotodon liberiensis,Hippopotamidae
+Lama glama,Mammalia,Cetartiodactyla,Camelidae,Lama glama,,TRUE,FALSE,FALSE,Domestic,,,
+Lama glama guanicoe,Mammalia,Cetartiodactyla,Camelidae,Lama guanicoe,lama guanicoe,TRUE,FALSE,FALSE,Domestic,,,
+Ovis aries,Mammalia,Cetartiodactyla,Bovidae,Ovis aries,,TRUE,FALSE,FALSE,Domestic,,,
+Ovis aries,Mammalia,Cetartiodactyla,Bovidae,Ovis aries musimon,,TRUE,FALSE,FALSE,Domestic,,,
+Ovis aries orientalis,Mammalia,Cetartiodactyla,Bovidae,Ovis orientalis,"ovis orientalis, ovis orientalis typica",TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Ovis orientalis,"ovis orientalis, ovis orientalis typica, ovis aries orientalis",Bovidae
+Taurotragus oryx,Mammalia,Cetartiodactyla,Bovidae,Taurotragus oryx,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Tragelaphus oryx,Taurotragus oryx,Bovidae
+Vicugna pacos,Mammalia,Cetartiodactyla,Camelidae,Lama pacos,lama pacos,TRUE,FALSE,FALSE,Domestic,,,
+Vicugna pacos,Mammalia,Cetartiodactyla,Camelidae,Vicugna pacos,lama pacos,TRUE,FALSE,FALSE,Domestic,,,
+Aeorestes cinereus,Mammalia,Chiroptera,Vespertilionidae,Aeorestes cinereus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Lasiurus cinereus,Aeorestes cinereus,Vespertilionidae
+Aeorestes egregius,Mammalia,Chiroptera,Vespertilionidae,Aeorestes egregius,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Lasiurus egregius,Aeorestes egregius,Vespertilionidae
+Artibeus cinereus,Mammalia,Chiroptera,Phyllostomidae,Artibeus cinereus,dermanura cinerea,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Dermanura cinerea,Artibeus cinereus ,Phyllostomidae
+Artibeus phaeotis,Mammalia,Chiroptera,Phyllostomidae,Artibeus phaeotis,"artibeus nanus, dermanura phaeotis, artibeus phaeotis phaeotis, artibeus phaeotis nanus, artibeus phaeotis palatinus, artibeus phaeotis ravus",TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Dermanura phaeotis,"Artibeus phaeotis, artibeus nanus, dermanura phaeotis, artibeus phaeotis phaeotis, artibeus phaeotis nanus, artibeus phaeotis palatinus, artibeus phaeotis ravus",Phyllostomidae
+Artibeus toltecus,Mammalia,Chiroptera,Phyllostomidae,Artibeus toltecus,"stenoderma tolteca, dermanura tolteca, artibeus toltecus toltecus, artibeus toltecus hesperus",TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Dermanura tolteca,"stenoderma tolteca, dermanura tolteca, artibeus toltecus toltecus, artibeus toltecus hesperus, artibeus toltecus",Phyllostomidae
+Dasypterus ega,Mammalia,Chiroptera,Vespertilionidae,Dasypterus ega,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Lasiurus ega,Dasypterus ega,Vespertilionidae
+Dasypterus intermedius,Mammalia,Chiroptera,Vespertilionidae,Dasypterus intermedius,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Lasiurus intermedius,Dasypterus intermedius,Vespertilionidae
+Dasypterus xanthinus,Mammalia,Chiroptera,Vespertilionidae,Dasypterus xanthinus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Lasiurus xanthinus,Dasypterus xanthinus,Vespertilionidae
+Failed,Mammalia,Chiroptera,Vespertilionidae,Pipistrellus abramus,failed,TRUE,FALSE,TRUE,taxize fail,Pipistrellus abramus,,Vespertilionidae
+Failed,Mammalia,Chiroptera,Pteropodidae,Pteronotus davyi,failed,TRUE,FALSE,TRUE,taxize fail,Pteronotus davyi,,Pteropodidae
+Failed,Mammalia,Chiroptera,Hipposideridae,Hipposideros abae,failed,TRUE,FALSE,TRUE,taxize fail,Hipposideros abae,,Hipposideridae
+Failed,Mammalia,Chiroptera,Hipposideridae,Hipposideros crumeniferus,failed,TRUE,FALSE,TRUE,taxize fail,Hipposideros crumeniferus,,Hipposideridae
+Macronycteris commersonii,Mammalia,Chiroptera,Hipposideridae,Hipposideros commersonii,"hipposideros commersoni, rhinolophus commersonii, hipposideros commersonii",TRUE,FALSE,TRUE,Misspelling (commersonii),Macronycteris commersoni,"hipposideros commersoni, rhinolophus commersonii, hipposideros commersonii",Hipposideridae
+Megaderma lyra,Mammalia,Chiroptera,Megadermatidae,Megaderma lyra,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Lyroderma lyra,Megaderma lyra,Megadermatidae
+Miniopterus fuliginosus,Mammalia,Chiroptera,Miniopteridae,Miniopterus fuliginosus,,TRUE,FALSE,TRUE,Subspecies,Miniopterus schreibersii,"Miniopterus fuliginosus, Miniopterus schreibersii fuliginosus",Vespertilionidae
+Miniopterus fuliginosus,Mammalia,Chiroptera,Vespertilionidae,Miniopterus fuliginosus,,TRUE,FALSE,TRUE,Subspecies,Miniopterus schreibersii,"Miniopterus fuliginosus, Miniopterus schreibersii fuliginosus",
+Myonycteris angolensis,Mammalia,Chiroptera,Pteropodidae,Myonycteris angolensis,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Lissonycteris angolensis,Myonycteris angolensis,Pteropodidae
+Myotis ricketti,Mammalia,Chiroptera,Vespertilionidae,Myotis ricketti,vespertilio ricketti,TRUE,FALSE,TRUE,Listed as Myotis pilosus in IUCN; added to syns,Myotis ricketti,"vespertilio ricketti, Myotis pilosus",Vespertilionidae
+Perimyotis subflavus subflavus,Mammalia,Chiroptera,Vespertilionidae,Pipistrellus subflavus,"pipistrellus subflavus, vespertilio subflavus, pipistrellus subflavus subflavus",TRUE,FALSE,TRUE,Subspecies,Perimyotis subflavus,"pipistrellus subflavus, vespertilio subflavus, pipistrellus subflavus subflavus",Vespertilionidae
+Rhinolophus cornutus,Mammalia,Chiroptera,Rhinolophidae,Rhinolophus cornutus,,TRUE,FALSE,FALSE,No record in IUCN,,,
+Tadarida plicata,Mammalia,Chiroptera,Molossidae,Tadarida plicata,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Chaerephon plicatus,Tadarida plicata,Molossidae
+Micoureus demerarae,Mammalia,Didelphimorphia,Didelphidae,Micoureus demerarae,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Marmosa demerarae,Micoureus demerarae,Didelphidae
+Dorcopsis veterum,Mammalia,Diprotodontia,Macropodidae,Dorcopsis veterum,,TRUE,FALSE,TRUE,NCBI lists as veterum; IUCN as muelleri; synonyms according to Wilson and Reeder https://www.departments.bucknell.edu/biology/resources/msw3/browse.asp?id=11000226,Dorcopsis muelleri,Dorcopsis veterum,Macropodidae
+Notamacropus agilis,Mammalia,Diprotodontia,Macropodidae,Notamacropus agilis,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Macropus agilis,Notamacropus agilis,Macropodidae
+Notamacropus dorsalis,Mammalia,Diprotodontia,Macropodidae,Notamacropus dorsalis,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Macropus dorsalis,Notamacropus dorsalis,Macropodidae
+Notamacropus eugenii,Mammalia,Diprotodontia,Macropodidae,Notamacropus eugenii,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Macropus eugenii,Notamacropus eugenii,Macropodidae
+Notamacropus parma,Mammalia,Diprotodontia,Macropodidae,Notamacropus parma,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Macropus parma,Notamacropus parma,Macropodidae
+Notamacropus parryi,Mammalia,Diprotodontia,Macropodidae,Notamacropus parryi,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Macropus parryi,Notamacropus parryi,Macropodidae
+Notamacropus rufogriseus,Mammalia,Diprotodontia,Macropodidae,Notamacropus rufogriseus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Macropus rufogriseus,Notamacropus rufogriseus,Macropodidae
+Osphranter robustus,Mammalia,Diprotodontia,Macropodidae,Osphranter robustus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Macropus robustus,Osphranter robustus,Macropodidae
+Osphranter rufus,Mammalia,Diprotodontia,Macropodidae,Osphranter rufus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Macropus rufus,Osphranter rufus,Macropodidae
+Equus asinus,Mammalia,Perissodactyla,Equidae,Equus asinus,"asinus vulgaris, equus asinus asinus, equus asinus palaestinae, equus africanus asinus",TRUE,FALSE,FALSE,Domestic,,,
+Equus asinus,Mammalia,Perissodactyla,Equidae,Equus asinus somalicus,"asinus vulgaris, equus asinus asinus, equus asinus palaestinae, equus africanus asinus",TRUE,FALSE,FALSE,Domestic,,,
+Equus caballus,Mammalia,Perissodactyla,Equidae,Equus caballus,"equus caballus caballus, equus ferus caballus",TRUE,FALSE,FALSE,Domestic,,,
+Equus przewalskii,Mammalia,Perissodactyla,Equidae,Equus przewalskii,"equus caballus przewalskii, equus ferus przewalskii",TRUE,FALSE,FALSE,Domestic,,,
+Equus quagga burchellii,Mammalia,Perissodactyla,Equidae,Equus burchellii,"equus burchellii, hippotigris campestris, equus festivus, equus zebroides, hippotigris antiquorum, equus wardi, equus burchelli, asinus burchellii, hippotigris isabellinus, equus burchellii burchellii, equus burchellii antiquorum, equus burchelli burchelli, hippotigris chapmanni kaokensis",TRUE,FALSE,FALSE,Extinct,,,
+Equus quagga burchellii,Mammalia,Perissodactyla,Equidae,Equus burchellii quagga,"equus burchellii, hippotigris campestris, equus festivus, equus zebroides, hippotigris antiquorum, equus wardi, equus burchelli, asinus burchellii, hippotigris isabellinus, equus burchellii burchellii, equus burchellii antiquorum, equus burchelli burchelli, hippotigris chapmanni kaokensis",TRUE,FALSE,FALSE,Extinct,,,
+Equus quagga burchellii,Mammalia,Perissodactyla,Equidae,Equus burchellii chapmani,"equus burchellii, hippotigris campestris, equus festivus, equus zebroides, hippotigris antiquorum, equus wardi, equus burchelli, asinus burchellii, hippotigris isabellinus, equus burchellii burchellii, equus burchellii antiquorum, equus burchelli burchelli, hippotigris chapmanni kaokensis",TRUE,FALSE,FALSE,Extinct,,,
+Cercopithecus aethiops,Mammalia,Primates,Cercopithecidae,Cercopithecus aethiops,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Chlorocebus aethiops,Cercopithecus aethiops,Cercopithecidae
+Cercopithecus mitis albogularis,Mammalia,Primates,Cercopithecidae,Cercopithecus albogularis,"cercopithecus albogularis, cercopithecus albogularis albogularis, cercopithecus albogularis kibonotensis, lasiopyga albogularis kima, lasiopyga albogularis maritima",TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Cercopithecus albogularis,"cercopithecus albogularis, cercopithecus albogularis albogularis, cercopithecus albogularis kibonotensis, lasiopyga albogularis kima, lasiopyga albogularis maritima",Cercopithecidae
+Homo sapiens,Mammalia,Primates,Hominidae,Homo sapiens,"homo aethiopicus, homo americanus, homo arabicus, homo australasicus, homo cafer, homo capensis, homo columbicus, homo drennani, homo grimaldii, homo hottentotus, homo hyperboreus, homo indicus, homo japeticus, homo melaninus, homo monstrosus, homo neptunianus, homo palestinus, homo patagonus, homo priscus, homo scythicus, homo sinicus, homo spelaeus, homo troglodytes, homo wadjakensis, homo sapiens cro-magnonensis, homo sapiens grimaldiensis, homo fossilis proto-aethiopicus, homo fossilis protoaethiopicus, homo sapiens cromagnonensis",TRUE,FALSE,FALSE,Obviously not in IUCN,,,
+Macaca balantak,Mammalia,Primates,Cercopithecidae,Macaca balantak,,TRUE,FALSE,TRUE,Listed in NCBI but difficult to resolve; Wilson and Reeder lists balantak as subspecies of tonkeana https://www.departments.bucknell.edu/biology/resources/msw3/browse.asp?id=12100571,Macaca tonkeana,Macaca balantak,Cercopithecidae
+Cavia porcellus,Mammalia,Rodentia,Caviidae,Cavia porcellus,,TRUE,FALSE,FALSE,Domestic,,,
+Coendou rothschildi,Mammalia,Rodentia,Erethizontidae,Coendou rothschildi,,FALSE,FALSE,TRUE,No record in NCBI; Wilson and Reeder list as poss subspecies of bicolor http://www.departments.bucknell.edu/biology/resources/msw3/browse.asp?id=13400104,Coendou bicolor,Coendou rothschildi,Erethizontidae
+Dipodillus dasyurus,Mammalia,Rodentia,Muridae,Dipodillus dasyurus,"gerbillus dasyurus, dipodillus dasyroides",TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Gerbillus dasyurus,Dipodillus dasyurus,Muridae
+Erethizon dorsatus,Mammalia,Rodentia,Erethizontidae,Erethizon dorsatus,erethizon dorsatum,TRUE,FALSE,TRUE,Misspelling (dorsatum),Erethizon dorsatum,,Erethizontidae
+Erethizon dorsatus,Mammalia,Rodentia,Erethizontidae,Erethizon dorsatum,erethizon dorsatum,TRUE,FALSE,TRUE,Misspelling (dorsatum),Erethizon dorsatum,,Erethizontidae
+Gerbilliscus kempii,Mammalia,Rodentia,Muridae,Gerbilliscus kempi,"tatera kempi, gerbilliscus kempi, tatera dundasi, tatera gambiana, tatera giffardi, tatera hopkinsoni, tatera nigrita, tatera smithi, tatera welmani, tatera kempii",TRUE,FALSE,TRUE,Misspelling (kempi),Gerbilliscus kempi,"tatera kempi, gerbilliscus kempi, tatera dundasi, tatera gambiana, tatera giffardi, tatera hopkinsoni, tatera nigrita, tatera smithi, tatera welmani, tatera kempii",Muridae
+Gerbilliscus kempii,Mammalia,Rodentia,Muridae,Gerbilliscus kempii,"tatera kempi, gerbilliscus kempi, tatera dundasi, tatera gambiana, tatera giffardi, tatera hopkinsoni, tatera nigrita, tatera smithi, tatera welmani, tatera kempii",TRUE,FALSE,TRUE,Misspelling (kempi),Gerbilliscus kempi,"tatera kempi, gerbilliscus kempi, tatera dundasi, tatera gambiana, tatera giffardi, tatera hopkinsoni, tatera nigrita, tatera smithi, tatera welmani, tatera kempii",Muridae
+Lasiopodomys gregalis,Mammalia,Rodentia,Cricetidae,Lasiopodomys gregalis,,TRUE,FALSE,TRUE,Listed as Microtus in IUCN; homotypic synonym in NCBI,Lasiopodomys gregalis,Microtus gregalis,Cricetidae
+Liomys adspersus,Mammalia,Rodentia,Heteromyidae,Liomys adspersus,,TRUE,FALSE,TRUE,Listed as Heteromys in IUCN; NCBI listed as homotypic synonym,Heteromys adspersus,Liomys adspersus,Heteromyidae
+Liomys salvini,Mammalia,Rodentia,Heteromyidae,Liomys salvini,,TRUE,FALSE,TRUE,Listed as Heteromys in IUCN; NCBI listed as homotypic synonym,Heteromys salvini,Liomys salvini,Heteromyidae
+Myotomys unisulcatus,Mammalia,Rodentia,Muridae,Myotomys unisulcatus,"otomys unisulcatus, otomys broomi, myotomys unisulcatus albaniensis, otomys unisulcatus bergensis, otomys unisulcatus grantii",TRUE,FALSE,TRUE,Listed as Otomys in IUCN; NCBI listed as homotypic synonym,Otomys unisulcatus,Myotomys unisulcatus,Muridae
+Rattus flavipectus,Mammalia,Rodentia,Muridae,Rattus flavipectus,,TRUE,FALSE,TRUE,Subspecies,Rattus tanezumi,Rattus tanezumi flavipectus,Muridae
+Tamias amoenus,Mammalia,Rodentia,Sciuridae,Tamias amoenus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Neotamias amoenus,Tamias amoenus,Sciuridae
+Tamias minimus,Mammalia,Rodentia,Sciuridae,Tamias minimus,eutamias minimus,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Neotamias minimus,"Tamias minimus, Eutamias minimus",Sciuridae
+Tamias quadrivittatus,Mammalia,Rodentia,Sciuridae,Tamias quadrivittatus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Neotamias quadrivittatus,Tamias quadrivittatus,Sciuridae
+Tamias sibiricus,Mammalia,Rodentia,Sciuridae,Tamias sibiricus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Eutamias sibiricus,Tamias sibiricus,Sciuridae
+Tamias umbrinus,Mammalia,Rodentia,Sciuridae,Tamias umbrinus,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Neotamias umbrinus,Tamias umbrinus,Sciuridae
+Tupaia chinensis,Mammalia,Scandentia,Tupaiidae,Tupaia chinensis,,TRUE,FALSE,TRUE,NCBI listed as homotypic synonym,Tupaia belangeri,Tupaia chinensis,Tupaiidae

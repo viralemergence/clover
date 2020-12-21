@@ -1,0 +1,102 @@
+"Host","HostClass","HostOrder","HostFamily","Host_Original","HostSynonyms","Host_NCBIResolved"
+"Canis lupus familiaris","Mammalia","Carnivora","Canidae","Canis familiaris","canis familiaris, canis familiarus domesticus",TRUE
+"Dusicyon thous","Mammalia","Carnivora","Canidae","Dusicyon thous","",TRUE
+"Failed","Mammalia","Carnivora","Canidae","Lycalopex gymnocercus","failed",TRUE
+"Felis catus","Mammalia","Carnivora","Felidae","Felis catus","",TRUE
+"Felis manul","Mammalia","Carnivora","Felidae","Otocolobus manul","otocolobus manul",TRUE
+"Felis manul","Mammalia","Carnivora","Felidae","Felis manul","otocolobus manul",TRUE
+"Galerella pulverulenta","Mammalia","Carnivora","Herpestidae","Galerella pulverulenta","",TRUE
+"Galerella sanguinea","Mammalia","Carnivora","Herpestidae","Galerella sanguinea","",TRUE
+"Herpestes edwardsi","Mammalia","Carnivora","Herpestidae","Herpestes edwardsi","herpestes edwardsii",TRUE
+"Monachus schauinslandi","Mammalia","Carnivora","Phocidae","Monachus schauinslandi","",TRUE
+"Mustela vison","Mammalia","Carnivora","Mustelidae","Neovison vison","neovison vison",TRUE
+"Puma yagouaroundi","Mammalia","Carnivora","Felidae","Puma yagouaroundi","felis yaguarondi, herpailurus yaguarondi",TRUE
+"Puma yagouaroundi","Mammalia","Carnivora","Felidae","Herpailurus yaguarondi","felis yaguarondi, herpailurus yaguarondi",TRUE
+"Uncia uncia","Mammalia","Carnivora","Felidae","Panthera uncia","panthera uncia",TRUE
+"Uncia uncia","Mammalia","Carnivora","Felidae","Uncia uncia","panthera uncia",TRUE
+"Urva javanica","Mammalia","Carnivora","Herpestidae","Urva javanica","",TRUE
+"Alcelaphus lichtensteinii","Mammalia","Cetartiodactyla","Bovidae","Alcelaphus lichtensteinii","sigmoceros lichtensteinii",TRUE
+"Alces americanus","Mammalia","Cetartiodactyla","Cervidae","Alces americanus","cervus americanus",TRUE
+"Bos frontalis","Mammalia","Cetartiodactyla","Bovidae","Bos frontalis","",TRUE
+"Bos frontalis","Mammalia","Artiodactyla","Bovidae","Bos gaurus","bos gaurus",TRUE
+"Bos grunniens","Mammalia","Cetartiodactyla","Bovidae","Bos grunniens","",TRUE
+"Bos grunniens mutus","Mammalia","Cetartiodactyla","Bovidae","Bos mutus","bos mutus",TRUE
+"Bos taurus","Mammalia","Cetartiodactyla","Bovidae","Bos taurus","",TRUE
+"Bos taurus indicus","Mammalia","Cetartiodactyla","Bovidae","Bos indicus","bos indicus, bos namadicus",TRUE
+"Bos taurus primigenius","Mammalia","Cetartiodactyla","Bovidae","Bos primigenius","bos primigenius",TRUE
+"Bubalus bubalis","Mammalia","Cetartiodactyla","Bovidae","Bubalus bubalis","",TRUE
+"Bubalus bubalis","Mammalia","Artiodactyla","Bovidae","Bubalus arnee","bubalus arnee",TRUE
+"Bubalus carabanensis","Mammalia","Cetartiodactyla","Bovidae","Bubalus carabanensis","",TRUE
+"Camelus bactrianus","Mammalia","Cetartiodactyla","Camelidae","Camelus bactrianus","",TRUE
+"Camelus dromedarius","Mammalia","Cetartiodactyla","Camelidae","Camelus dromedarius","camelus ferus",TRUE
+"Capra hircus","Mammalia","Cetartiodactyla","Bovidae","Capra hircus","",TRUE
+"Capra hircus aegagrus","Mammalia","Cetartiodactyla","Bovidae","Capra aegagrus","capra aegagrus",TRUE
+"Hexaprotodon liberiensis","Mammalia","Cetartiodactyla","Hippopotamidae","Hexaprotodon liberiensis","",TRUE
+"Lama glama","Mammalia","Cetartiodactyla","Camelidae","Lama glama","",TRUE
+"Lama glama guanicoe","Mammalia","Cetartiodactyla","Camelidae","Lama guanicoe","lama guanicoe",TRUE
+"Ovis aries","Mammalia","Cetartiodactyla","Bovidae","Ovis aries","",TRUE
+"Ovis aries","Mammalia","Cetartiodactyla","Bovidae","Ovis aries musimon","",TRUE
+"Ovis aries orientalis","Mammalia","Cetartiodactyla","Bovidae","Ovis orientalis","ovis orientalis, ovis orientalis typica",TRUE
+"Taurotragus oryx","Mammalia","Cetartiodactyla","Bovidae","Taurotragus oryx","",TRUE
+"Vicugna pacos","Mammalia","Cetartiodactyla","Camelidae","Lama pacos","lama pacos",TRUE
+"Vicugna pacos","Mammalia","Cetartiodactyla","Camelidae","Vicugna pacos","lama pacos",TRUE
+"Aeorestes cinereus","Mammalia","Chiroptera","Vespertilionidae","Aeorestes cinereus","",TRUE
+"Aeorestes egregius","Mammalia","Chiroptera","Vespertilionidae","Aeorestes egregius","",TRUE
+"Artibeus cinereus","Mammalia","Chiroptera","Phyllostomidae","Artibeus cinereus","dermanura cinerea",TRUE
+"Artibeus phaeotis","Mammalia","Chiroptera","Phyllostomidae","Artibeus phaeotis","artibeus nanus, dermanura phaeotis, artibeus phaeotis phaeotis, artibeus phaeotis nanus, artibeus phaeotis palatinus, artibeus phaeotis ravus",TRUE
+"Artibeus toltecus","Mammalia","Chiroptera","Phyllostomidae","Artibeus toltecus","stenoderma tolteca, dermanura tolteca, artibeus toltecus toltecus, artibeus toltecus hesperus",TRUE
+"Dasypterus ega","Mammalia","Chiroptera","Vespertilionidae","Dasypterus ega","",TRUE
+"Dasypterus intermedius","Mammalia","Chiroptera","Vespertilionidae","Dasypterus intermedius","",TRUE
+"Dasypterus xanthinus","Mammalia","Chiroptera","Vespertilionidae","Dasypterus xanthinus","",TRUE
+"Failed","Mammalia","Chiroptera","Vespertilionidae","Pipistrellus abramus","failed",TRUE
+"Failed","Mammalia","Chiroptera","Pteropodidae","Pteronotus davyi","failed",TRUE
+"Failed","Mammalia","Chiroptera","Hipposideridae","Hipposideros abae","failed",TRUE
+"Failed","Mammalia","Chiroptera","Hipposideridae","Hipposideros crumeniferus","failed",TRUE
+"Macronycteris commersonii","Mammalia","Chiroptera","Hipposideridae","Hipposideros commersonii","hipposideros commersoni, rhinolophus commersonii, hipposideros commersonii",TRUE
+"Megaderma lyra","Mammalia","Chiroptera","Megadermatidae","Megaderma lyra","",TRUE
+"Miniopterus fuliginosus","Mammalia","Chiroptera","Miniopteridae","Miniopterus fuliginosus","",TRUE
+"Miniopterus fuliginosus","Mammalia","Chiroptera","Vespertilionidae","Miniopterus fuliginosus","",TRUE
+"Myonycteris angolensis","Mammalia","Chiroptera","Pteropodidae","Myonycteris angolensis","",TRUE
+"Myotis ricketti","Mammalia","Chiroptera","Vespertilionidae","Myotis ricketti","vespertilio ricketti",TRUE
+"Perimyotis subflavus subflavus","Mammalia","Chiroptera","Vespertilionidae","Pipistrellus subflavus","pipistrellus subflavus, vespertilio subflavus, pipistrellus subflavus subflavus",TRUE
+"Rhinolophus cornutus","Mammalia","Chiroptera","Rhinolophidae","Rhinolophus cornutus","",TRUE
+"Tadarida plicata","Mammalia","Chiroptera","Molossidae","Tadarida plicata","",TRUE
+"Micoureus demerarae","Mammalia","Didelphimorphia","Didelphidae","Micoureus demerarae","",TRUE
+"Dorcopsis veterum","Mammalia","Diprotodontia","Macropodidae","Dorcopsis veterum","",TRUE
+"Notamacropus agilis","Mammalia","Diprotodontia","Macropodidae","Notamacropus agilis","",TRUE
+"Notamacropus dorsalis","Mammalia","Diprotodontia","Macropodidae","Notamacropus dorsalis","",TRUE
+"Notamacropus eugenii","Mammalia","Diprotodontia","Macropodidae","Notamacropus eugenii","",TRUE
+"Notamacropus parma","Mammalia","Diprotodontia","Macropodidae","Notamacropus parma","",TRUE
+"Notamacropus parryi","Mammalia","Diprotodontia","Macropodidae","Notamacropus parryi","",TRUE
+"Notamacropus rufogriseus","Mammalia","Diprotodontia","Macropodidae","Notamacropus rufogriseus","",TRUE
+"Osphranter robustus","Mammalia","Diprotodontia","Macropodidae","Osphranter robustus","",TRUE
+"Osphranter rufus","Mammalia","Diprotodontia","Macropodidae","Osphranter rufus","",TRUE
+"Equus asinus","Mammalia","Perissodactyla","Equidae","Equus asinus","asinus vulgaris, equus asinus asinus, equus asinus palaestinae, equus africanus asinus",TRUE
+"Equus asinus","Mammalia","Perissodactyla","Equidae","Equus asinus somalicus","asinus vulgaris, equus asinus asinus, equus asinus palaestinae, equus africanus asinus",TRUE
+"Equus caballus","Mammalia","Perissodactyla","Equidae","Equus caballus","equus caballus caballus, equus ferus caballus",TRUE
+"Equus przewalskii","Mammalia","Perissodactyla","Equidae","Equus przewalskii","equus caballus przewalskii, equus ferus przewalskii",TRUE
+"Equus quagga burchellii","Mammalia","Perissodactyla","Equidae","Equus burchellii","equus burchellii, hippotigris campestris, equus festivus, equus zebroides, hippotigris antiquorum, equus wardi, equus burchelli, asinus burchellii, hippotigris isabellinus, equus burchellii burchellii, equus burchellii antiquorum, equus burchelli burchelli, hippotigris chapmanni kaokensis",TRUE
+"Equus quagga burchellii","Mammalia","Perissodactyla","Equidae","Equus burchellii quagga","equus burchellii, hippotigris campestris, equus festivus, equus zebroides, hippotigris antiquorum, equus wardi, equus burchelli, asinus burchellii, hippotigris isabellinus, equus burchellii burchellii, equus burchellii antiquorum, equus burchelli burchelli, hippotigris chapmanni kaokensis",TRUE
+"Equus quagga burchellii","Mammalia","Perissodactyla","Equidae","Equus burchellii chapmani","equus burchellii, hippotigris campestris, equus festivus, equus zebroides, hippotigris antiquorum, equus wardi, equus burchelli, asinus burchellii, hippotigris isabellinus, equus burchellii burchellii, equus burchellii antiquorum, equus burchelli burchelli, hippotigris chapmanni kaokensis",TRUE
+"Cercopithecus aethiops","Mammalia","Primates","Cercopithecidae","Cercopithecus aethiops","",TRUE
+"Cercopithecus mitis albogularis","Mammalia","Primates","Cercopithecidae","Cercopithecus albogularis","cercopithecus albogularis, cercopithecus albogularis albogularis, cercopithecus albogularis kibonotensis, lasiopyga albogularis kima, lasiopyga albogularis maritima",TRUE
+"Homo sapiens","Mammalia","Primates","Hominidae","Homo sapiens","homo aethiopicus, homo americanus, homo arabicus, homo australasicus, homo cafer, homo capensis, homo columbicus, homo drennani, homo grimaldii, homo hottentotus, homo hyperboreus, homo indicus, homo japeticus, homo melaninus, homo monstrosus, homo neptunianus, homo palestinus, homo patagonus, homo priscus, homo scythicus, homo sinicus, homo spelaeus, homo troglodytes, homo wadjakensis, homo sapiens cro-magnonensis, homo sapiens grimaldiensis, homo fossilis proto-aethiopicus, homo fossilis protoaethiopicus, homo sapiens cromagnonensis",TRUE
+"Macaca balantak","Mammalia","Primates","Cercopithecidae","Macaca balantak","",TRUE
+"Cavia porcellus","Mammalia","Rodentia","Caviidae","Cavia porcellus","",TRUE
+"Coendou rothschildi","Mammalia","Rodentia","Erethizontidae","Coendou rothschildi","",FALSE
+"Dipodillus dasyurus","Mammalia","Rodentia","Muridae","Dipodillus dasyurus","gerbillus dasyurus, dipodillus dasyroides",TRUE
+"Erethizon dorsatus","Mammalia","Rodentia","Erethizontidae","Erethizon dorsatus","erethizon dorsatum",TRUE
+"Erethizon dorsatus","Mammalia","Rodentia","Erethizontidae","Erethizon dorsatum","erethizon dorsatum",TRUE
+"Gerbilliscus kempii","Mammalia","Rodentia","Muridae","Gerbilliscus kempi","tatera kempi, gerbilliscus kempi, tatera dundasi, tatera gambiana, tatera giffardi, tatera hopkinsoni, tatera nigrita, tatera smithi, tatera welmani, tatera kempii",TRUE
+"Gerbilliscus kempii","Mammalia","Rodentia","Muridae","Gerbilliscus kempii","tatera kempi, gerbilliscus kempi, tatera dundasi, tatera gambiana, tatera giffardi, tatera hopkinsoni, tatera nigrita, tatera smithi, tatera welmani, tatera kempii",TRUE
+"Lasiopodomys gregalis","Mammalia","Rodentia","Cricetidae","Lasiopodomys gregalis","",TRUE
+"Liomys adspersus","Mammalia","Rodentia","Heteromyidae","Liomys adspersus","",TRUE
+"Liomys salvini","Mammalia","Rodentia","Heteromyidae","Liomys salvini","",TRUE
+"Myotomys unisulcatus","Mammalia","Rodentia","Muridae","Myotomys unisulcatus","otomys unisulcatus, otomys broomi, myotomys unisulcatus albaniensis, otomys unisulcatus bergensis, otomys unisulcatus grantii",TRUE
+"Rattus flavipectus","Mammalia","Rodentia","Muridae","Rattus flavipectus","",TRUE
+"Tamias amoenus","Mammalia","Rodentia","Sciuridae","Tamias amoenus","",TRUE
+"Tamias minimus","Mammalia","Rodentia","Sciuridae","Tamias minimus","eutamias minimus",TRUE
+"Tamias quadrivittatus","Mammalia","Rodentia","Sciuridae","Tamias quadrivittatus","",TRUE
+"Tamias sibiricus","Mammalia","Rodentia","Sciuridae","Tamias sibiricus","",TRUE
+"Tamias umbrinus","Mammalia","Rodentia","Sciuridae","Tamias umbrinus","",TRUE
+"Tupaia chinensis","Mammalia","Scandentia","Tupaiidae","Tupaia chinensis","",TRUE
