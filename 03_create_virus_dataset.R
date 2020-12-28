@@ -24,92 +24,95 @@ foo = strsplit(shaw$Species, " ")
 foo = lapply(foo, function(x){ if(x[length(x)] == "virus"){ return(x[1:length(x)-1]) } else(return(x)) })
 foo = unlist(lapply(foo, paste, collapse=" "))
 shaw$Pathogen_Original = foo
+shaw$PMID[ is.na(shaw$PMID) ] = ""
+shaw$ReferenceComb = paste(shaw$Reference, shaw$Additional, sep="; ")
+shaw$ReferenceComb = paste("PMID:", shaw$PMID, "_Citations:", shaw$ReferenceComb, sep="")
 
 
-# =============== access publication year for Shaw; first for refs, then scrape PubMed ================
-
-# extract numerics (year) and trim out second year marker
-years = regmatches(shaw$Reference, gregexpr("[[:digit:]]+", shaw$Reference))
-shaw$YearRef = as.numeric(unlist(lapply(years, "[", 1)))
-
-# create dataframe of PMIDs to lookup
-shaw$idx = 1:nrow(shaw)
-query_df = shaw %>%
-  dplyr::select(idx, PMID, Pathogen_Original) %>%
-  dplyr::mutate(Database = "pubmed") %>%
-  dplyr::filter(!is.na(PMID))
-
-# function to lookup create and update dates from PubMed
-pubMedDateLookup = function(ids){
-  
-  # result
-  e = simpleError("lookup error")
-  
-  # lookup 5 attempts then break
-  e = simpleError("test error")
-  for(attempt in 1:5){
-    search = tryCatch(entrez_summary(db="pubmed", id=ids), error=function(e) e)
-    if(class(search)[1] != "simpleError"){ break }
-    Sys.sleep(0.5)
-  }
-  
-  # if throws error
-  if(class(search)[1] == "simpleError"){
-    resx = data.frame(id = ids)
-    resx$PubDate = NA; resx$PubYear = NA
-    resx$Lookup = "Fail"
-    return(resx)
-    
-  } else{
-    resx = data.frame(id = names(search))
-    pubdatenullfilter = function(x){ 
-      lx = x$pubdate
-      if(is.null(lx)){ lx = NA }
-      lx
-    }
-    resx$PubDate = unlist(lapply(search, pubdatenullfilter))
-    resx$PubYear = substr(resx$PubDate, 1, 4)
-    resx$Lookup = "Success"
-  }
-  
-  # return
-  return(resx)
-}
-
-# batches
-batch = rep(1:1000, each=100); batch = batch[ 1:nrow(query_df) ]
-query_df$batch = batch
-
-# create filenames
-output_loc = "./output/"
-#save_file = paste(output_loc, "Shaw_Pubmedscrape_28122020_rentrez.csv", sep="")
-
-# append each new query to csv
-for(i in 1:n_distinct(query_df$batch)){
-  
-  # run query
-  cat(paste(i, "...", sep=""))
-      
-  e = simpleError("lookup error")
-  ids = query_df$PMID[ query_df$batch == unique(query_df$batch)[i] ]
-  lookupx = tryCatch(pubMedDateLookup(ids))
-  lookupx = rename(lookupx, "PMID" = id)
-  lookupx$PMID = as.numeric(as.vector(lookupx$PMID))
-  
-  # combine with eid2 records
-  lookupx = left_join(query_df[ query_df$batch == unique(query_df$batch)[i], ], lookupx,  by="PMID")
-  
-  # initialise file on first iteration, and then append
-  if(class(lookupx)[1] == "simpleError"){ next
-  } else if(i == 1){
-    write.csv(lookupx, save_file, row.names=FALSE)
-  } else{
-    write.table(lookupx, save_file, append=TRUE, sep=",", col.names=FALSE, row.names=FALSE, quote=TRUE) # append
-  }
-  
-  # sleep system to reduce overload
-  Sys.sleep(0.5)
-}
+# # =============== access publication year for Shaw; first for refs, then scrape PubMed ================
+# 
+# # extract numerics (year) and trim out second year marker
+# years = regmatches(shaw$Reference, gregexpr("[[:digit:]]+", shaw$Reference))
+# shaw$YearRef = as.numeric(unlist(lapply(years, "[", 1)))
+# 
+# # create dataframe of PMIDs to lookup
+# shaw$idx = 1:nrow(shaw)
+# query_df = shaw %>%
+#   dplyr::select(idx, PMID, Pathogen_Original) %>%
+#   dplyr::mutate(Database = "pubmed") %>%
+#   dplyr::filter(!is.na(PMID))
+# 
+# # function to lookup create and update dates from PubMed
+# pubMedDateLookup = function(ids){
+#   
+#   # result
+#   e = simpleError("lookup error")
+#   
+#   # lookup 5 attempts then break
+#   e = simpleError("test error")
+#   for(attempt in 1:5){
+#     search = tryCatch(entrez_summary(db="pubmed", id=ids), error=function(e) e)
+#     if(class(search)[1] != "simpleError"){ break }
+#     Sys.sleep(0.5)
+#   }
+#   
+#   # if throws error
+#   if(class(search)[1] == "simpleError"){
+#     resx = data.frame(id = ids)
+#     resx$PubDate = NA; resx$PubYear = NA
+#     resx$Lookup = "Fail"
+#     return(resx)
+#     
+#   } else{
+#     resx = data.frame(id = names(search))
+#     pubdatenullfilter = function(x){ 
+#       lx = x$pubdate
+#       if(is.null(lx)){ lx = NA }
+#       lx
+#     }
+#     resx$PubDate = unlist(lapply(search, pubdatenullfilter))
+#     resx$PubYear = substr(resx$PubDate, 1, 4)
+#     resx$Lookup = "Success"
+#   }
+#   
+#   # return
+#   return(resx)
+# }
+# 
+# # batches
+# batch = rep(1:1000, each=100); batch = batch[ 1:nrow(query_df) ]
+# query_df$batch = batch
+# 
+# # create filenames
+# output_loc = "./output/"
+# #save_file = paste(output_loc, "Shaw_Pubmedscrape_28122020_rentrez.csv", sep="")
+# 
+# # append each new query to csv
+# for(i in 1:n_distinct(query_df$batch)){
+#   
+#   # run query
+#   cat(paste(i, "...", sep=""))
+#       
+#   e = simpleError("lookup error")
+#   ids = query_df$PMID[ query_df$batch == unique(query_df$batch)[i] ]
+#   lookupx = tryCatch(pubMedDateLookup(ids))
+#   lookupx = rename(lookupx, "PMID" = id)
+#   lookupx$PMID = as.numeric(as.vector(lookupx$PMID))
+#   
+#   # combine with eid2 records
+#   lookupx = left_join(query_df[ query_df$batch == unique(query_df$batch)[i], ], lookupx,  by="PMID")
+#   
+#   # initialise file on first iteration, and then append
+#   if(class(lookupx)[1] == "simpleError"){ next
+#   } else if(i == 1){
+#     write.csv(lookupx, save_file, row.names=FALSE)
+#   } else{
+#     write.table(lookupx, save_file, append=TRUE, sep=",", col.names=FALSE, row.names=FALSE, quote=TRUE) # append
+#   }
+#   
+#   # sleep system to reduce overload
+#   Sys.sleep(0.5)
+# }
 
 
 #' # =============== save host names for lookup via taxize ================
@@ -175,7 +178,8 @@ shaw$YearRef[ shaw$YearRef >2019 & !is.na(shaw$YearRef)] = NA # couple of issues
 years_pm = read.csv("./output/crossref_temp/Shaw_Pubmedscrape_28122020_rentrez.csv", stringsAsFactors = FALSE) %>%
   dplyr::select(PMID, PubYear) %>%
   dplyr::rename("YearPubMed" = PubYear) %>%
-  dplyr::filter(!duplicated(PMID))
+  dplyr::filter(!duplicated(PMID)) %>%
+  dplyr::mutate(PMID = as.character(PMID))
 shaw = left_join(shaw, years_pm)
 
 # how many have years? 19% in database; 90% from PubMed
@@ -212,15 +216,14 @@ write.csv(shaw, "./output/hostpathogen_harmonised/Shaw_MammalViruses_AllHarmonis
 
 # subset to relevant columns, combine with assoc, subset to mammals only
 shaw_sub = shaw[ , c("Pathogen_Original", "Pathogen_Harmonised", "Type", "Host_Original", "Host_Harmonised", "HostClass",
-                     "HostOrder", "HostFamily", "HostSynonyms", "Year", "YearType", "Method")] %>%
-  dplyr::rename("PathogenType" = Type, "DetectionMethod_Original" = Method) %>%
+                     "HostOrder", "HostFamily", "HostSynonyms", "Year", "YearType", "Method", "ReferenceComb")] %>%
+  dplyr::rename("PathogenType" = Type, "DetectionMethod_Original" = Method, "Reference" = "ReferenceComb") %>%
   dplyr::mutate(Database = "Shaw",
-                Source = "Publication",
+                ReferenceType = "Publication and/or PMID",
                 PathogenType = tolower(PathogenType))
 assoc = assoc[ , which(names(assoc) %in% names(shaw_sub)) ]
 assoc = assoc[ assoc$HostClass == "Mammalia" & assoc$PathogenType == "virus", ]
 assoc = rbind(assoc, shaw_sub)
-assoc$Source = ifelse(assoc$Source == "NCBI Nucleotide", "NCBI Nucleotide", "Publication")
 
 # note on database version
 database_version = data.frame(Database=c("EID2", "Shaw", "GMPD2", "HP3"), DatabaseVersion = c("Wardeh et al. 2015 Sci Data", "Shaw et al. 2020 Mol Ecol", "Stephens et al. 2017 Ecology", "Olival et al. 2017 Nature"))
@@ -264,13 +267,31 @@ assoc$HostOrder[ assoc$HostOrder %in% c("Artiodactyla", "Cetacea") ] = "Cetartio
 # order, keep only distinct records, and save
 assoc = assoc %>%
   dplyr::arrange(HostOrder, Host_Harmonised, Pathogen_Harmonised, Database) %>%
-  dplyr::select(Host_Harmonised, Host_Original, HostClass, HostOrder, HostFamily, Pathogen_Harmonised, Pathogen_Original, PathogenType, Database, DatabaseVersion, Source, Year, YearType,
+  dplyr::select(Host_Harmonised, Host_Original, HostClass, HostOrder, HostFamily, Pathogen_Harmonised, Pathogen_Original, PathogenType, Database, DatabaseVersion, Reference, ReferenceType, Year, YearType,
                 DetectionMethod_Original, HostSynonyms) %>%
   distinct()
 
+
+
+# =============== EID2 has multiple records per year e.g. from Nucleotide; combine so each host-virus pair only has one record per year ==============
+
+# combine multiple records from EID2
+ei = assoc[ assoc$Database == "EID2", ]
+
+# subset
+combx = ei %>%
+  group_by(Host_Harmonised, Pathogen_Harmonised, Year, ReferenceType) %>%
+  dplyr::summarise(Reference = paste(Reference, collapse="; "))
+
+# combine with eid
+ei = ei %>%
+  dplyr::select(-Reference) %>%
+  distinct() %>%
+  left_join(combx)
+assoc = rbind(ei, assoc[ assoc$Database != "EID2", ])
+
 # write 
 #write.csv(assoc, "./output/Clover_reconciledassociations_v1_20201120.csv", row.names=FALSE)
-
 
 
 

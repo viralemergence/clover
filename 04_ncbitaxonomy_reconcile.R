@@ -113,7 +113,7 @@ assoc = assoc %>%
 
 # reorder columns
 assoc = assoc %>%
-  dplyr::select(Host, HostClass, HostOrder, HostFamily, Virus, VirusClass, VirusOrder, VirusFamily, VirusGenus, Year, YearType, Database, DatabaseVersion, Source,
+  dplyr::select(Host, HostClass, HostOrder, HostFamily, Virus, VirusClass, VirusOrder, VirusFamily, VirusGenus, Year, YearType, Database, DatabaseVersion, Reference, ReferenceType, 
                 DetectionMethod, Detection_NotSpecified, Detection_Serology, Detection_Genetic, Detection_Isolation,
                 Host_Original, Virus_Original, DetectionMethod_Original, Host_NCBIResolved, Virus_NCBIResolved, HostSynonyms) %>%
   distinct()
@@ -192,7 +192,8 @@ meta$Description = c("Host species (first taxized and then resolved against NCBI
                      "How was year obtained? Either scientific publication, listed in source database, or scraped from PubMed PMID or NCBI Nucleotide. If year is NA, it was not possible to resolve from source database",
                      "Source database",
                      "Version of source database that was accessed for CLOVER",
-                     "Was association reported in a publication, or accessed from NCBI Nucleotide?",
+                     "Citation as provided in original dataset",
+                     "Description of citation type (publication name; PubMed ID; NCBI Nucleotide ID)",
                      "Detection method (reconciled and harmonised to a simple classification system)",
                      "True/false flag",
                      "True/false flag",

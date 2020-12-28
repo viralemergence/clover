@@ -5,7 +5,7 @@
 # outstanding issue: EID2 human non-virus pathogens still need initial harmonisation if expanding to all pathogen types
 
 # dependencies and basedir
-setwd("C:/Users/roryj/Documents/PhD/202011_clover/")
+setwd("C:/Users/roryj/Documents/PhD/202011_clover/clover/")
 pacman::p_load("dplyr", "magrittr")
 
 
@@ -46,9 +46,9 @@ eid2 = data.frame(HostType = eid$Carrier.classification,
                   ParasiteGenus = tolower(unlist(lapply(strsplit(par_temp1, " "), "[[", 1))),
                   ParasiteSpecies = par_temp2,
                   Database = "EID2",
-                  Source = eid$YearType,
+                  #Source = eid$YearType,
                   Year = eid$Year,
-                  NCBI_ID = eid$id,
+                  Reference = eid$id,
                   YearType = eid$YearType,
                   stringsAsFactors=F)
 
@@ -99,6 +99,7 @@ gmpd2 = data.frame(HostType = gmpd2$Group,
                    Year = gmpd2$Year,
                    YearType = "ScientificPublicationDate",
                    Database = "GMPD2",
+                   Citation = gmpd2$Citation,
                    HostsSampled = gmpd2$HostsSampled,
                    Seroprevalence = gmpd2$Prevalence,
                    Location = gmpd2$LocationName,
@@ -128,13 +129,13 @@ gmpd2 = gmpd2[ gmpd2$ParasiteType %in% c("helminth", "protozoa", "virus", "fungi
 
 # harmonised pathogen names
 assoc = read.csv("./data/harmonisednames_rg/GMPD2_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
-  select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Any, DiseaseAgent, IsZoonotic, Disease_GIDEON, Route_GIDEON, UN_subregion, Countries_EID2Wertheim)
+  dplyr::select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Any, DiseaseAgent, IsZoonotic, Disease_GIDEON, Route_GIDEON, UN_subregion, Countries_EID2Wertheim)
 
 # get data on missing pathogens from eid2 (some pathogen metadata missing in updated pipeline - not sure why but still in harmonised EID2 file)
 missing = gmpd2[ which(!gmpd2$Parasite %in% assoc$Pathogen), ]
 missingrecs = read.csv("./data/harmonisednames_rg/EID2_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
-  select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Any, DiseaseAgent, IsZoonotic, Disease_GIDEON, Route_GIDEON, UN_subregion, Countries_EID2Wertheim) %>%
-  filter(Pathogen_Original %in% missing$Parasite)
+  dplyr::select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Any, DiseaseAgent, IsZoonotic, Disease_GIDEON, Route_GIDEON, UN_subregion, Countries_EID2Wertheim) %>%
+  dplyr::filter(Pathogen_Original %in% missing$Parasite)
 assoc = rbind(assoc, missingrecs)
 
 # combine and save
@@ -147,7 +148,7 @@ write.csv(gmpd2, "./output/hostpathogen_harmonised/GMPD2_Mammals_Harmonised_Oct2
 
 # host-pathogen associations based on both serology and infection status
 oliv_assoc = read.csv("./data/HP3_associations.csv", stringsAsFactors = F) %>%
-  select(-WildDomInReference)
+  dplyr::select(-WildDomInReference)
 oliv_vir = read.csv("./data/HP3_viruses.csv", stringsAsFactors = F)
 oliv_mam = read.csv("./data/HP3_hosts.csv", stringsAsFactors = F)
 
@@ -184,9 +185,9 @@ hp3$Database = "HP3"
 
 # harmoniesd pathogen names and definitions
 assoc = read.csv("./data/harmonisednames_rg/Olival_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
-  select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Olival,  Zoonotic_Olival_Strict, HumanInfective_External, IsZoonotic, DiseaseAgent, Disease_GIDEON, Route_GIDEON) %>%
+  dplyr::select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Olival,  Zoonotic_Olival_Strict, HumanInfective_External, IsZoonotic, DiseaseAgent, Disease_GIDEON, Route_GIDEON) %>%
   dplyr::mutate(HumanInfective_Any = ifelse(HumanInfective_Olival == 1 | HumanInfective_External == 1, 1, 0)) %>%
-  select(-HumanInfective_Olival, -Zoonotic_Olival_Strict)
+  dplyr::select(-HumanInfective_Olival, -Zoonotic_Olival_Strict)
 hp3 = left_join(hp3, assoc, by=c("Parasite"="Pathogen_Original"))
 
 # standardise columns (tolower for all taxonomy)
@@ -201,19 +202,19 @@ write.csv(hp3, "./output/hostpathogen_harmonised/HP3_MammalViruses_Harmonised_Oc
 
 # read in files
 eid2 = read.csv("./output/hostpathogen_harmonised/EID2_MammalsBirds_Harmonised_Oct2020.csv", stringsAsFactors = FALSE)  %>%
-  dplyr::mutate(Source = ifelse(grepl("Nucleotide", YearType), "NCBI Nucleotide", "PubMed publication"))
+  dplyr::mutate(ReferenceType = ifelse(grepl("Nucleotide", YearType), "NCBI Nucleotide", "PMID"))
 gmpd2 = read.csv("./output/hostpathogen_harmonised/GMPD2_Mammals_Harmonised_Oct2020.csv", stringsAsFactors = FALSE) %>%
+  dplyr::rename("Reference" = Citation) %>%
   dplyr::mutate(YearType = "Scientific publication date (earliest)",
-                Source = "Publication")
+                ReferenceType = "Publication (from source database)")
 hp3 = read.csv("./output/hostpathogen_harmonised/HP3_MammalViruses_Harmonised_Oct2020.csv", stringsAsFactors = FALSE)  %>%
+  dplyr::rename("Reference" = Citation) %>%
   dplyr::mutate(YearType = "Scientific publication date (earliest)",
-                Source = "Publication")
+                ReferenceType = "Publication (from source database)")
 
 # combine keeping columns present in all 3 databases
 cols = Reduce(intersect, list(names(eid2), names(gmpd2), names(hp3)))
 assoc = rbind(eid2[ , cols], gmpd2[ , cols], hp3[ , cols])
-
-# remove detection quality (finalise when combined with Shaw)
 assoc = assoc[ , - which(names(assoc) == "DetectionQuality")]
 
 # standardise host names (resolve synonyms using ITIS/CoL)
@@ -247,7 +248,7 @@ assoc = assoc %>%
          "PathogenType" = ParasiteType,
          "DetectionMethod_Original" = DetectionMethod,
          "Pathogen_Harmonised" = PathogenName_Harmonised)
-assoc = assoc[ , c("Database", "Source", "Pathogen_Original", "Pathogen_Harmonised", "PathogenType", 
+assoc = assoc[ , c("Database", "Reference", "ReferenceType", "Pathogen_Original", "Pathogen_Harmonised", "PathogenType", 
                    "Host_Original", "Host_Harmonised", "HostClass", "HostOrder", "HostFamily", "HostSynonyms",
                    "Year", "YearType", "DetectionMethod_Original", "HumanInfective_Any", "DiseaseAgent", "IsZoonotic", "Disease_GIDEON", "Route_GIDEON")]
 
