@@ -15,8 +15,8 @@ Rory Gibb, Gregory Albery, Timothée Poisot, and Colin Carlson
 
 The integrated CLOVER dataset, currently limited to mammal viruses:
 
- ↳ output → Clover_v1.0_NCBIreconciled_20201211.csv
-
+ ↳ output → Clover_v1.0_NCBIreconciled_20201218.csv (database)
+ ↳ output → Clover_v1.0_ColumnDescriptions_20201218.csv (field descriptions)
 
 A full reconciled dataset of all four databases that includes non-virus pathogens and parasites:
 
