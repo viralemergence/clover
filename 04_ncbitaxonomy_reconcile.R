@@ -1,18 +1,22 @@
 
 
 
-# ================= Reconcile host and virus taxonomy using NCBITaxonomy.jl lookup ==================
+# ================= Reconcile mammal host and virus taxonomy against NCBITaxonomy.jl lookup ==================
+
+# Host and virus harmonised names are standardised against the NCBI Taxonomy backbone
+# This script resolves names based on NCBITaxonomy.jl lookups to ensure consistent nomenclature
+# Finally, any outstanding host species without clear matches in NCBI are cross-referenced against IUCN and Wilson & Reeder (~100 species)
 
 # dependencies and basedir
 setwd("C:/Users/roryj/Documents/PhD/202011_clover/clover/")
-pacman::p_load("RISmed", "dplyr", "magrittr")
+pacman::p_load("dplyr", "magrittr")
 
 # associations data
 assoc = read.csv("./output/intermediate_versions/Clover_reconciledassociations_v1_20201120.csv", stringsAsFactors = FALSE)
-assoc = assoc[ assoc$Pathogen_Harmonised != "bse agent", ]
+assoc = assoc[ !assoc$Pathogen_Harmonised %in% c("bse agent", "pepper mild mottle"), ]
 
 # remove nucleotide year (lookup issues)
-assoc$Year[ assoc$YearType == "Nucleotide" ] = NA
+#assoc$Year[ assoc$YearType == "Nucleotide" ] = NA
 
 
 
@@ -109,12 +113,10 @@ assoc = assoc %>%
 
 # reorder columns
 assoc = assoc %>%
-  dplyr::select(Host, HostClass, HostOrder, HostFamily, Virus, VirusClass, VirusOrder, VirusFamily, VirusGenus, Year, YearType, Database, DatabaseVersion, 
+  dplyr::select(Host, HostClass, HostOrder, HostFamily, Virus, VirusClass, VirusOrder, VirusFamily, VirusGenus, Year, YearType, Database, DatabaseVersion, Source,
                 DetectionMethod, Detection_NotSpecified, Detection_Serology, Detection_Genetic, Detection_Isolation,
-                Host_Original, Virus_Original, DetectionMethod_Original, Host_NCBIResolved, Virus_NCBIResolved, HostSynonyms) 
-
-# save
-write.csv(assoc, "./output/Clover_v1.0_NBCIreconciled_20201211.csv", row.names=FALSE)
+                Host_Original, Virus_Original, DetectionMethod_Original, Host_NCBIResolved, Virus_NCBIResolved, HostSynonyms) %>%
+  distinct()
 
 # # save corrected records for Tim
 # vir_corrected = vir_checked %>%
@@ -144,7 +146,7 @@ iucn = sf::st_read("C:/Users/roryj/Documents/PhD/202011_clover/data/iucn_range/M
 
 # issues
 issues = assoc[ !assoc$Host %in% iucn$binomial, ] %>% 
-  select(Host, HostClass, HostOrder, HostFamily, Host_Original, HostSynonyms, Host_NCBIResolved) %>%
+  dplyr::select(Host, HostClass, HostOrder, HostFamily, Host_Original, HostSynonyms, Host_NCBIResolved) %>%
   distinct()
 #write.csv(issues, "./output/iucn_crossref/HostIssues_CLOVER.csv", row.names=FALSE)
 
@@ -168,15 +170,38 @@ foo = assoc[ assoc$Host %in% issues_rg$Host, ] %>%
 # combine, order and save
 assoc_updated = rbind( assoc[ !assoc$Host %in% issues_rg$Host, ], foo) %>%
   dplyr::arrange(HostOrder, Host, VirusOrder, Virus)
-write.csv(assoc_updated, "./output/Clover_v1.0_NBCIreconciled_20201211.csv", row.names=FALSE)
+write.csv(assoc_updated, "./output/Clover_v1.0_NBCIreconciled_20201218.csv", row.names=FALSE)
 
 
 
 
+# ================= column descriptors CSV ==================
 
-
-
-
-
-
-
+# create
+meta = data.frame(ColName = colnames(assoc_updated))
+meta$Description = c("Host species (first taxized and then resolved against NCBI Taxonomy, with outstanding issues cross-referenced to IUCN)",
+                     "Host taxonomic class",
+                     "Host taxonomic order", 
+                     "Host taxonomic family",
+                     "Virus species (manually harmonised across datasets, then resolved against NCBI Taxonomy)",
+                     "Virus taxonomic class",
+                     "Virus taxonomic order", 
+                     "Virus taxonomic family", 
+                     "Virus taxonomic genus",
+                     "Year association was reported (if multiple year were included in source database record, the earliest is reported)",
+                     "How was year obtained? Either scientific publication, listed in source database, or scraped from PubMed PMID or NCBI Nucleotide. If year is NA, it was not possible to resolve from source database",
+                     "Source database",
+                     "Version of source database that was accessed for CLOVER",
+                     "Was association reported in a publication, or accessed from NCBI Nucleotide?",
+                     "Detection method (reconciled and harmonised to a simple classification system)",
+                     "True/false flag",
+                     "True/false flag",
+                     "True/false flag",
+                     "True/false flag",
+                     "Host species as listed in source database",
+                     "Virus species as listed in source database",
+                     "Detection method as described in source database",
+                     "Does host species name have an exact match in NCBITaxonomy? True/false",
+                     "Does virus species name have an exact match in NCBITaxonomy? True/false",
+                     "Synonyms of host species, accessed from taxize")
+write.csv(meta, "./output/Clover_v1.0_ColumnDescriptions_20201218.csv")

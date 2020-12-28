@@ -912,3 +912,6 @@ upsilonpapillomavirus 1,TRUE,viruses,Zurhausenvirales,Papovaviricetes,Papillomav
 upsilonpapillomavirus 3,TRUE,viruses,Zurhausenvirales,Papovaviricetes,Papillomaviridae,Upsilonpapillomavirus,Upsilonpapillomavirus 3,,,,,,,,
 walrus calicivirus,TRUE,viruses,Picornavirales,Pisoniviricetes,Caliciviridae,Vesivirus,Vesicular exanthema of swine virus,,,,,,,,
 zaire ebolavirus,TRUE,viruses,Mononegavirales,Monjiviricetes,Filoviridae,Ebolavirus,Zaire ebolavirus,,,,,,,,
+enterovirus d68,TRUE,viruses,Picornavirales,Pisoniviricetes,Picornaviridae,Enterovirus,Enterovirus D,,,,,,,,
+infectious spleen and kidney necrosis,FALSE,viruses,Pimascovirales,Megaviricetes,Iridoviridae,Megalocytivirus,Infectious spleen and kidney necrosis virus,,,,,,,,
+kemerovo,TRUE,viruses,Reovirales,Resentoviricetes,Reoviridae,Orbivirus,Kemerovo virus,,,,,,,,
