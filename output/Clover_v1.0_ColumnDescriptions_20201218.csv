@@ -25,3 +25,4 @@
 "24","Host_NCBIResolved","Does host species name have an exact match in NCBITaxonomy? True/false"
 "25","Virus_NCBIResolved","Does virus species name have an exact match in NCBITaxonomy? True/false"
 "26","HostSynonyms","Synonyms of host species, accessed from taxize"
+"27","Host_IsDomestic","Is host species domesticated? True/false"

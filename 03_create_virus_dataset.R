@@ -273,7 +273,7 @@ assoc = assoc %>%
 
 
 
-# =============== EID2 has multiple records per year e.g. from Nucleotide; combine so each host-virus pair only has one record per year ==============
+# ============= EID2 reports multiple instances of same association using nuccore/PMID; collapse down to one record per year ==============
 
 # combine multiple records from EID2
 ei = assoc[ assoc$Database == "EID2", ]

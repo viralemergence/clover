@@ -174,6 +174,23 @@ write.csv(assoc_updated, "./output/Clover_v1.0_NBCIreconciled_20201218.csv", row
 
 
 
+# ================ add domestic species metadata ================
+
+# flag species in assoc that are domestic
+load("./data/domesticspecies_list/domestic_species.R")
+domestic = c(domestic, "canis familiaris", 
+             "bos frontalis", 
+             "bos grunniens", 
+             "bos taurus indicus",
+             "bos taurus primigenius",
+             "bubalus bubalis",
+             "bubalus carabanensis",
+             "lama glama guanicoe",
+             "vicugna pacos")
+domestic = Hmisc::capitalize(domestic)
+assoc_updated$Host_IsDomestic = ifelse(assoc_updated$Host %in% domestic, TRUE, FALSE)
+write.csv(assoc_updated, "./output/Clover_v1.0_NBCIreconciled_20201218.csv", row.names=FALSE)
+
 
 # ================= column descriptors CSV ==================
 
@@ -204,5 +221,6 @@ meta$Description = c("Host species (first taxized and then resolved against NCBI
                      "Detection method as described in source database",
                      "Does host species name have an exact match in NCBITaxonomy? True/false",
                      "Does virus species name have an exact match in NCBITaxonomy? True/false",
-                     "Synonyms of host species, accessed from taxize")
+                     "Synonyms of host species, accessed from taxize",
+                     "Is host species domesticated? True/false")
 write.csv(meta, "./output/Clover_v1.0_ColumnDescriptions_20201218.csv")

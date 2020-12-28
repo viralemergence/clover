@@ -176,6 +176,9 @@ yy[ yy == Inf ] = NA
 hp3$Year = yy
 hp3$YearType = "ScientificPublicationDate_Earliest"
 
+# correct erroneous years (http in reference)
+hp3$Year[ (hp3$Year < 1920 | hp3$Year > 2018) & !is.na(hp3$Year) ] = NA
+
 # rename columns to standardise with other datasets
 names(hp3) = c("Parasite", "Host", "DetectionMethod", "DetectionQuality", "Citation", "HostOrder", "HostFamily", "HostGenus", "HostSpecies", 
                "ParasiteOrder", "ParasiteFamily", "ParasiteSubfamily", "ParasiteGenus", "SSorDS", "DNAorRNA", "Envelope", "Segmented", 
