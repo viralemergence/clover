@@ -16,11 +16,13 @@ Rory Gibb, Gregory Albery, Timothée Poisot, and Colin Carlson
 The integrated CLOVER dataset, currently limited to mammal viruses (database and separate csv of field descriptions)
 
  ↳ clover → Clover_v1.0_NCBIreconciled_20201218.csv
+
  ↳ clover → Clover_v1.0_ColumnDescriptions_20201218.csv
  
 Metadata and scripts for linking CLOVER to a [mammal phylogeny](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000494) and information on host species' domestication status
 
  ↳ clover → phylogenies
+
  ↳ clover → domestic_status
  
 A full reconciled dataset of all four databases that includes non-virus pathogens and parasites (currently internally harmonised but not yet standardised to NCBI Taxonomy)
