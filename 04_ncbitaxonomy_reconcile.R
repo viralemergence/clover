@@ -13,10 +13,7 @@ pacman::p_load("dplyr", "magrittr")
 
 # associations data
 assoc = read.csv("./output/intermediate_versions/Clover_reconciledassociations_v1_20201120.csv", stringsAsFactors = FALSE)
-assoc = assoc[ !assoc$Pathogen_Harmonised %in% c("bse agent", "pepper mild mottle"), ]
-
-# remove nucleotide year (lookup issues)
-#assoc$Year[ assoc$YearType == "Nucleotide" ] = NA
+assoc = assoc[ !assoc$Pathogen_Harmonised %in% c("bse agent", "pepper mild mottle"), ] # non viruses/erroneous
 
 
 
@@ -51,6 +48,7 @@ names(vir) = c("Pathogen_Harmonised", "VirusClass", "VirusOrder", "VirusFamily",
 assoc = left_join(assoc, vir, by="Pathogen_Harmonised") %>%
   dplyr::select(-Pathogen_Harmonised) %>%
   dplyr::rename("Virus_Original" = Pathogen_Original)
+
 
 
 
@@ -90,26 +88,6 @@ assoc = assoc %>%
   dplyr::mutate(Host_Original = Hmisc::capitalize(Host_Original),
                 Virus_Original = Hmisc::capitalize(Virus_Original),
                 PathogenType = "Virus")
-
-
-
-# =========================== reorder columns and save ===========================
-
-# Host = host species (first taxized and then resolved against NCBI)
-# HostClass, HostOrder, HostFamily = taxonomic information (resolved against NCBI)
-# Virus = virus species (manually harmonised then reconciled with ref to NCBI)
-# VirusClass, VirusOrder, VirusFamily, VirusGenus = taxonomic info (accessed from NCBI)
-# Year = year reported
-# YearType = how was year obtained? (author = in source db; pubmed = from pubmed scrape; nucleotide = from nucleotide scrape)
-# Database = source database
-# DatabaseVersion = version of source database that was accessed for CLOVER
-# DetectionMethod = detection method (reconciled and harmonised to a simple classification system)
-# DetectionMethod_NotSpecified, Serology, Genetic, Isolation = TRUE/FALSE flags for detection method
-# Host_Original = host species as listed in source database
-# Virus_Original = virus species as listed in source database
-# DetectionMethod_Original = detection method as reported in source database
-# Host or Virus_NCBIResolved = does Host/Virus column have an exact match in NCBITaxonomy? TRUE/FALSE
-# HostSynonyms = synonyms of host species (accessed from taxize)
 
 # reorder columns
 assoc = assoc %>%
@@ -155,7 +133,7 @@ issues = assoc[ !assoc$Host %in% iucn$binomial, ] %>%
 issues_rg = read.csv("./output/iucn_crossref/HostIssues_CLOVER_rg.csv", stringsAsFactors = FALSE) %>%
   dplyr::filter(Record_Updated == TRUE)
 
-# correct issues in assoc database 1: domestic dog across all records ahnd "Artiodactyla"
+# correct issues in assoc database 1: domestic dog across all records and "Artiodactyla"
 assoc$Host[ assoc$Host_Original == "Canis lupus familiaris" ] = "Canis lupus familiaris"
 assoc$HostOrder[ assoc$HostOrder == "Artiodactyla" ] = "Cetartiodactyla"
 
@@ -170,26 +148,8 @@ foo = assoc[ assoc$Host %in% issues_rg$Host, ] %>%
 # combine, order and save
 assoc_updated = rbind( assoc[ !assoc$Host %in% issues_rg$Host, ], foo) %>%
   dplyr::arrange(HostOrder, Host, VirusOrder, Virus)
-write.csv(assoc_updated, "./output/Clover_v1.0_NBCIreconciled_20201218.csv", row.names=FALSE)
+write.csv(assoc_updated, "./clover/Clover_v1.0_NBCIreconciled_20201218.csv", row.names=FALSE)
 
-
-
-# ================ add domestic species metadata ================
-
-# flag species in assoc that are domestic
-load("./data/domesticspecies_list/domestic_species.R")
-domestic = c(domestic, "canis familiaris", 
-             "bos frontalis", 
-             "bos grunniens", 
-             "bos taurus indicus",
-             "bos taurus primigenius",
-             "bubalus bubalis",
-             "bubalus carabanensis",
-             "lama glama guanicoe",
-             "vicugna pacos")
-domestic = Hmisc::capitalize(domestic)
-assoc_updated$Host_IsDomestic = ifelse(assoc_updated$Host %in% domestic, TRUE, FALSE)
-write.csv(assoc_updated, "./output/Clover_v1.0_NBCIreconciled_20201218.csv", row.names=FALSE)
 
 
 # ================= column descriptors CSV ==================
@@ -221,6 +181,6 @@ meta$Description = c("Host species (first taxized and then resolved against NCBI
                      "Detection method as described in source database",
                      "Does host species name have an exact match in NCBITaxonomy? True/false",
                      "Does virus species name have an exact match in NCBITaxonomy? True/false",
-                     "Synonyms of host species, accessed from taxize",
-                     "Is host species domesticated? True/false")
-write.csv(meta, "./output/Clover_v1.0_ColumnDescriptions_20201218.csv")
+                     "Synonyms of host species, accessed from taxize")
+write.csv(meta, "./clover/Clover_v1.0_ColumnDescriptions_20201218.csv")
+

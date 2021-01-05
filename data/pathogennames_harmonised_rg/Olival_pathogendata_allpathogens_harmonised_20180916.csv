@@ -1,0 +1,587 @@
+Pathogen_Original,PathogenName_Harmonised,PathogenType,HumanInfective_Olival,Zoonotic_Olival_Strict,HumanInfective_External,DiseaseAgent,IsZoonotic,InGIDEON,Disease_GIDEON,Route_GIDEON,AnimalReservoir_GIDEON,VectorBorne,Vector_GIDEON,InWertheim,Disease_Wertheim,AnimalReservoir_Taylor
+adeno-associated virus-1,adeno-associated virus-1,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+adeno-associated virus-2,adeno-associated virus-2,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+african green monkey polyomavirus,african green monkey polyomavirus,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+aleutian mink disease,aleutian mink disease,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+andes,andes,virus,1,1,1,1,1,1,hantavirus pulmonary syndrome,"direct, environmental, respiratory",1,0,NA,1,hantavirus cardiopulmonary syndrome,1
+anopheles a,anopheles a,virus,1,1,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+aroa,aroa,virus,1,1,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+aura,aura,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+australian bat lyssavirus,australian bat lyssavirus,virus,1,1,1,1,1,1,rabies,"direct, bite",1,0,NA,1,fatal encephalitis,1
+banna,banna,virus,1,1,1,1,1,1,old world coltivirus infection,vector,1,1,"mosquito (culex spp., anopheles spp., aedes spp.)",1,Encephalitis,1
+banzi,banzi,virus,1,1,1,1,1,1,spondweni,vector,1,1,"mosquito (Aedes circumluteolus, Armigeres, Culex, Eretmapodites, Mansonia)",0,NA,1
+barmah forest,barmah forest,virus,1,0,1,1,1,1,barmah forest disease,vector,1,1,"mosquito (Aedes vigilax, Ae. camptorhynchus, Culex spp., Ae. normanensis and Coquillettidia spp)",1,Barmah Forest virus disease,1
+bayou,bayou,virus,1,1,1,1,1,1,hantavirus pulmonary syndrome,"direct, environment, respiratory",1,0,NA,1,Hantavirus Pulmonary Syndrome,1
+bhanja,bhanja,virus,1,0,1,1,1,1,bunyaviridae misc,vector,1,0,NA,0,NA,1
+black creek canal,black creek canal,virus,1,1,1,1,1,1,hantavirus pulmonary syndrome,"direct, environment, respiratory",1,0,NA,1,Hantavirus Pulmonary Syndrome,1
+borna disease,borna,virus,1,0,1,1,1,1,borna virus encephalitis,unknown,1,0,NA,1,none reported,1
+bouboui,bouboui,virus,1,1,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine leukemia,bovine leukemia,virus,1,0,1,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine papular stomatitis,bovine papular stomatitis,virus,1,1,1,0,1,0,NA,NA,0,0,NA,0,NA,1
+bunyamwera,bunyamwera,virus,1,1,1,1,1,1,bunyaviridae misc,vector,1,1,mosquito,1,viral hemorrhagic fever,1
+california encephalitis,california encephalitis,virus,1,1,1,1,1,1,california encephalitis,vector,1,1,mosquito,0,NA,1
+camelpox,camelpox,virus,1,0,0,1,1,1,camelpox (vaccinia and cowpox),direct,1,0,NA,0,NA,0
+canine distemper,canine distemper,virus,1,1,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+caraparu,caraparu,virus,1,1,1,1,1,1,group c viral fevers,vector,1,1,"mosquito (culex, aedes, limatus, wyeomyia, coquillettidia, mansonia, psophora)",1,bunyavirus group c disease,1
+catu,catu,virus,1,1,1,1,1,1,bunyaviridae infections misc.,vector,1,1,mosquito,0,NA,1
+cercopithecine herpesvirus 1,cercopithecine herpesvirus 1,virus,1,1,1,1,1,1,herpes b infection,"direct, respiratory",1,0,NA,1,herpes b infection,1
+chandipura,chandipura,virus,1,1,1,1,1,1,chandipura virus infection,"vector, contact",1,1,sandfly,0,NA,1
+changuinola,changuinola,virus,1,1,1,1,1,1,new world phlebovirus,vector,1,1,"sandfly (lutzomyia), tick",0,NA,1
+chikungunya,chikungunya,virus,1,1,1,1,1,1,chikungunya fever,vector,1,1,mosquito (aedes spp.),1,chikungunya fever,1
+colorado tick fever,colorado tick fever,virus,1,1,1,1,1,1,colorado tick fever,vector,1,1,tick (Dermacentor andersoni),1,Colorado Tick fever,1
+corriparta,corriparta,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cote d'ivoire ebolavirus,tai forest ebolavirus,virus,1,1,1,1,1,1,ebola,"direct, environment, sexual",1,0,NA,1,ebola,1
+cowpox,cowpox,virus,1,1,1,1,1,1,cowpox,direct,1,0,NA,1,cowpox,1
+crimean-congo hemorrhagic fever,crimean-congo hemorrhagic fever,virus,1,1,1,1,1,1,crimean-congo hemorrhagic fever,"vector, direct",1,1,tick (hyalomma),1,crimean-congo hemorrhagic fever,1
+dengue,dengue,virus,1,1,1,1,1,1,dengue,"vector, direct",1,1,aedes spp.,1,dengue,1
+dera ghazi khan,dera ghazi khan,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+dhori,dhori,virus,1,0,1,1,1,1,viral encephalitis or hepatitis,vector,1,1,tick,0,NA,1
+dobrava-belgrade,dobrava-belgrade,virus,1,1,1,1,1,1,old world hantavirus,"direct, environmental, respiratory",1,0,NA,0,NA,1
+dugbe,dugbe,virus,1,0,1,0,1,0,NA,NA,0,0,NA,0,NA,1
+duvenhage,duvenhage,virus,1,1,1,1,1,1,rabies,"direct, bite",1,0,NA,0,NA,1
+eastern equine encephalitis,eastern equine encephalitis,virus,1,0,1,1,1,1,eastern equine encephalitis,vector,1,1,"mosquito (aedes, culiseta)",1,eastern equine encephalitis,1
+encephalomyocarditis,encephalomyocarditis,virus,1,1,1,1,1,1,respiratory viruses (misc),respiratory,0,0,NA,0,NA,1
+european bat lyssavirus 1,european bat lyssavirus 1,virus,1,1,1,1,1,1,rabies,"direct, bite",1,0,NA,1,rabies,1
+european bat lyssavirus 2,european bat lyssavirus 2,virus,1,1,1,1,1,1,rabies,"direct, bite",1,0,NA,1,rabies,1
+everglades,everglades,virus,1,0,1,1,1,1,venezuelan equine encephalitis-related,vector,1,1,"mosquito (culex spp., aedes taeniorhynchus, psophora confinnis, anopheles spp.)",1,encephalitis,1
+flexal,flexal,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+foot-and-mouth disease,foot-and-mouth disease,virus,1,1,1,0,1,0,NA,NA,0,0,NA,0,NA,1
+gan gan,gan gan,virus,1,0,1,1,1,1,barmah forest disease,vector,1,1,"mosquito (Aedes vigilax, Ae. camptorhynchus, Culex spp., Ae. normanensis and Coquillettidia spp)",0,NA,1
+gb virus c,gb virus c,virus,1,1,0,1,0,1,human pegivirus infection,"fluids, sexual",0,0,NA,0,NA,0
+getah,getah,virus,1,1,1,0,1,0,NA,NA,0,0,NA,0,NA,1
+gibbon ape leukemia,gibbon ape leukemia,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+great island,great island,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+guama,guama,virus,1,1,1,1,1,1,bunyaviridae infections misc.,vector,1,1,mosquito,0,NA,1
+guanarito,guanarito,virus,1,1,1,1,1,1,venezuelan haemorrhagic fever,"direct, environment, respiratory",1,0,NA,1,Venezuelan hemorrhagic fever,1
+guaroa,guaroa,virus,1,0,1,1,1,1,california encephalitis,vector,1,1,"mosquito (aedes, anopheles triseriatus, culex, psorophora)",0,NA,1
+hantaan,hantaan,virus,1,0,1,1,1,1,old world hantavirus,"direct, environmental, respiratory",1,0,NA,1,hemorrhagic fever with renal syndrome,1
+hendra,hendra,virus,1,1,1,1,1,1,hendra virus disease,"direct, environmental, respiratory",1,0,NA,1,hendra virus,1
+hepatitis a,hepatitis a,virus,1,1,1,1,1,1,hepatitis a,"food, water, fecal-oral",1,0,NA,0,NA,1
+hepatitis b,hepatitis b,virus,1,1,1,1,1,1,hepatitis b,"direct, sexual, blood",1,0,NA,0,NA,0
+hepatitis e,hepatitis e,virus,1,0,1,1,1,1,hepatitis e,"fecal-oral, water, food",1,0,NA,0,NA,1
+human adenovirus a,human adenovirus a,virus,1,1,1,1,0,1,adenovirus infection,"respiratory, water",0,0,NA,0,NA,0
+human adenovirus b,human adenovirus b,virus,1,1,1,1,1,1,adenovirus infection,"airborne, water",1,0,NA,0,NA,0
+human adenovirus c,human adenovirus c,virus,1,1,1,1,1,1,adenovirus infection,"airborne, water",1,0,NA,0,NA,0
+human adenovirus d,human adenovirus d,virus,1,1,1,1,0,1,adenovirus infection,respiratory,0,0,NA,0,NA,0
+human adenovirus e,human adenovirus e,virus,1,1,1,1,0,1,adenovirus infection,respiratory,0,0,NA,0,NA,0
+human adenovirus f,human adenovirus f,virus,1,1,1,1,0,1,adenovirus infection,respiratory,0,0,NA,0,NA,0
+human coronavirus 229e,human coronavirus 229e,virus,1,0,1,1,0,1,respiratory viruses (misc),"respiratory, direct",0,0,NA,0,NA,0
+human enterovirus a,enterovirus a,virus,1,1,1,1,0,1,enterovirus infection,"fecal-oral, direct, respiratory",0,0,NA,0,NA,0
+human enterovirus b,enterovirus b,virus,1,1,1,1,0,1,NA,NA,0,0,NA,0,NA,0
+human enterovirus d,enterovirus d,virus,1,1,1,1,0,1,enterovirus infection,"fecal-oral, direct, respiratory",0,0,NA,0,NA,0
+human herpesvirus 1,human herpesvirus 1,virus,1,1,1,1,0,1,"herpes simplex encephalitis, herpes simplex","direct, sexual",0,0,NA,0,NA,0
+human herpesvirus 4,human herpesvirus 4,virus,1,1,1,1,0,1,infectious mononucleosis,"blood, respiratory",0,0,NA,0,NA,0
+human herpesvirus 5,human herpesvirus 5,virus,1,0,1,1,0,1,cytomegalovirus 5,"direct, sexual, fluid, respiratory",0,0,NA,0,NA,0
+human metapneumovirus,human metapneumovirus,virus,1,1,1,1,0,1,metapneumovirus infection,"fluids, respiratory",0,0,NA,0,NA,0
+human norovirus-alphatron,human norovirus-alphatron,virus,1,1,1,1,0,1,viral gastoenteritis,"food, water",0,0,NA,0,NA,0
+human parainfluenza virus 1,human parainfluenza virus 1,virus,1,0,1,1,0,1,parainfluenza virus infection,respiratory,0,0,NA,0,NA,0
+human parainfluenza virus 2,human parainfluenza virus 2,virus,1,0,1,1,0,1,parainfluenza virus infection,respiratory,0,0,NA,0,NA,0
+human parainfluenza virus 3,human parainfluenza virus 3,virus,1,1,1,1,0,1,parainfluenza virus infection,respiratory,0,0,NA,0,NA,0
+human picobirnavirus,human picobirnavirus,virus,1,1,1,1,0,1,viral gastoenteritis,"food, water",0,0,NA,0,NA,0
+human respiratory syncytial,human respiratory syncytial,virus,1,1,1,1,0,1,human respiratory syncytial virus infection,"fluids, respiratory",0,0,NA,0,NA,0
+ilheus,ilheus,virus,1,0,1,1,1,1,ilheus,vector,1,1,"mosquito (Aedes, Culex, Coquillettidia, Haemagogus, Psorophora, Sabethes, Trichoprosopon and Wyeomyia spp.",1,hantavirus infection,1
+influenza a,influenza a,virus,1,1,1,1,1,1,influenza,"respiratory, direct",1,0,NA,0,NA,1
+influenza b,influenza b,virus,1,1,1,1,1,1,influenza,"respiratory, direct",1,0,NA,0,NA,1
+influenza c,influenza c,virus,1,1,1,1,1,1,influenza,"respiratory, direct",1,0,NA,0,NA,1
+isfahan,isfahan,virus,1,0,0,1,1,1,vesicular stomatitis-related,vector,1,1,sandfly,0,NA,0
+japanese encephalitis,japanese encephalitis,virus,1,0,1,1,1,1,japanese encephalitis,vector,1,1,"mosquito (aedes spp., anopheles barbirostris and hyrcanus groups, culex tritaeniorhynchus group and cu. annulus)",1,japanese encephalitis,1
+junin,junin,virus,1,1,1,1,1,1,argentine haemorrhagic fever,"direct, food, water",1,0,NA,1,argentinian hemorrhagic fever,1
+kairi,kairi,virus,1,0,1,1,1,1,bunyaviridae infections misc.,vector,1,1,mosquito,0,NA,1
+kasokero,kasokero,virus,1,1,1,0,1,0,NA,NA,0,0,NA,0,NA,1
+kokobera,kokobera,virus,1,0,1,1,1,1,barmah forest-related,vector,1,1,"mosquito (Aedes vigilax, Ae. camptorhynchus, Culex spp., Ae. normanensis and Coquillettidia spp)",0,NA,1
+kotonkan,kotonkan,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+koutango,koutango,virus,1,1,1,1,1,1,spondweni,vector,1,1,"mosquito (Aedes circumluteolus, Armigeres, Culex, Eretmapodites, Mansonia)",0,NA,1
+kyasanur forest disease,kyasanur forest disease,virus,1,1,1,1,1,1,kyasanur forest disease,vector,1,1,"tick (Haemaphysalis spinigera, H. turturis, H. papuana)",1,Tick-borne Encephalitis,1
+laguna negra,laguna negra,virus,1,0,1,1,1,1,hantavirus pulmonary syndrome,"direct, environmental, respiratory",1,0,NA,1,hantavirus pulmonary syndrome,1
+lake victoria marburgvirus,marburg,virus,1,1,1,1,1,1,marburg virus disease,"direct, environmental, fluids, respiratory",1,0,NA,1,marburg virus,1
+lassa,lassa,virus,1,1,1,1,1,1,lassa fever,"direct, food, environmental",1,0,NA,1,lassa fever,1
+lebombo,lebombo,virus,1,1,1,0,1,0,NA,vector,0,0,NA,0,NA,1
+ljungan,ljungan,virus,1,1,0,1,1,1,enterovirus infection,"fecal-oral, direct, respiratory",0,0,NA,1,enterovirus infecton,0
+louping ill,louping ill,virus,1,1,1,1,1,1,louping ill,"food, vector",1,1,tick (ixodes ricinus),0,NA,1
+lymphocytic choriomeningitis,lymphocytic choriomeningitis,virus,1,1,1,1,1,1,lymphocytic choriomeningitis,"direct, food, respiratory",1,0,NA,1,encephalitis,1
+machupo,machupo,virus,1,0,1,1,1,1,bolivian hemorrhagic fever,"direct, food, water",1,0,NA,1,bolivian hemorrhagic fever,1
+marituba,marituba,virus,1,1,1,1,1,1,group c viral fevers,vector,1,1,"mosquito (culex, aedes, limatus, wyeomyia, coquillettidia, mansonia, psophora)",0,NA,1
+mayaro,mayaro,virus,1,0,1,1,1,1,mayaro,vector,1,1,mosquito (Haemagogus janthinomys),1,Mayaro Fever,1
+measles,measles,virus,1,1,1,1,1,1,measles,respiratory,0,0,NA,0,NA,1
+menangle,menangle,virus,1,0,1,1,1,1,hendra virus associated disease,"direct, respiratory, environment",1,0,NA,1,menangle,1
+modoc,modoc,virus,1,0,0,1,1,1,viral encephalitis (st. louis-related),vector,1,1,"mosquito (Culex pipiens, Cx. tarsalis, Cx. nigripalpus, Cx. restuans, Cx. salinarius, Aedes, Sabethes)",0,NA,0
+mokola,mokola,virus,1,1,1,1,1,1,NA,NA,0,0,NA,1,encephalitis,1
+monkeypox,monkeypox,virus,1,1,1,1,1,1,monkeypox,"direct, respiratory",1,0,NA,1,monkeypox,1
+mumps,mumps,virus,1,0,1,1,0,1,mumps,respiratory,0,0,NA,0,NA,0
+murine pneumonia,murine pneumonia,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murray valley encephalitis,murray valley encephalitis,virus,1,0,1,1,1,1,murray valley encephalitis,vector,1,1,"mosquito (aedes normanensis, culex annulirostris and cu. bitaeniorhynchus)",1,murray valley encephalitis,1
+ndumu,ndumu,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+new york,new york-1,virus,1,1,1,1,1,1,hantavirus pulmonary syndrome,"direct, environment, respiratory",1,0,NA,1,Hantavirus Pulmonary Syndrome,1
+nipah,nipah,virus,1,1,1,1,1,1,nipah virus encephalitis,"food, direct, respiratory",1,0,NA,1,nipah virus,1
+norwalk,norwalk,virus,1,0,1,1,0,1,viral gastroenteritis,"water, food, environment",0,0,NA,0,NA,0
+o'nyong-nyong,o'nyong-nyong,virus,1,0,1,1,1,1,o'nyong-nyong,vector,1,1,mosquito (Anopheles funestus and An. Gambiae),0,NA,1
+omsk hemorrhagic fever,omsk,virus,1,1,1,1,1,1,omsk haemorrhagic fever,vector,1,1,tick (Dermacentor pictus and D. marginatus),1,tick-borne Encephalitis,1
+orf,orf,virus,1,1,1,1,1,1,orf,"direct, fluids, environment",1,0,NA,0,NA,1
+oriboca,oriboca,virus,1,0,1,1,1,1,group c viral fevers,vector,1,1,"mosquito (culex, aedes, limatus, wyeomyia, coquillettidia, mansonia, psophora)",0,NA,1
+oropouche,oropouche,virus,1,0,1,1,1,1,oropouche virus disease,vector,1,1,"midge (culicoides paraensis), mosquito (culex quinquefasciatus, aedes serratus, coquillettidia venezuelensis)",1,oropouche virus disease,1
+orungo,orungo,virus,1,0,1,1,1,1,crimean-congo-related haemorrhagic fever,"vector, direct",1,1,tick (hyalomma),0,NA,1
+palyam,palyam,virus,1,1,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+parainfluenza virus 5,parainfluenza virus 5,virus,1,1,1,1,0,1,parainfluenza virus infection,airborne,0,0,NA,0,NA,0
+patois,patois,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pichinde,pichinde,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pixuna,pixuna,virus,1,0,0,1,1,1,venezuelan equine encephalitis-related,vector,1,1,"mosquito (culex spp., aedes taeniorhynchus, psophora confinnis, anopheles spp.)",0,NA,0
+powassan,powassan,virus,1,1,1,1,1,1,powassan encephalitis,"vector, food",1,1,"tick (Ixodes cookei, Ix. marxi, Ix. scapularis, Dermacentor andersoni)",1,tick-borne encephalitis,1
+primate t-lymphotropic virus 1,primate t-lymphotropic virus 1,virus,1,0,1,1,1,1,htlv infection,"food (bushmeat), blood, sexual",1,0,NA,0,NA,0
+primate t-lymphotropic virus 2,primate t-lymphotropic virus 2,virus,1,1,1,1,1,1,htlv infection,"food (bushmeat), blood, sexual",1,0,NA,0,NA,0
+primate t-lymphotropic virus 3,primate t-lymphotropic virus 3,virus,1,1,1,1,1,1,htlv infection,"food (bushmeat), blood, sexual",1,0,NA,0,NA,0
+pseudocowpox,pseudocowpox,virus,1,1,1,1,1,1,pseudocowpox,direct,1,0,NA,0,NA,1
+punta toro,punta toro,virus,1,0,1,1,1,1,new world phlebovirus,vector,1,1,"sandfly (lutzomyia), tick",0,NA,0
+puumala,puumala,virus,1,1,1,1,1,1,old world hantavirus,"direct, environmental, respiratory",1,0,NA,1,nephropathia epidemica,1
+rabies,rabies,virus,1,1,1,1,1,1,rabies,"direct, bite",1,0,NA,1,rabies,1
+reston ebolavirus,reston ebolavirus,virus,1,0,1,1,1,1,ebola,"direct, respiratory, environment, sexual",1,0,NA,1,haemorrhagic fever,1
+rift valley fever,rift valley,virus,1,1,1,1,1,1,rift valley fever,"vector, direct",1,1,"moquito (culex, aedes, anopheles, eretmapodites, mansonia, culicoides, coquillettidia spp.)",1,rift valley fever,1
+rio bravo,rio bravo,virus,1,0,1,1,1,1,viral encephalitis (st. louis-related),vector,1,1,"mosquito (Culex pipiens, Cx. tarsalis, Cx. nigripalpus, Cx. restuans, Cx. salinarius, Aedes, Sabethes)",0,NA,1
+rio mamore,rio mamore,virus,1,1,0,1,1,1,hantavirus pulmonary syndrome,"direct, environment ,respiratory",1,0,NA,1,none reported,0
+ross river,ross river,virus,1,1,1,1,1,1,ross river disease,"vector, fluids",1,1,"mosquito (aedes vigilax, culex annulirostris)",1,ross river virus disease,1
+rotavirus a,rotavirus a,virus,1,1,1,1,1,1,rotavirus infection,"water, fecal-oral",1,0,NA,0,NA,1
+rotavirus b,rotavirus b,virus,1,1,1,1,1,1,rotavirus infection,"water, fecal-oral",1,0,NA,0,NA,1
+rotavirus c,rotavirus c,virus,1,1,1,1,1,1,rotavirus infection,"water, fecal-oral",1,0,NA,0,NA,1
+sandfly fever naples,sandfly fever naples,virus,1,1,1,1,1,1,old world phlebovirus infection,vector,1,1,sandfly (phlebotomus),0,NA,1
+sandfly fever sicilian,sandfly fever sicilian,virus,1,0,1,1,1,1,sandfly fever,vector,1,1,"sandfly (Phlebotomus papatasi, Ph. Perfilewi)",0,NA,1
+sealpox,sealpox,virus,1,1,1,1,1,1,pseudocowpox and related,direct,1,0,NA,0,NA,1
+semliki forest,semliki forest,virus,1,0,1,1,1,1,semliki forest fever (chikungunya-related),vector,1,1,"mosquito (Aedes spp., Aedes furcifer-taylori group)",0,NA,1
+seoul,seoul,virus,1,0,1,1,1,1,old world hantavirus,"direct, environmental, respiratory",1,0,NA,1,hantaviral disease,1
+severe acute respiratory syndrome-related coronavirus,severe acute respiratory syndrome coronavirus,virus,1,0,1,1,1,1,sars,"airborne, direct, fecal-oral",1,0,NA,1,severe acute respiratory syndrome,0
+shamonda,shamonda,virus,1,1,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+shuni,shuni,virus,1,1,0,1,1,1,bunyaviridae infections misc.,vector,1,1,mosquito,0,NA,0
+simian foamy,simian foamy,virus,1,1,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian parvovirus,simian parvovirus,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian virus 10,simian virus 10,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian virus 40,simian virus 40,virus,1,1,1,0,0,0,NA,NA,0,0,NA,0,NA,0
+sin nombre,sin nombre,virus,1,1,1,1,1,1,hantavirus pulmonary syndrome,"direct, environmental, respiratory",1,0,NA,1,hantavirus pulmonary syndrome,1
+sindbis,sindbis,virus,1,0,1,1,1,1,"karelian fever, sindbis fever",vector,1,1,mosquito (culex univittatus and cx. tritaeniorhyncus),1,sindbis fever,1
+st. louis encephalitis,st. louis encephalitis,virus,1,1,1,1,1,1,st. louis encephalitis,vector,1,1,"mosquito (culex pipiens, cx. tarsalis, cx. nigripalpus, cx. restuans, cx. salinarius, aedes, sabethes)",0,NA,1
+suid herpesvirus 1,suid herpesvirus 1,virus,1,0,1,0,1,0,NA,NA,0,0,NA,0,NA,1
+tacaiuma,tacaiuma,virus,1,0,1,1,1,1,bunyaviridae infections misc.,vector,1,1,mosquito,0,NA,1
+tacaribe,tacaribe,virus,1,0,0,1,1,1,new world arenaviral haemorrhagic fever,"direct, environment, respiratory",1,0,NA,1,arenaviral disease,0
+tanapox,tanapox,virus,1,0,1,1,1,1,tanapox virus disease,direct,1,0,NA,0,NA,0
+tembusu,tembusu,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+thailand,thailand,virus,1,0,1,1,1,1,old world hantavirus,"respiratory, fluid, environment",1,0,NA,0,NA,0
+thiafora,thiafora,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+thogoto,thogoto,virus,1,1,1,1,1,1,thogoto encephalitis,vector,1,1,tick,0,NA,1
+tick-borne encephalitis,tick-borne encephalitis,virus,1,0,1,1,1,1,tick-borne encephalitis,"vector, food",1,1,tick (ixodes ricinus),1,tick-borne encephalitis,1
+tioman,tioman,virus,1,0,0,1,1,1,respiratory viruses (misc),"respiratory, fluid",1,0,NA,0,NA,0
+torque teno,torque teno,virus,1,1,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+trubanaman,trubanaman,virus,1,0,1,1,1,1,barmah forest-related,vector,1,1,"mosquito (Aedes vigilax, Ae. camptorhynchus, Culex spp., Ae. normanensis and Coquillettidia spp)",0,NA,1
+tula,tula,virus,1,1,0,1,1,1,old world hantavirus,"respiratory, fluid, environment",1,0,NA,0,NA,0
+una,una,virus,1,0,0,1,1,1,mayaro-related alphaviral infection,vector,1,1,mosquito (Haemagogus janthinomys),1,alphavirus infection,0
+usutu,usutu,virus,1,0,1,1,1,1,west nile-related fever,vector,1,1,"mosquito (Culex univittatus. Cx. pipiens, Cx. vishnui, Cx. naevei, Coquillettidia, Aedes and Anopheles spp.)",1,usutu,1
+uukuniemi,uukuniemi,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+vaccinia,vaccinia,virus,1,0,1,1,1,1,pseudocowpox,direct,1,0,NA,0,NA,0
+venezuelan equine encephalitis,venezuelan equine encephalitis,virus,1,1,1,1,1,1,venezuelan equine encephalitis,vector,1,1,"mosquito (culex_spp,_aedes taeniorhynchus,_psorophora confinnis,_anopheles spp)",1,venezuelan equine encephalitis,1
+vesicular stomatitis alagoas,vesicular stomatitis alagoas,virus,1,0,1,1,1,1,vesicular stomatitis,"vector, contact",1,1,sandfly,0,NA,1
+vesicular stomatitis indiana,vesicular stomatitis indiana,virus,1,0,1,1,1,1,vesicular stomatitis,"vector, contact",1,1,sandfly,0,NA,1
+vesicular stomatitis new jersey,vesicular stomatitis new jersey,virus,1,0,1,1,1,1,vesicular stomatitis,"vector, contact",1,1,sandfly,0,NA,1
+wesselsbron,wesselsbron,virus,1,1,1,1,1,1,wesselsbron,vector,1,1,"mosquito (aedes_sp.,_anopheles gambiae,_an. pharoensis,_culex telesilla,_cx. univittatus,_mansonia uniformis)",0,NA,1
+west nile,west nile,virus,1,1,1,1,1,1,west nile fever,"vector, fluids",1,1,"mosquito (culex univittatus. cx. pipiens, cx. vishnui, cx. naevei, coquillettidia, aedes and anopheles spp.)",1,west nile fever,1
+western equine encephalitis,western equine encephalitis,virus,1,1,1,1,1,1,western equine encephalitis,vector,1,1,mosquito (culex tarsalis),1,western equine encephalitis,1
+whitewater arroyo,whitewater arroyo,virus,1,1,1,1,1,1,whitewater arroyo virus infection,"environment, respiratory",1,0,NA,1,Tacaribe Complex Virus Disease,0
+woolly monkey sarcoma,woolly monkey sarcoma,virus,1,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+wyeomyia,wyeomyia,virus,1,1,1,1,1,1,bunyaviridae infections misc.,vector,1,0,"mosquito (23 spp, inc. aedes, anopheles, limatus, culex, haemogogus, coquillettidia, psopsophora)",0,NA,1
+yaba monkey tumor,yaba monkey tumor,virus,1,0,1,0,1,0,NA,NA,0,0,NA,0,NA,1
+yellow fever,yellow fever,virus,1,1,1,1,1,1,yellow fever,"vector, fluids",1,1,"mosquito (aedes, haemoagogus, sabethes)",1,yellow fever,1
+zaire ebolavirus,zaire ebolavirus,virus,1,1,1,1,1,1,ebola,"direct, food",1,0,NA,1,ebola,1
+zika,zika,virus,1,0,1,1,1,1,zika fever,"vector, sexual",1,1,mosquito (Aedes spp.),1,zika fever,1
+adelaide river,adelaide river,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+adeno-associated virus-5,adeno-associated virus-5,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+african green monkey simian foamy,african green monkey simian foamy,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+african horse sickness,african horse sickness,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+african swine fever,african swine fever,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+aichi,aichi,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+akabane,akabane,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+alcelaphine herpesvirus 1,alcelaphine herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+alcelaphine herpesvirus 2,alcelaphine herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+allpaahuayo,allpaahuayo,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+amapari,amapari,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+anopheles b,anopheles b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+apoi,apoi,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+araguari,araguari,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+aravan,aravan,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+arctic squirrel hepatitis,arctic squirrel hepatitis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+arumowot,arumowot,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ateline herpesvirus 1,ateline herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ateline herpesvirus 2,ateline herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+baboon orthoreovirus,baboon orthoreovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+baboon polyomavirus 2,baboon polyomavirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bakau,bakau,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bangui,bangui,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+barur,barur,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bear canyon,bear canyon,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bebaru,bebaru,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+berrimah,berrimah,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bimiti,bimiti,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bivens arm,bivens arm,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bk polyomavirus,bk polyomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bluetongue,bluetongue,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+border disease,border disease,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine adenovirus a,bovine adenovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine adenovirus b,bovine adenovirus b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine adenovirus c,bovine adenovirus c,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine adenovirus d,bovine adenovirus d,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine adenovirus e,bovine adenovirus e,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine astrovirus,bovine astrovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine coronavirus,bovine coronavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine enteric calicivirus strain nb,bovine enteric calicivirus strain nb,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine ephemeral fever,bovine ephemeral fever,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine foamy,bovine foamy,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine herpesvirus 1,bovine herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine herpesvirus 2,bovine herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine herpesvirus 4,bovine herpesvirus 4,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine herpesvirus 5,bovine herpesvirus 5,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine immunodeficiency,bovine immunodeficiency,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine norovirus-ch126,bovine norovirus-ch126,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine norovirus-jena,bovine norovirus-jena,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine papillomavirus 1,bovine papillomavirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine papillomavirus 3,bovine papillomavirus 3,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine papillomavirus 5,bovine papillomavirus 5,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine parainfluenza virus 3,bovine parainfluenza virus 3,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine parvovirus,bovine parvovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine polyomavirus,bovine polyomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine respiratory syncytial,bovine respiratory syncytial,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine torovirus,bovine torovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine viral diarrhea virus 1,bovine viral diarrhea virus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bovine viral diarrhea virus 2,bovine viral diarrhea virus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bubaline herpesvirus 1,bubaline herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bujaru,bujaru,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bukalasa bat,bukalasa bat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+bwamba,bwamba,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cabassou,cabassou,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cacipacore,cacipacore,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+callitrichine herpesvirus 1,callitrichine herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+callitrichine herpesvirus 3,callitrichine herpesvirus 3,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+candiru,candiru,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+canid herpesvirus 1,canid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+canine adenovirus,canine adenovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+canine calicivirus,canine calicivirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+canine coronavirus,canine coronavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+canine minute,canine minute,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+canine oral papillomavirus,canine oral papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cano delgadito,cano delgadito,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+caprine arthritis encephalitis,caprine arthritis encephalitis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+caprine herpesvirus 1,caprine herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+carey island,carey island,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+caviid herpesvirus 1,caviid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+caviid herpesvirus 2,caviid herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+caviid herpesvirus 3,caviid herpesvirus 3,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 12,cercopithecine herpesvirus 12,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 14,cercopithecine herpesvirus 14,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 15,cercopithecine herpesvirus 15,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 16,cercopithecine herpesvirus 16,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 17,cercopithecine herpesvirus 17,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 2,cercopithecine herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 5,cercopithecine herpesvirus 5,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 8,cercopithecine herpesvirus 8,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cercopithecine herpesvirus 9,cercopithecine herpesvirus 9,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cervid herpesvirus 1,cervid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cervid herpesvirus 2,cervid herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cetacean morbillivirus,cetacean morbillivirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+chagres,chagres,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+chipmunk parvovirus,chipmunk parvovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+chobar gorge,chobar gorge,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+classical swine fever,classical swine fever,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cocal,cocal,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cottontail rabbit papillomavirus,cottontail rabbit papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cowbone ridge,cowbone ridge,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cricetid herpesvirus,cricetid herpesvirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+cupixi,cupixi,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+dakar bat,dakar bat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+deer adenovirus,deer adenovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+deer papillomavirus,deer papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ectromelia,ectromelia,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+el moro canyon,el moro canyon,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+entebbe bat,entebbe bat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+epizootic hemorrhagic disease,epizootic hemorrhagic disease,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equid herpesvirus 1,equid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equid herpesvirus 2,equid herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equid herpesvirus 3,equid herpesvirus 3,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equid herpesvirus 4,equid herpesvirus 4,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equid herpesvirus 5,equid herpesvirus 5,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equid herpesvirus 7,equid herpesvirus 7,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equid herpesvirus 8,equid herpesvirus 8,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equid herpesvirus 9,equid herpesvirus 9,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine adenovirus a,equine adenovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine adenovirus b,equine adenovirus b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine arteritis,equine arteritis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine encephalosis,equine encephalosis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine foamy,equine foamy,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine infectious anemia,equine infectious anemia,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine papillomavirus 1,equine papillomavirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine rhinitis a,equine rhinitis a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine rhinitis b,equine rhinitis b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+equine torovirus,equine torovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+eubenangee,eubenangee,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+european brown hare syndrome,european brown hare syndrome,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+european elk papillomavirus,european elk papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+eyach,eyach,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+felid herpesvirus 1,felid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+feline astrovirus,feline astrovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+feline calicivirus,feline calicivirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+feline coronavirus,feline coronavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+feline foamy,feline foamy,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+feline immunodeficiency,feline immunodeficiency,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+feline leukemia,feline leukemia,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+feline panleukopenia,feline panleukopenia,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+feline papillomavirus,feline papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+gb virus a,gb virus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+gb virus b,gb virus b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+goat adenovirus,goat adenovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+goatpox,goatpox,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ground squirrel hepatitis,ground squirrel hepatitis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+guinea pig adenovirus,guinea pig adenovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+guinea pig type-c oncovirus,guinea pig type-c oncovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+h-1 parvovirus,h-1 parvovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+hamster oral papillomavirus,hamster oral papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+hamster parvovirus,hamster parvovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+hamster polyomavirus,hamster polyomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+hare fibroma,hare fibroma,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+hepatitis c,hepatitis c,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+hepatitis delta,hepatitis delta,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+highlands j,highlands j,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+hippotragine herpesvirus 1,hippotragine herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human astrovirus,human astrovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human coronavirus oc43,human coronavirus oc43,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human enterovirus c,human enterovirus c,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human herpesvirus 2,human herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human herpesvirus 3,human herpesvirus 3,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human herpesvirus 6,human herpesvirus 6,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human herpesvirus 7,human herpesvirus 7,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human herpesvirus 8,human herpesvirus 8,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human immunodeficiency virus 1,human immunodeficiency virus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human immunodeficiency virus 2,human immunodeficiency virus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 1,human papillomavirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 10,human papillomavirus 10,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 16,human papillomavirus 16,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 18,human papillomavirus 18,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 2,human papillomavirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 26,human papillomavirus 26,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 32,human papillomavirus 32,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 34,human papillomavirus 34,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 4,human papillomavirus 4,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 41,human papillomavirus 41,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 48,human papillomavirus 48,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 49,human papillomavirus 49,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 5,human papillomavirus 5,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 50,human papillomavirus 50,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 53,human papillomavirus 53,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 54,human papillomavirus 54,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 6,human papillomavirus 6,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 60,human papillomavirus 60,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 61,human papillomavirus 61,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 63,human papillomavirus 63,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 7,human papillomavirus 7,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 71,human papillomavirus 71,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 88,human papillomavirus 88,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus 9,human papillomavirus 9,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus cand90,human papillomavirus cand90,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus cand92,human papillomavirus cand92,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human papillomavirus cand96,human papillomavirus cand96,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human parainfluenza virus 4,human parainfluenza virus 4,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human parechovirus,human parechovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human parvovirus b19,human parvovirus b19,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human polyomavirus,human polyomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human rhinovirus a,human rhinovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human rhinovirus b,human rhinovirus b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+human torovirus,human torovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ife,ife,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ippy,ippy,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+irkut,irkut,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+isla vista,isla vista,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+issyk-kul,issyk-kul,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+itaporanga,itaporanga,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+jaagsiekte sheep retrovirus,jaagsiekte sheep retrovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+japanaut,japanaut,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+jc polyomavirus,jc polyomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+jugra,jugra,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+jurona,jurona,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+jutiapa,jutiapa,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+kaeng khoi,kaeng khoi,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+kern canyon,kern canyon,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+keuraliba,keuraliba,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+khabarovsk,khabarovsk,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+khujand,khujand,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+kilham rat,kilham rat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+koongol,koongol,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+lactate dehydrogenase-elevating,lactate dehydrogenase-elevating,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+lagos bat,lagos bat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+langur,langur,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+lapine parvovirus,lapine parvovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+latino,latino,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+lumpy skin disease,lumpy skin disease,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+macaque simian foamy,macaque simian foamy,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+macropodid herpesvirus 1,macropodid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+macropodid herpesvirus 2,macropodid herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+madrid,madrid,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+main drain,main drain virus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mammalian orthoreovirus,mammalian orthoreovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+manzanilla,manzanilla,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mapuera,mapuera,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+maraba,maraba,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+marmodid herpesvirus 1,marmodid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mason-pfizer monkey,mason-pfizer monkey,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mastomys natalensis papillomavirus,mastomys natalensis papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+middelburg,middelburg,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+minatitlan,minatitlan,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mink astrovirus,mink astrovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mink calicivirus,mink calicivirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mink enteric sapovirus,mink enteric sapovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+minute virus of mice,minute virus of mice,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mobala,mobala,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+molluscum contagiosum,molluscum contagiosum,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+moloney murine sarcoma,moloney murine sarcoma,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+montana myotis leukoencephalitis,montana myotis leukoencephalitis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mopeia,mopeia,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mosso das pedras virus 78v3531,mosso das pedras virus 78v3531,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mount elgon bat,mount elgon bat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mouse mammary tumor,mouse mammary tumor,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mouse parvovirus 1,mouse parvovirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mucambo,mucambo,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+muleshoe,muleshoe,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murid herpesvirus 1,murid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murid herpesvirus 2,murid herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murid herpesvirus 3,murid herpesvirus 3,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murid herpesvirus 4,murid herpesvirus 4,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murid herpesvirus 5,murid herpesvirus 5,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murine adenovirus a,murine adenovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murine adenovirus b,murine adenovirus b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murine hepatitis,murine hepatitis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murine leukemia,murine leukemia,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murine norovirus 1,murine norovirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murine pneumotropic,murine pneumotropic,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+murine polyomavirus,murine polyomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+mustelid herpesvirus 1,mustelid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+myxoma,myxoma,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+nariva,nariva,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+nelson bay orthoreovirus,nelson bay orthoreovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+newcastle disease,newcastle disease,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ntaya,ntaya,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+nyando,nyando,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+oita,oita,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+okola,okola,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+oliveros,oliveros,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ovine adenovirus a,ovine adenovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ovine adenovirus d,ovine adenovirus d,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ovine astrovirus,ovine astrovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ovine herpesvirus 2,ovine herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+ovine papillomavirus 1,ovine papillomavirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pampa,pampa,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+parana,parana,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+parapoxvirus of red deer in new zealand,red deer parapoxvirus new zealand,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+peruvian horse sickness,peruvian horse sickness,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+peste-des-petits-ruminants,peste-des-petits-ruminants,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+phnom penh bat,phnom penh bat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+phocid herpesvirus 1,phocid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+phocine distemper,phocine distemper,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+phocoena spinipinnis papillomavirus,phocoena spinipinnis papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pig-tailed macaque parvovirus,pig-tailed macaque parvovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pirital,pirital,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+piry,piry,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+poliovirus,poliovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pongine herpesvirus 1,pongine herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pongine herpesvirus 2,pongine herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pongine herpesvirus 3,pongine herpesvirus 3,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+pongine herpesvirus 4,pongine herpesvirus 4,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine adenovirus a,porcine adenovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine adenovirus b,porcine adenovirus b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine adenovirus c,porcine adenovirus c,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine astrovirus,porcine astrovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine circovirus-1,porcine circovirus-1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine circovirus-2,porcine circovirus-2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine enteric sapovirus,porcine enteric sapovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine enterovirus a,porcine enterovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine enterovirus b,porcine enterovirus b,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine epidemic diarrhea,porcine epidemic diarrhea,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine hemagglutinating encephalomyelitis,porcine hemagglutinating encephalomyelitis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine parvovirus,porcine parvovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine reproductive and respiratory syndrome,porcine reproductive and respiratory syndrome virus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine rubulavirus,porcine rubulavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine teschovirus,porcine teschovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine torovirus,porcine torovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+porcine type-c oncovirus,porcine type-c oncovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+possum adenovirus,possum adenovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+prospect hill,prospect hill,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+puma lentivirus,puma lentivirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+qalyub,qalyub,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+quaranfil,quaranfil,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rabbit coronavirus,rabbit coronavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rabbit fibroma,rabbit fibroma,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rabbit hemorrhagic disease,rabbit hemorrhagic disease,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rabbit kidney vacuolating,rabbit kidney vacuolating,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rabbit oral papillomavirus,rabbit oral papillomavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+racoonpox,raccoonpox,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rat coronavirus,rat coronavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rat minute virus 1,rat minute virus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rat parvovirus 1,rat parvovirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rhesus macaque parvovirus,rhesus macaque parvovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rhesus monkey papillomavirus 1,rhesus monkey papillomavirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rinderpest,rinderpest,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rio negro,rio negro,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rio segundo,rio segundo,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rotavirus e,rotavirus e,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+rubella,rubella,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sabia,sabia,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+saboya,saboya,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+saimiriine herpesvirus 1,saimiriine herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+saimiriine herpesvirus 2,saimiriine herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sal vieja,sal vieja,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+salehabad,salehabad,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+salem,salem,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+san perlita,san perlita,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sapporo,sapporo,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sathuperi,sathuperi,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sciurid herpesvirus 1,sciurid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sciurid herpesvirus 2,sciurid herpesvirus 2,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sendai,sendai,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sepik,sepik,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sheeppox,sheeppox,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simbu,simbu,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian adenovirus,simian adenovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian enterovirus a,simian enterovirus a,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian hemorrhagic fever,simian hemorrhagic fever,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian immunodeficiency,simian immunodeficiency,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian virus 12,simian virus 12,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+simian virus 5,simian virus 5,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+southern elephant seal,southern elephant seal,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+squirrel adenovirus,squirrel adenovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+squirrel fibroma,squirrel fibroma,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+squirrel monkey retrovirus,squirrel monkey retrovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+squirrel parapoxvirus,squirrel parapoxvirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+sudan ebolavirus,sudan ebolavirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+swine norovirus,swine norovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+swinepox,swinepox,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+tamana bat,tamana bat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+tamdy,tamdy,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+tamiami,tamiami,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+tataguine,tataguine,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+taterapox,taterapox,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+theilovirus,theilovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+thottapalayam,thottapalayam,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+tonate,tonate,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+topografov,topografov,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+transmissible gastroenteritis,transmissible gastroenteritis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+tree shrew adenovirus,tree shrew adenovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+tupaia paramyxovirus,tupaia paramyxovirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+tupaiid herpesvirus 1,tupaiid herpesvirus 1,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+turlock,turlock,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+uganda s,uganda s,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+upolu,upolu,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+variola,variola,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+vesicular exanthema of swine,vesicular exanthema of swine,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+visna/maedi,visna/maedi,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+volepox,volepox,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+wad medani,wad medani,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+wallal,wallal,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+walrus calicivirus,walrus calicivirus,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+wanowrie,wanowrie,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+warrego,warrego,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+west caucasian bat,west caucasian bat,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+witwatersrand,witwatersrand,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+wongorr,wongorr,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+woodchuck hepatitis,woodchuck hepatitis,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+yogue,yogue,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+yokose,yokose,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0
+zegla,zegla,virus,0,0,0,0,0,0,NA,NA,0,0,NA,0,NA,0

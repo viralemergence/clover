@@ -1,8 +1,8 @@
 
-# ============= Scrape NCBI databases (PubMed/Nucleotide) for EID2 publication details inc. year ============
+# ============= Scrape NCBI databases (PubMed/Nucleotide) for EID2 publication details inc. year using rentrez ============
 
 # dependencies and basedir
-setwd("C:/Users/roryj/Documents/PhD/202011_clover/")
+setwd("C:/Users/roryj/Documents/PhD/202011_clover/clover/")
 pacman::p_load("RISmed", "dplyr", "magrittr", "rentrez")
 
 
@@ -11,7 +11,7 @@ pacman::p_load("RISmed", "dplyr", "magrittr", "rentrez")
 # ================ load data and prepare for PubMed query =================
 
 # eid2 for mammals and birds only
-eid2 = read.csv("./data/host_pathogen_orig/EID2_SpeciesInteractions_Wardeh2015.csv", stringsAsFactors = FALSE) %>%
+eid2 = read.csv("./data/source_databases/EID2_SpeciesInteractions_Wardeh2015.csv", stringsAsFactors = FALSE) %>%
   dplyr::filter(Carrier.classification %in% c("Human", "Mammal", "Domestic", "Primate", "Rodent", "Aves"))
 
 # EID2 data with PMIDs (stored in 'Publications' column)
@@ -185,9 +185,11 @@ for(i in 1:n_distinct(nuc$batch)){
 
 # pubmed and nuccore year scrapes
 scr1 = read.csv("./output/data_processed/host_pathogen/EID2_PubMed_DateScrape_23122020.csv", stringsAsFactors = FALSE) %>%
-  dplyr::mutate(id = as.character(id))
+  dplyr::mutate(id = as.character(id)) %>%
+  distinct()
 scr2 = read.csv("./output/data_processed/host_pathogen/EID2_Nuccore_DateScrape_23122020.csv", stringsAsFactors = FALSE) %>%
-  dplyr::mutate(id = as.character(id))
+  dplyr::mutate(id = as.character(id)) %>%
+  distinct()
 
 # harmonise column names
 scr1 = scr1 %>%
@@ -200,15 +202,17 @@ scr2 = scr2 %>%
   dplyr::select(-batch, -Lookup, -UpdateDate, -UpdateYear)
 scr = rbind(scr1, scr2)
 
-# remove duplicate records
+# remove duplicate records and save as partitioned EID2 in data folder
 scr = distinct(scr)
-write.csv(scr, "./output/data_processed/host_pathogen/EID2_SpeciesInteractions_RentrezScrape_28122020.csv", row.names=FALSE)
+write.csv(scr, "./data/source_databases/EID2_SpeciesInteractions_RentrezScrape_28122020.csv", row.names=FALSE)
+
+
+
 
 
 
 
 ############################# OLD CODE #########################################
-
 
 
 #' # ================== extract PubMed publications for associations with PMIDs ==================

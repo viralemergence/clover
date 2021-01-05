@@ -23,7 +23,7 @@ pacman::p_load("dplyr", "magrittr")
 ###
 
 # eid2 for mammals and birds cross-referenced to pubmed/nucleotide for publication details
-eid = read.csv( "./data/EID2_SpeciesInteractions_RentrezScrape_28122020.csv", stringsAsFactors = FALSE)
+eid = read.csv( "./data/source_databases/EID2_SpeciesInteractions_RentrezScrape_28122020.csv", stringsAsFactors = FALSE)
 
 # create parasite list, remove 'virus' from end of virus description
 par_temp = strsplit(tolower(eid$Cargo), " ")
@@ -63,7 +63,7 @@ eid2 = eid2[ !eid2$HostType %in% c("Higher Plants", "Protozoa", "Bacteria", "Oth
 # EID2 pathogen names harmonised (to match to other databases)
 # assoc = read.csv("./data/harmonisednames_rg/EID2_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
 #   dplyr::select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Any, DiseaseAgent, IsZoonotic, Disease_GIDEON, Route_GIDEON, UN_subregion, Countries_EID2Wertheim)
-assoc = read.csv("./data/harmonisednames_rg/EID2_pathogendata_allpathogens_harmonised_20201228.csv", stringsAsFactors = FALSE) %>%
+assoc = read.csv("./data/pathogennames_harmonised_rg/EID2_pathogendata_allpathogens_harmonised_20201228.csv", stringsAsFactors = FALSE) %>%
   dplyr::select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Any, DiseaseAgent, IsZoonotic, Disease_GIDEON, Route_GIDEON, UN_subregion, Countries_EID2Wertheim)
 eid2 = left_join(eid2, assoc, by=c("Parasite"="Pathogen_Original")) 
 eid2$ParasiteType = eid2$PathogenType
@@ -79,7 +79,7 @@ write.csv(eid2, "./output/hostpathogen_harmonised/EID2_MammalsBirds_Harmonised_O
 # ===================== Compile and process GMPD2 =========================
 
 # main GMPD2 dataset
-gmpd2 = read.csv("./data/GMPD2_main.csv", encoding = "latin1", stringsAsFactors = F)
+gmpd2 = read.csv("./data/source_databases/GMPD2_main.csv", encoding = "latin1", stringsAsFactors = F)
 
 # extract numerics (year) and trim out second year marker
 years = regmatches(gmpd2$Citation, gregexpr("[[:digit:]]+", gmpd2$Citation))
@@ -128,12 +128,12 @@ gmpd2 = gmpd2[ !gmpd2$Parasite %in% c("abolished", "no binomial name"), ]
 gmpd2 = gmpd2[ gmpd2$ParasiteType %in% c("helminth", "protozoa", "virus", "fungi", "bacteria"), ]
 
 # harmonised pathogen names
-assoc = read.csv("./data/harmonisednames_rg/GMPD2_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
+assoc = read.csv("./data/pathogennames_harmonised_rg/GMPD2_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
   dplyr::select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Any, DiseaseAgent, IsZoonotic, Disease_GIDEON, Route_GIDEON, UN_subregion, Countries_EID2Wertheim)
 
-# get data on missing pathogens from eid2 (some pathogen metadata missing in updated pipeline - not sure why but still in harmonised EID2 file)
+# get data on missing pathogens from eid2 (some pathogen names metadata missing in updated pipeline - still in harmonised EID2 file)
 missing = gmpd2[ which(!gmpd2$Parasite %in% assoc$Pathogen), ]
-missingrecs = read.csv("./data/harmonisednames_rg/EID2_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
+missingrecs = read.csv("./data/pathogennames_harmonised_rg/EID2_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
   dplyr::select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Any, DiseaseAgent, IsZoonotic, Disease_GIDEON, Route_GIDEON, UN_subregion, Countries_EID2Wertheim) %>%
   dplyr::filter(Pathogen_Original %in% missing$Parasite)
 assoc = rbind(assoc, missingrecs)
@@ -147,10 +147,10 @@ write.csv(gmpd2, "./output/hostpathogen_harmonised/GMPD2_Mammals_Harmonised_Oct2
 # ======================== Compile and process HP3 (Olival) ============================
 
 # host-pathogen associations based on both serology and infection status
-oliv_assoc = read.csv("./data/HP3_associations.csv", stringsAsFactors = F) %>%
+oliv_assoc = read.csv("./data/source_databases/HP3_associations.csv", stringsAsFactors = F) %>%
   dplyr::select(-WildDomInReference)
-oliv_vir = read.csv("./data/HP3_viruses.csv", stringsAsFactors = F)
-oliv_mam = read.csv("./data/HP3_hosts.csv", stringsAsFactors = F)
+oliv_vir = read.csv("./data/source_databases/HP3_viruses.csv", stringsAsFactors = F)
+oliv_mam = read.csv("./data/source_databases/HP3_hosts.csv", stringsAsFactors = F)
 
 # standardise names
 oliv_assoc$vVirusNameCorrected = tolower(unlist(lapply(strsplit(as.vector(oliv_assoc$vVirusNameCorrected), "_"), paste, collapse=" ")))
@@ -186,8 +186,8 @@ names(hp3) = c("Parasite", "Host", "DetectionMethod", "DetectionQuality", "Citat
 hp3$ParasiteType = "virus"
 hp3$Database = "HP3"
 
-# harmoniesd pathogen names and definitions
-assoc = read.csv("./data/harmonisednames_rg/Olival_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
+# harmonised pathogen names and definitions
+assoc = read.csv("./data/pathogennames_harmonised_rg/Olival_pathogendata_allpathogens_harmonised_20180916.csv", stringsAsFactors = FALSE) %>%
   dplyr::select(Pathogen_Original, PathogenName_Harmonised, PathogenType, HumanInfective_Olival,  Zoonotic_Olival_Strict, HumanInfective_External, IsZoonotic, DiseaseAgent, Disease_GIDEON, Route_GIDEON) %>%
   dplyr::mutate(HumanInfective_Any = ifelse(HumanInfective_Olival == 1 | HumanInfective_External == 1, 1, 0)) %>%
   dplyr::select(-HumanInfective_Olival, -Zoonotic_Olival_Strict)
@@ -220,9 +220,9 @@ cols = Reduce(intersect, list(names(eid2), names(gmpd2), names(hp3)))
 assoc = rbind(eid2[ , cols], gmpd2[ , cols], hp3[ , cols])
 assoc = assoc[ , - which(names(assoc) == "DetectionQuality")]
 
-# standardise host names (resolve synonyms using ITIS/CoL)
+# standardised host names (resolve synonyms using ITIS/CoL in taxize)
 # data compiled during PREDICTS/pathogens paper
-all_syns = read.csv("./data/hostsynonyms_rg/hostdata_allsynonyms_itis_20180917.csv", stringsAsFactors=F, encoding="latin1")
+all_syns = read.csv("./data/hostsynonyms_taxize/hostdata_allsynonyms_itis_20180917.csv", stringsAsFactors=F, encoding="latin1")
 all_syns1 = all_syns %>%
   group_by(Original) %>%
   dplyr::summarise(Host_Harmonised = tolower(head(Accepted_name, 1)),
@@ -232,7 +232,7 @@ all_syns1 = all_syns %>%
                    HostSynonyms = tolower(paste(unique(Synonyms), collapse=", ")))
 all_syns1$HostSynonyms[ all_syns1$HostSynonyms == "na" ] = ""
 
-# manual fix on species unsuccessful in scrape
+# manual fix on species unsuccessful in taxize scrape
 all_syns2 = data.frame(Original = c("pica pica", "felis catus", "inia geoffrensis", "mesoplodon grayi", "physeter catodon", "physeter macrocephalus"),
                        Host_Harmonised =c("pica pica", "felis catus", "inia geoffrensis", "mesoplodon grayi", "physeter macrocephalus", "physeter macrocephalus"),
                        HostSynonyms = c("", "", "", "", "physeter catodon", "physeter catodon"),

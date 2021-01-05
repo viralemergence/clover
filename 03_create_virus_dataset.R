@@ -16,7 +16,7 @@ pacman::p_load("RISmed", "dplyr", "magrittr", "rentrez")
 assoc = read.csv("./output/hostpathogen_harmonised/AllDatabases_Associations_Hosts_Harmonised_Oct2020.csv", stringsAsFactors = FALSE)
 
 # shaw mammals/viruses and clip pathogen names
-shaw = read.csv("./data/Shaw_Database_main.csv", stringsAsFactors = FALSE) %>%
+shaw = read.csv("./data/source_databases/Shaw_Database_main.csv", stringsAsFactors = FALSE) %>%
   dplyr::filter(HostGroup %in% c("Human", "Ungulates", "Carnivora", "Cetacea", "Rodentia", "Mammalia", "Primates", "Chiroptera")) %>%
   dplyr::filter(Type == "Virus") %>%
   dplyr::mutate(Species = tolower(Species))
@@ -27,6 +27,7 @@ shaw$Pathogen_Original = foo
 shaw$PMID[ is.na(shaw$PMID) ] = ""
 shaw$ReferenceComb = paste(shaw$Reference, shaw$Additional, sep="; ")
 shaw$ReferenceComb = paste("PMID:", shaw$PMID, "_Citations:", shaw$ReferenceComb, sep="")
+
 
 
 # # =============== access publication year for Shaw; first for refs, then scrape PubMed ================
@@ -301,7 +302,7 @@ assoc = rbind(ei, assoc[ assoc$Database != "EID2", ])
 #assoc = read.csv("./output/Clover_reconciledassociations_v1_20201120.csv", stringsAsFactors = FALSE)
 
 # any EID2 entries based on NCBI Nucleotide labelled as "PCR"
-assoc$DetectionMethod_Original[ assoc$Database == "EID2" & assoc$Source == "NCBI Nucleotide" ] = "PCR"
+assoc$DetectionMethod_Original[ assoc$Database == "EID2" & assoc$ReferenceType == "NCBI Nucleotide" ] = "NCBI Nucleotide"
 
 # detection methods
 dm = assoc[ !duplicated(assoc$DetectionMethod_Original), c("DetectionMethod_Original"), drop=FALSE ]
@@ -317,7 +318,7 @@ sero = c("bcELISA", "Antibodies", "Serology", "plaque reduction neutralization",
 dm$Detection_Serology = ifelse(dm$DetectionMethod_Original %in% sero, TRUE, FALSE)
 
 # genetic detection methods
-gen_det = c("PCR", "Cell culture, PCR", "PCR, Isolation", "DNA RFLP", "EM, DNA (i.e. more than just PCR)", "Pyroseq", "RNA")
+gen_det = c("PCR", "Cell culture, PCR", "PCR, Isolation", "DNA RFLP", "EM, DNA (i.e. more than just PCR)", "Pyroseq", "RNA", "NCBI Nucleotide")
 dm$Detection_Genetic = ifelse(dm$DetectionMethod_Original %in% gen_det, TRUE, FALSE)
 
 # pathogen direct isolation/observation within/from tissue
