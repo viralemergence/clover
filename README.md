@@ -9,7 +9,7 @@ CLOVER is a reconciled aggregate of four popular datasets that catalog host-viru
 Buy 1️⃣ get 3️⃣ free!
 
 ## Who curates this?
-Rory Gibb, Gregory Albery, Timothée Poisot, and Colin Carlson 
+Rory Gibb, Gregory Albery, Timothée Poisot, Colin Carlson, and Max Farrell
 
 ## Key files
 
