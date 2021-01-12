@@ -31,8 +31,10 @@ A full reconciled dataset of all four databases that includes non-virus pathogen
  
 ## Everything else you might want to know
 
-### Full directory
-
 ### Data usage agreement
 
+To use these data, please cite the DOI for the repository provided by Zenodo, and a manuscript citation (_forthcoming_).
+
 ### Contact information
+
+For inquiries contact Rory Gibb or Colin Carlson.
