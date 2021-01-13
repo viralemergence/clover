@@ -1,4 +1,5 @@
-# Clover: A harmonized mammal-virus association database
+# Clover
+## A harmonized mammal-virus association database
 
 [![DOI](https://zenodo.org/badge/312029561.svg)](https://zenodo.org/badge/latestdoi/312029561)
 
