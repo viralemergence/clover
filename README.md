@@ -1,4 +1,4 @@
-# Clover: Harmonized association data for the vertebrate virome
+# Clover: Harmonized mammal-virus association data
 
 [![DOI](https://zenodo.org/badge/312029561.svg)](https://zenodo.org/badge/latestdoi/312029561)
 
