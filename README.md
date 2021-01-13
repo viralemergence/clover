@@ -1,6 +1,6 @@
-[![DOI](https://zenodo.org/badge/312029561.svg)](https://zenodo.org/badge/latestdoi/312029561)
-
 # Clover: Harmonized association data for the vertebrate virome
+
+[![DOI](https://zenodo.org/badge/312029561.svg)](https://zenodo.org/badge/latestdoi/312029561)
 
 You're looking for data for your research on wildlife virology, macroecology, or zoonotic risk prediction. But there are too many options! They're all slightly different, and some haven't been updated for years. How do you know which one to use? If everyone is using different data, could that be the reason they have different findings?
 
