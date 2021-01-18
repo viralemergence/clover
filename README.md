@@ -35,7 +35,9 @@ A full reconciled dataset of all four databases that includes non-virus pathogen
 
 ### Data usage agreement
 
-To use these data, please cite the DOI for the repository provided by Zenodo, and a manuscript citation (_forthcoming_).
+To use these data, please cite the DOI for the repository provided by Zenodo, and a citation of the preprint:
+
+R Gibb, GF Albery, DJ Becker, L Brierley, R Connor, TA Dallas, EA Eskew, MJ Farrell, AL Rasmussen, SJ Ryan, AR Sweeny, CJ Carlson, T Poisot. Data proliferation, reconciliation, and synthesis in viral ecology. First posted January 16, 2021. bioRxiv DOI: 10.1101/2021.01.14.426572v1.
 
 ### Contact information
 
