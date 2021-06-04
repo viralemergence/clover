@@ -15,21 +15,21 @@ Rory Gibb, Gregory Albery, Timothée Poisot, Colin Carlson, and Max Farrell
 
 ## Key files
 
-The integrated CLOVER dataset, currently limited to mammal viruses (database and separate csv of field descriptions)
+The integrated CLOVER dataset of associations between mammal hosts and viruses (database and separate csv of field descriptions)
 
- ↳ clover → Clover_v1.0_NCBIreconciled_20201218.csv
+ ↳ clover → clover_0.1_mammalviruses → CLOVER_0.1_MammalViruses_AssociationsFlatFile.csv
 
- ↳ clover → Clover_v1.0_ColumnDescriptions_20201218.csv
+ ↳ clover → clover_0.1_mammalviruses → CLOVER_ColumnDescriptions.csv
  
 Metadata and scripts for linking CLOVER to a [mammal phylogeny](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000494) and information on host species' domestication status
 
- ↳ clover ↳ phylogenies
+ ↳ clover → clover_0.1_mammalviruses → phylogenies
 
- ↳ clover ↳ domestic_status
+ ↳ clover → clover_0.1_mammalviruses → domestic_status
  
-A full reconciled dataset of all four databases that includes non-virus pathogens and parasites (currently internally harmonised but not yet standardised to NCBI Taxonomy)
+A full reconciled dataset of all four databases that includes non-mammal hosts, and non-virus pathogens and parasites. This is standardised to the NCBI's taxonomic backbone, but higher taxonomy for a subset of fuzzy matched species is currently missing (3 database files for different pathogen subgroups, and a column descriptors csv)
 
- ↳ output ↳ hostpathogen_harmonised → AllDatabases_Associations_Hosts_Harmonised_Oct2020.csv
+ ↳ clover → clover_1.0_allpathogens
  
 ## Everything else you might want to know
 
