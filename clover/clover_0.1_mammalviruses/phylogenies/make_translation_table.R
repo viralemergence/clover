@@ -2,21 +2,21 @@
 
 require(ape)
 
-clover <- read.csv("./output/Clover_v1.0_NBCIreconciled_20201218.csv")
+clover <- read.csv("./clover/clover_0.1_mammalviruses/CLOVER_0.1_MammalViruses_AssociationsFlatFile.csv")
 
 # subset to mammals
-clover <- clover[clover$HostClass=="Mammalia",]
+clover <- clover[clover$HostClass=="mammalia",]
 
 
 # Import the Upham et al. node-dated phylogeny for mammals
 # Use a single tree for now
 # tree_upham <- read.nexus("./vertlife_mammals_node_dated.nex")[[666]]
 # write.nexus(tree_upham, file="./upham_tree_666.nex")
-tree_upham <- read.nexus("./data/phylogenies/upham_tree_666.nex")
+tree_upham <- read.nexus("./clover/clover_0.1_mammalviruses/phylogenies/upham_tree_666.nex")
 
 tree_upham$tip.label <- gsub("_"," ", tree_upham$tip.label)
 
-clover$Host_Upham <- clover$Host
+clover$Host_Upham <- Hmisc::capitalize(clover$Host)
 
 # % match
 length(intersect(tree_upham$tip.label, clover$Host_Upham))/length(unique(clover$Host_Upham))# 95.8%
@@ -33,7 +33,7 @@ length(intersect(tree_upham$tip.label, clover$Host_Upham))/length(unique(clover$
 setdiff(clover$Host_Upham, tree_upham$tip.label)
 
 # Using Upham Master Taxonomy to translate NCBI names to IUCN / Upham
-IUCN_2_NCBI <- read.csv("./data/phylogenies/Upham_S1_Data/Upham_IUCN_to_NCBI.csv")
+IUCN_2_NCBI <- read.csv("./clover/clover_0.1_mammalviruses/phylogenies/Upham_S1_Data/Upham_IUCN_to_NCBI.csv")
 
 IUCN_2_NCBI$NCBI_SciName <- gsub("_"," ", IUCN_2_NCBI$NCBI_SciName)
 IUCN_2_NCBI$MasterTax_SciName <- gsub("_"," ", IUCN_2_NCBI$MasterTax_SciName)
@@ -43,11 +43,11 @@ to_swap <- lookup[setdiff(clover$Host_Upham, tree_upham$tip.label)]
 to_swap <- to_swap[!is.na(to_swap)]
 clover$Host_Upham=plyr::revalue(clover$Host_Upham, to_swap)
 
-length(intersect(tree_upham$tip.label, clover$Host_Upham))/length(unique(clover$Host_Upham))# 98.1%
+length(intersect(tree_upham$tip.label, clover$Host_Upham))/length(unique(clover$Host_Upham))# 97.4%
 setdiff(clover$Host_Upham, tree_upham$tip.label)
 
 # Using ASM Mammal Diversity Database Taxonomy v1.3 (https://www.mammaldiversity.org/)
-MDD <- read.csv("./data/phylogenies/MDD_v1.3_6513species.csv")
+MDD <- read.csv("./clover/clover_0.1_mammalviruses/phylogenies/MDD_taxonomy/MDD_v1.3_6513species.csv")
 
 # First pass mapping from MSW3
 MDD$MSW3_sciName <- gsub("_"," ", MDD$MSW3_sciName)
@@ -58,11 +58,11 @@ to_swap <- lookup[setdiff(clover$Host_Upham, tree_upham$tip.label)]
 to_swap <- to_swap[!is.na(to_swap)]
 clover$Host_Upham=plyr::revalue(clover$Host_Upham, to_swap)
 
-length(intersect(tree_upham$tip.label, clover$Host_Upham))/length(unique(clover$Host_Upham))# 99.4%
+length(intersect(tree_upham$tip.label, clover$Host_Upham))/length(unique(clover$Host_Upham))# 98.7%
 setdiff(clover$Host_Upham, tree_upham$tip.label)
 
 # six manual changes
-unique(clover[!clover$Host_Upham %in% tree_upham$tip.label, c("Host","HostSynonyms")])
+unique(clover[!clover$Host_Upham %in% tree_upham$tip.label, c("Host_Upham")])
 # looking at synonyms and manually searching notes in MDD and Upham MasterTaxonomy
 
 clover$Host_Upham=plyr::revalue(clover$Host_Upham,
