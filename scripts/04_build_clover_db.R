@@ -97,7 +97,7 @@ clover$PathogenType[ clover$PathogenType %in% c("Bacteria", "Bacteria/rickettsia
 
 # database version
 database_version = data.frame(Database=c("EID2", "Shaw", "GMPD2", "HP3"),
-                              #DatabaseDOI = c("https://doi.org/10.1038/sdata.2015.49", "https://doi.org/10.1111/mec.15463", "https://doi.org/10.1002/ecy.1799", "https://doi.org/10.5281/zenodo.596810"),
+                              DatabaseDOI = c("https://doi.org/10.1038/sdata.2015.49", "https://doi.org/10.1111/mec.15463", "https://doi.org/10.1002/ecy.1799", "https://doi.org/10.5281/zenodo.596810"),
                               DatabaseVersion = c("Wardeh et al. 2015 Sci Data", "Shaw et al. 2020 Mol Ecol", "Stephens et al. 2017 Ecology", "Olival et al. 2017 Nature"))
 clover = left_join(clover, database_version)
 
@@ -107,7 +107,7 @@ clover = clover %>%
                 Pathogen, PathogenType, PathogenClass, PathogenOrder, PathogenFamily, PathogenGenus, 
                 PathogenTaxID, PathogenNCBIResolved, ICTVRatified,
                 PublicationYear, ReleaseYear, ReferenceText, PMID, NCBIAccession,
-                Database, DatabaseVersion, 
+                Database, DatabaseVersion, DatabaseDOI,
                 DetectionMethod, Detection_NotSpecified, Detection_Serology, Detection_Genetic, Detection_Isolation,
                 HostOriginal, PathogenOriginal, DetectionMethodOriginal) %>%
   distinct() %>%
@@ -159,6 +159,7 @@ meta$Description = c("Host species",
                      "NCBI Nucleotide accession is primary source is NCBI Nucleotide",
                      "Source database",
                      "Version of source database that was accessed for CLOVER",
+                     "DOI for source database version",
                      "Detection method (reconciled and harmonised to a standardised classification system)",
                      "True/false flag",
                      "True/false flag",
@@ -175,9 +176,9 @@ write.csv(meta, "./clover/clover_0.1_mammalviruses/CLOVER_ColumnDescriptions.csv
 # ------------------ 2. Save full all-hosts-all-pathogens CLOVER -------------------
 
 # save in separate pathogen types to fit into GitHub size
-write.csv(clover[ clover$PathogenType == "virus", ], "./clover/clover_1.0_all/CLOVER_1.0_Viruses_AssociationsFlatFile.csv", row.names=FALSE)
-write.csv(clover[ clover$PathogenType == "bacteria/rickettsia", ], "./clover/clover_1.0_all/CLOVER_1.0_Bacteria_AssociationsFlatFile.csv", row.names=FALSE)
-write.csv(clover[ !clover$PathogenType %in% c("bacteria/rickettsia", "virus"), ], "./clover/clover_1.0_all/CLOVER_1.0_HelminthProtozoaFungi_AssociationsFlatFile.csv", row.names=FALSE)
+write.csv(clover[ clover$PathogenType == "virus", ], "./clover/clover_1.0_allpathogens/CLOVER_1.0_Viruses_AssociationsFlatFile.csv", row.names=FALSE)
+write.csv(clover[ clover$PathogenType == "bacteria/rickettsia", ], "./clover/clover_1.0_allpathogens/CLOVER_1.0_Bacteria_AssociationsFlatFile.csv", row.names=FALSE)
+write.csv(clover[ !clover$PathogenType %in% c("bacteria/rickettsia", "virus"), ], "./clover/clover_1.0_allpathogens/CLOVER_1.0_HelminthProtozoaFungi_AssociationsFlatFile.csv", row.names=FALSE)
 
 # create descriptors
 meta = data.frame(ColName = colnames(clover))
@@ -204,6 +205,7 @@ meta$Description = c("Host species",
                      "NCBI Nucleotide accession is primary source is NCBI Nucleotide",
                      "Source database",
                      "Version of source database that was accessed for CLOVER",
+                     "DOI for source database version",
                      "Detection method (reconciled and harmonised to a standardised classification system)",
                      "True/false flag",
                      "True/false flag",
@@ -212,7 +214,7 @@ meta$Description = c("Host species",
                      "Host species as listed in source database",
                      "Pathogen species as listed in source database",
                      "Detection method as described in source database")
-write.csv(meta, "./clover/clover/CLOVER_ColumnDescriptions.csv")
+write.csv(meta, "./clover/clover_1.0_allpathogens/CLOVER_ColumnDescriptions.csv")
 
 
 

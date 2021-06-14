@@ -839,39 +839,39 @@ bovine enteric calicivirus strain nb,11983,TRUE,Norwalk virus,Norovirus,Calicivi
 bovine norovirus-ch126,11983,TRUE,Norwalk virus,Norovirus,Caliciviridae,Picornavirales,Pisoniviricetes,virus
 bovine norovirus-jena,11983,TRUE,Norwalk virus,Norovirus,Caliciviridae,Picornavirales,Pisoniviricetes,virus
 bovine reovirus,351073,TRUE,Mammalian orthoreovirus,Orthoreovirus,Reoviridae,Reovirales,Resentoviricetes,virus
-bse agent,NA,FALSE,bse agent,,,,,virus
-caviid herpesvirus 1,NA,FALSE,Caviid herpesvirus 1,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-caviid herpesvirus 3,NA,FALSE,Caviid herpesvirus 3,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-cercopithecine herpesvirus 14,NA,FALSE,Cercopithecine herpesvirus 14,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-cjd agent,NA,FALSE,cjd agent,,,,,virus
+bse agent,NA,FALSE,bse agent,NA,NA,NA,NA,virus
+caviid herpesvirus 1,NA,FALSE,Caviid herpesvirus 1,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+caviid herpesvirus 3,NA,FALSE,Caviid herpesvirus 3,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+cercopithecine herpesvirus 14,NA,FALSE,Cercopithecine herpesvirus 14,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+cjd agent,NA,FALSE,cjd agent,NA,NA,NA,NA,virus
 cricetid herpesvirus,1605972,TRUE,Cricetid gammaherpesvirus 2,Rhadinovirus,Herpesviridae,Herpesvirales,Herviviricetes,virus
 deer adenovirus,2169706,TRUE,Deer atadenovirus A,Atadenovirus,Adenoviridae,Rowavirales,Tectiliviricetes,virus
-equus zebra gammaherpesvirus 2,517184,TRUE,Equus zebra gammaherpesvirus 1,,Herpesviridae,Herpesvirales,Herviviricetes,virus
+equus zebra gammaherpesvirus 2,517184,TRUE,Equus zebra gammaherpesvirus 1,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
 goat adenovirus,130327,TRUE,Ovine atadenovirus D,Atadenovirus,Adenoviridae,Rowavirales,Tectiliviricetes,virus
-guinea pig type-c oncovirus,NA,FALSE,Guinea pig type-c oncovirus,,Retroviridae,Ortervirales,Revtraviricetes,virus
+guinea pig type-c oncovirus,NA,FALSE,Guinea pig type-c oncovirus,NA,Retroviridae,Ortervirales,Revtraviricetes,virus
 hare fibroma virus,10271,TRUE,Rabbit fibroma virus,Leporipoxvirus,Poxviridae,Chitovirales,Pokkesviricetes,virus
 juncopox virus,NA,FALSE,Juncopox virus,Avipoxvirus,Poxviridae,Chitovirales,Pokkesviricetes,virus
-lapine parvovirus,NA,FALSE,Lapine parvovirus,,Parvoviridae,Piccovirales,Quintoviricetes,virus
-marmodid herpesvirus 1,NA,FALSE,Marmodid herpesvirus 1,,Herpesviridae,Herpesvirales,Herviviricetes,virus
+lapine parvovirus,NA,FALSE,Lapine parvovirus,NA,Parvoviridae,Piccovirales,Quintoviricetes,virus
+marmodid herpesvirus 1,NA,FALSE,Marmodid herpesvirus 1,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
 mosso das pedras virus 78v3531,2083199,TRUE,Mosso das Pedras virus,Alphavirus,Togaviridae,Martellivirales,Alsuviricetes,virus
-murid herpesvirus 5,NA,FALSE,Murid herpesvirus 5,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-murid herpesvirus 7,NA,FALSE,Murid herpesvirus 7,,Herpesviridae,Herpesvirales,Herviviricetes,virus
+murid herpesvirus 5,NA,FALSE,Murid herpesvirus 5,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+murid herpesvirus 7,NA,FALSE,Murid herpesvirus 7,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
 murine leukemia,11786,TRUE,Murine leukemia virus,Gammaretrovirus,Retroviridae,Ortervirales,Revtraviricetes,virus
 mynahpox virus,NA,FALSE,Mynahpox virus,Avipoxvirus,Poxviridae,Chitovirales,Pokkesviricetes,virus
 primate t-lymphotropic virus 4,NA,FALSE,Primate T-lymphotropic virus 4,Deltaretrovirus,Retroviridae,Ortervirales,Revtraviricetes,virus
 red deer parapoxvirus new zealand,129728,TRUE,Parapoxvirus of red deer in New Zealand,Parapoxvirus,Poxviridae,Chitovirales,Pokkesviricetes,virus
 rotavirus e,NA,FALSE,Rotavirus E,Rotavirus,Reoviridae,Reovirales,Resentoviricetes,virus
-rupicapra gammaherpesvirus 1,397369,TRUE,Rupicapra rupicapra gammaherpesvirus 1,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-sciurid herpesvirus 1,NA,FALSE,Sciurid herpesvirus 1,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-sciurid herpesvirus 2,NA,FALSE,Sciurid herpesvirus 2,,Herpesviridae,Herpesvirales,Herviviricetes,virus
+rupicapra gammaherpesvirus 1,397369,TRUE,Rupicapra rupicapra gammaherpesvirus 1,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+sciurid herpesvirus 1,NA,FALSE,Sciurid herpesvirus 1,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+sciurid herpesvirus 2,NA,FALSE,Sciurid herpesvirus 2,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
 simian virus 10,11216,TRUE,Human respirovirus 3,Respirovirus,Paramyxoviridae,Mononegavirales,Monjiviricetes,virus
 sparrowpox virus,NA,FALSE,Sparrowpox virus,Avipoxvirus,Poxviridae,Chitovirales,Pokkesviricetes,virus
 squirrel adenovirus,2170003,TRUE,Squirrel mastadenovirus A,Mastadenovirus,Adenoviridae,Rowavirales,Tectiliviricetes,virus
 starlingpox virus,NA,FALSE,Starlingpox virus,Avipoxvirus,Poxviridae,Chitovirales,Pokkesviricetes,virus
-suid herpesvirus 3,NA,FALSE,Suid herpesvirus 3,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-suid herpesvirus 4,NA,FALSE,Suid herpesvirus 4,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-suid herpesvirus 5,NA,FALSE,Suid herpesvirus 5,,Herpesviridae,Herpesvirales,Herviviricetes,virus
-torque teno zalophus virus,1218490,TRUE,Torque teno zalophus virus 1,Lambdatorquevirus,Anelloviridae,,,virus
+suid herpesvirus 3,NA,FALSE,Suid herpesvirus 3,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+suid herpesvirus 4,NA,FALSE,Suid herpesvirus 4,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+suid herpesvirus 5,NA,FALSE,Suid herpesvirus 5,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+torque teno zalophus virus,1218490,TRUE,Torque teno zalophus virus 1,Lambdatorquevirus,Anelloviridae,NA,NA,virus
 trager duck spleen necrosis virus,NA,FALSE,Trager duck spleen necrosis virus,Gammaretrovirus,Retroviridae,Ortervirales,Revtraviricetes,virus
 viper retrovirus,NA,FALSE,Viper retrovirus,Gammaretrovirus,Retroviridae,Ortervirales,Revtraviricetes,virus
 abiotrophia defectiva,46125,TRUE,Abiotrophia defectiva,Abiotrophia,Aerococcaceae,Lactobacillales,Bacilli,bacteria
