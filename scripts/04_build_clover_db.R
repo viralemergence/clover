@@ -109,7 +109,8 @@ clover = clover %>%
                 PublicationYear, ReleaseYear, ReferenceText, PMID, NCBIAccession,
                 Database, DatabaseVersion, DatabaseDOI,
                 DetectionMethod, Detection_NotSpecified, Detection_Serology, Detection_Genetic, Detection_Isolation,
-                HostOriginal, PathogenOriginal, DetectionMethodOriginal) %>%
+                HostOriginal, PathogenOriginal, DetectionMethodOriginal,
+                Host_AsReported, Pathogen_AsReported) %>%
   distinct() %>%
   dplyr::arrange(PathogenType, HostClass, Host, Pathogen)
 
@@ -118,6 +119,9 @@ clover = clover %>%
   dplyr::mutate_at(c("Host", "HostClass", "HostOrder", "HostFamily", "HostGenus",
                      "Pathogen", "PathogenType", "PathogenClass", "PathogenOrder", "PathogenFamily", "PathogenGenus"),
                    tolower)
+
+# add assoc ID
+clover = cbind(data.frame(AssocID = 1:nrow(clover)), clover)
 
 
 
@@ -133,11 +137,12 @@ clovm = clover %>%
   dplyr::rename("Virus"=Pathogen, "VirusClass"=PathogenClass, "VirusOrder"=PathogenOrder, "VirusFamily"=PathogenFamily,
                 "VirusGenus"=PathogenGenus, "VirusTaxID"=PathogenTaxID, "VirusNCBIResolved"=PathogenNCBIResolved,
                 "VirusOriginal"=PathogenOriginal) %>%
-  dplyr::select(-PathogenType)
+  dplyr::select(-PathogenType, -Host_AsReported, -Pathogen_AsReported)
 write.csv(clovm, "./clover/clover_0.1_mammalviruses/CLOVER_0.1_MammalViruses_AssociationsFlatFile.csv", row.names=FALSE)
 
 meta = data.frame(ColName = colnames(clovm))
-meta$Description = c("Host species",
+meta$Description = c("Unique association identifier",
+                     "Host species",
                      "Host taxonomic class",
                      "Host taxonomic order", 
                      "Host taxonomic family",
@@ -172,8 +177,22 @@ write.csv(meta, "./clover/clover_0.1_mammalviruses/CLOVER_ColumnDescriptions.csv
 
 
 
+# ----------------- 2. Save originally reported host/pathogen name as separate metadata file ------------------------
+
+# where provided in source database; these are linked to clover via unique associd
+orig_rep = clover %>%
+  dplyr::select(AssocID, Host_AsReported, Pathogen_AsReported) %>%
+  dplyr::filter(!is.na(Host_AsReported)) %>%
+  dplyr::filter(!is.na(Pathogen_AsReported))
+write.csv(orig_rep, "./output/clover_metadata/CLOVER_HostParasite_ReportedNames.csv", row.names=FALSE)
+
+
+
 
 # ------------------ 2. Save full all-hosts-all-pathogens CLOVER -------------------
+
+# remove as reported names
+clover = clover %>% dplyr::select(-Host_AsReported, -Pathogen_AsReported)
 
 # save in separate pathogen types to fit into GitHub size
 write.csv(clover[ clover$PathogenType == "virus", ], "./clover/clover_1.0_allpathogens/CLOVER_1.0_Viruses_AssociationsFlatFile.csv", row.names=FALSE)
@@ -182,7 +201,8 @@ write.csv(clover[ !clover$PathogenType %in% c("bacteria/rickettsia", "virus"), ]
 
 # create descriptors
 meta = data.frame(ColName = colnames(clover))
-meta$Description = c("Host species",
+meta$Description = c("Unique association identifier",
+                     "Host species",
                      "Host taxonomic class",
                      "Host taxonomic order", 
                      "Host taxonomic family",

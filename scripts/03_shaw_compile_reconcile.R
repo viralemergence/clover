@@ -19,6 +19,8 @@ assoc = read.csv("./output/hostpathogen_reconciled/EID2GMPD2HP3_Associations_CLO
 shaw = read.csv("./data/source_databases/Shaw_Database_Rentrez_CLOVERT.csv", stringsAsFactors = FALSE)
 shaw$Pathogen_Orig2 = shaw$Species
 shaw$Host_Original = tolower(shaw$HostSpecies.new)
+shaw$Host_AsReported = tolower(shaw$HostSpecies)
+shaw$Pathogen_AsReported = NA
 
 # initially harmonised pathogen names for Shaw and save
 shawp = read.csv("./data/pathogennames_harmonised_rg/Shaw_allpathogens_harmonised_rg_gfa_20210407.csv", stringsAsFactors = FALSE) %>%
@@ -32,7 +34,7 @@ write.csv(shaw, "./output/hostpathogen_reconciled/Shaw_CLOVERT_Harmonised_Jan202
 # ================= Combine into full associations dataframe with other datasets ====================
 
 # subset to relevant columns
-shaw_sub = shaw[ , c("Pathogen_Original", "Pathogen_Orig2", "Pathogen_Harmonised", "Pathogen_Harm2", "Type", "Host_Original", 
+shaw_sub = shaw[ , c("Pathogen_Original", "Pathogen_Orig2", "Pathogen_AsReported", "Pathogen_Harmonised", "Pathogen_Harm2", "Type", "Host_Original", "Host_AsReported",
                      "PublicationYear", "CitationID", "ReferenceText", "Method")] %>%
   dplyr::rename("PathogenType" = Type, "DetectionMethod_Original" = Method) %>%
   dplyr::mutate(Database = "Shaw",
@@ -42,6 +44,7 @@ shaw_sub = shaw[ , c("Pathogen_Original", "Pathogen_Orig2", "Pathogen_Harmonised
                 ReleaseYear=NA, 
                 ReleaseDate=NA)
 assoc = rbind(assoc, shaw_sub)
+
 
 
 # ------------ manual corrections to pathogen synonymy in complete database ---------------

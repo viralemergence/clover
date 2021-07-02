@@ -30,12 +30,14 @@ par_temp2[ par_temp2 == "xxxx" ] = ""
 # create updated df
 eid2 = data.frame(HostType = eid$Carrier.classification,
                   Host = tolower(eid$Carrier),
+                  Host_AsReported = "",
                   HostGenus = tolower(unlist(lapply(strsplit(eid$Carrier, " "), "[[", 1))),
                   HostSpecies = tolower(unlist(lapply(strsplit(eid$Carrier, " "), "[[", 2))),
                   IsDomestic = ifelse(eid$Carrier.classification == "Domestic", 1, 0),
                   ParasiteType = tolower(eid$Cargo.classification),
                   Parasite = par_temp1,
                   Parasite_og = tolower(eid$Cargo),
+                  Parasite_AsReported = "",
                   Database = "EID2",
                   PublicationDate = eid$PublicationDate,
                   PublicationYear = eid$PublicationYear,
@@ -80,9 +82,11 @@ gmpd2$PublicationYear = as.numeric(unlist(lapply(years, "[", 1)))
 # remove records with no binomial name for host
 gmpd2 = data.frame(HostType = gmpd2$Group,
                    Host = tolower(gmpd2$HostCorrectedName),
+                   Host_AsReported = tolower(gmpd2$HostReportedName),
                    HostOrder = tolower(gmpd2$HostOrder),
                    HostFamily = tolower(gmpd2$HostFamily),
                    Parasite = tolower(gmpd2$ParasiteCorrectedName),
+                   Parasite_AsReported = tolower(gmpd2$ParasiteReportedName),
                    ParasiteType = tolower(gmpd2$ParType),
                    ParasitePhylum = tolower(gmpd2$ParPhylum),
                    ParasiteClass = tolower(gmpd2$ParClass),
@@ -168,6 +172,8 @@ names(hp3) = c("Parasite", "Host", "DetectionMethod", "DetectionQuality", "Refer
                "CytoReplic", "GenomeAveLength", "ReverseZoonosis", "IsZoonotic_HP3", "IsZoonotic_Strict_HP3", "PublicationYear")
 hp3$ParasiteType = "virus"
 hp3$Database = "HP3"
+hp3$Host_AsReported = ""
+hp3$Parasite_AsReported = ""
 
 # remove 'virus' from pathogen names to standardise with other databases
 hp3$Parasite_og = hp3$Parasite
@@ -201,13 +207,14 @@ assoc = assoc %>%
   rename("Host_Original" = Host,
          "Pathogen_Original" = Parasite,
          "Pathogen_Orig2"=Parasite_og,
+         "Pathogen_AsReported"=Parasite_AsReported,
          "PathogenType" = ParasiteType,
          "DetectionMethod_Original" = DetectionMethod,
          "Pathogen_Harmonised" = PathogenName_Harmonised,
          "Pathogen_Harm2"=PathogenName_Harm2)
 assoc = assoc[ , c("Database", "ReferenceText", "CitationID", "CitationIDType", 
-                   "Pathogen_Original", "Pathogen_Orig2", "Pathogen_Harmonised", "Pathogen_Harm2", "PathogenType", 
-                   "Host_Original", 
+                   "Pathogen_Original", "Pathogen_Orig2", "Pathogen_Harmonised", "Pathogen_Harm2", "Pathogen_AsReported", "PathogenType", 
+                   "Host_Original", "Host_AsReported",
                    #"Host_Harmonised", "HostClass", "HostOrder", "HostFamily", "HostSynonyms",
                    "PublicationYear", "PublicationDate", "ReleaseYear", "ReleaseDate", "DetectionMethod_Original")]
 
