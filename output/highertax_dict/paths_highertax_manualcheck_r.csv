@@ -6909,3 +6909,18 @@ yunnan virus,306276,TRUE,Yunnan orbivirus,Orbivirus,Reoviridae,Reovirales,Resent
 zaire ebolavirus,186538,TRUE,Zaire ebolavirus,Ebolavirus,Filoviridae,Mononegavirales,Monjiviricetes,virus
 zegla virus,2170060,TRUE,Zegla orthobunyavirus,Orthobunyavirus,Peribunyaviridae,Bunyavirales,Ellioviricetes,virus
 zika virus,64320,TRUE,Zika virus,Flavivirus,Flaviviridae,Amarillovirales,Flasuviricetes,virus
+orthopoxvirus sp.,10242,TRUE,NA,Orthopoxvirus,Poxviridae,Chitovirales,Pokkesviricetes,virus
+parapoxvirus sp.,10257,TRUE,NA,Parapoxvirus,Poxviridae,Chitovirales,Pokkesviricetes,virus
+deltaretrovirus sp.,153136,TRUE,NA,Deltaretrovirus,Retroviridae,Ortervirales,Revtraviricetes,virus
+pestivirus sp.,11095,TRUE,NA,Pestivirus,Flaviviridae,Amarillovirales,Flasuviricetes,virus
+cytomegalovirus sp.,10358,TRUE,NA,Cytomegalovirus,Herpesviridae,Herpesvirales,Herviviricetes,virus
+lymphocryptovirus sp.,10375,TRUE,NA,Lymphocryptovirus,Herpesviridae,Herpesvirales,Herviviricetes,virus
+rhadinovirus sp.,10379,TRUE,NA,Rhadinovirus,Herpesviridae,Herpesvirales,Herviviricetes,virus
+varicellovirus sp.,10319,TRUE,NA,Varicellovirus,Herpesviridae,Herpesvirales,Herviviricetes,virus
+morbillivirus sp.,11229,TRUE,NA,Morbillivirus,Paramyxoviridae,Mononegavirales,Monjiviricetes,virus
+unassigned phocid gammaherpesvirus 2,47419,TRUE,Phocid gammaherpesvirus 2,NA,Herpesviridae,Herpesvirales,Herviviricetes,virus
+vesivirus sp.,95337,TRUE,NA,Vesivirus,Caliciviridae,Picornavirales,Pisoniviricetes,virus
+lyssavirus sp.,11286,TRUE,NA,Lyssavirus,Rhabdoviridae,Mononegavirales,Monjiviricetes,virus
+mastadenovirus sp.,10509,TRUE,NA,Mastadenovirus,Adenoviridae,Rowavirales,Tectiliviricetes,virus
+rotavirus sp.,10912,TRUE,NA,Rotavirus,Reoviridae,Reovirales,Resentoviricetes,virus
+hantavirus sp.,1980442,TRUE,NA,Orthohantavirus,Hantaviridae,Bunyavirales,Ellioviricetes,virus

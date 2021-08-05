@@ -21,8 +21,6 @@ assoc = read.csv("./output/clover_versions/CLOVER_Associations_Initial.csv", str
 
 
 
-
-
 # --------------- 1. resolve higher taxonomy to NCBI: generate host and pathogen dictionaries --------------
 
 # hosts
@@ -53,6 +51,7 @@ assoc = assoc %>%
 
 
 
+
 # ------------------ 2. Split CitationID field ------------------
 
 # more useful fields
@@ -79,7 +78,6 @@ assoc$ICTVRatified = ifelse(tolower(assoc$Pathogen) %in% tolower(ictv$Species), 
 assoc %<>% dplyr::filter( !assoc$PathogenOriginal %in% c("bse agent", "cjd agent") )
 assoc$PathogenGenus[ assoc$Pathogen == "Torque teno virus" ] = "Alphatorquevirus"
 assoc$Pathogen[ assoc$Pathogen == "Torque teno virus" ] = NA
-
 
 
 

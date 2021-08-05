@@ -114,6 +114,7 @@ remove_virus_start = function(x){
 path = unlist(lapply(lapply(strsplit(path, " "), remove_virus_start), paste, collapse=" "))
 gmpd2$Parasite_og = gmpd2$Parasite
 gmpd2$Parasite = path
+gmpd2$Parasite[ gmpd2$Parasite == "sp." ] = gmpd2$Parasite_og[ gmpd2$Parasite == "sp." ]
 
 # remove records with pathogen name 'abolished'
 # and remove ectoparasites
